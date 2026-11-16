@@ -1,0 +1,326 @@
+
+name: Collect Developer Graduations
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "47 */6 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: developer-graduations
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Collect confirmed graduations
+        run: |
+          python3 - <<'PY'
+          import json
+          import hashlib
+          import pathlib
+          import urllib.request
+          import time
+          from datetime import datetime, timezone, timedelta
+
+          folder = pathlib.Path("data")
+
+          coins_data = json.loads(
+              (folder / "developer-coins.json").read_text()
+          )
+          ranking = json.loads(
+              (folder / "top100.json").read_text()
+          )
+
+          coins = coins_data.get("coins", [])
+          top = ranking.get("top_100", [])
+
+          if not coins or not top:
+              raise RuntimeError("Coin or ranking data missing")
+
+          today = datetime.now(timezone.utc).date()
+          cutoff = (today - timedelta(days=29)).isoformat()
+
+          tracked = {
+              item["coin_id"]: item
+              for item in coins
+              if item.get("coin_id")
+              and item.get("launch_date", "") >= cutoff
+          }
+
+          output_path = folder / "graduation-results.json"
+
+          confirmed = {}
+
+          if output_path.exists():
+              previous = json.loads(output_path.read_text())
+              for item in previous.get("confirmed_coins", []):
+                  cid = item.get("coin_id")
+                  if cid in tracked:
+                      confirmed[cid] = item
+
+          def fetch(url):
+              for attempt in range(3):
+                  try:
+                      req = urllib.request.Request(
+                          url,
+                          headers={"User-Agent": "Pumpwatch/1.0"}
+                      )
+                      with urllib.request.urlopen(
+                          req, timeout=180
+                      ) as response:
+                          return json.load(response)
+                  except Exception as error:
+                      print(
+                          "Fetch attempt failed:",
+                          url.split("/")[-1],
+                          type(error).__name__
+                      )
+                      if attempt < 2:
+                          time.sleep(10)
+              return None
+
+          def rows_from_feed(feed, names):
+              if not isinstance(feed, dict):
+                  raise ValueError("Unexpected feed structure")
+
+              columns = feed.get("columns")
+
+              if isinstance(columns, list):
+                  for name in names:
+                      rows = feed.get(name)
+                      if isinstance(rows, list):
+                          return [
+                              dict(zip(columns, row))
+                              if isinstance(row, list)
+                              else row
+                              for row in rows
+                          ]
+
+              for name in names:
+                  rows = feed.get(name)
+                  if isinstance(rows, list):
+                      if all(isinstance(r, dict) for r in rows):
+                          return rows
+
+              raise ValueError(
+                  "Unknown feed format: "
+                  + ",".join(feed.keys())
+              )
+
+          def record(mint, graduated_at, source):
+              if not isinstance(mint, str):
+                  return
+
+              cid = hashlib.sha256(
+                  mint.encode()
+              ).hexdigest()
+
+              if cid not in tracked:
+                  return
+
+              coin = tracked[cid]
+
+              old = confirmed.get(cid, {})
+
+              confirmed[cid] = {
+                  "coin_id": cid,
+                  "developer_id": coin["developer_id"],
+                  "launch_date": coin["launch_date"],
+                  "graduated": True,
+                  "graduated_at": (
+                      graduated_at
+                      if graduated_at is not None
+                      else old.get("graduated_at")
+                  ),
+                  "source": source
+              }
+
+          successful_launches = 0
+          successful_graduations = 0
+
+          for offset in range(3):
+              day = today - timedelta(days=offset)
+              date = day.isoformat()
+
+              launch_feed = fetch(
+                  "https://pumpdata.fun/launches/"
+                  + date + ".json"
+              )
+
+              if launch_feed is not None:
+                  launches = rows_from_feed(
+                      launch_feed, ("launches",)
+                  )
+                  successful_launches += 1
+
+                  for item in launches:
+                      if not isinstance(item, dict):
+                          continue
+                      if item.get("migrated_at"):
+                          record(
+                              item.get("mint"),
+                              item["migrated_at"],
+                              "launch_feed"
+                          )
+
+              graduation_feed = fetch(
+                  "https://pumpdata.fun/graduations/"
+                  + date + ".json"
+              )
+
+              if graduation_feed is not None:
+                  graduates = rows_from_feed(
+                      graduation_feed,
+                      ("graduations", "graduates", "events")
+                  )
+                  successful_graduations += 1
+
+                  for item in graduates:
+                      if not isinstance(item, dict):
+                          continue
+
+                      mint = (
+                          item.get("mint")
+                          or item.get("coin")
+                      )
+
+                      when = (
+                          item.get("migrated_at")
+                          or item.get("graduated_at")
+                          or item.get("timestamp")
+                          or item.get("ts")
+                      )
+
+                      record(
+                          mint,
+                          when,
+                          "graduation_feed"
+                      )
+
+              print(
+                  date,
+                  "confirmed tracked graduations:",
+                  len(confirmed)
+              )
+
+          if (
+              successful_launches == 0
+              and successful_graduations == 0
+          ):
+              raise RuntimeError(
+                  "No feeds available; previous data retained"
+              )
+
+          counts = {}
+
+          for coin in tracked.values():
+              dev = coin["developer_id"]
+              counts.setdefault(dev, {
+                  "tracked": 0,
+                  "graduated": 0
+              })
+              counts[dev]["tracked"] += 1
+
+          for item in confirmed.values():
+              dev = item["developer_id"]
+              if dev in counts:
+                  counts[dev]["graduated"] += 1
+
+          developers = []
+
+          for developer in top:
+              dev = developer["developer_id"]
+              stats = counts.get(dev, {
+                  "tracked": 0,
+                  "graduated": 0
+              })
+
+              launches = stats["tracked"]
+              grads = stats["graduated"]
+
+              developers.append({
+                  "developer_id": dev,
+                  "rank_by_launches": developer.get("rank"),
+                  "coins_tracked": launches,
+                  "confirmed_graduations": grads,
+                  "minimum_graduation_rate": (
+                      round(grads / launches, 6)
+                      if launches else None
+                  )
+              })
+
+          developers.sort(
+              key=lambda d: (
+                  -d["confirmed_graduations"],
+                  -(
+                      d["minimum_graduation_rate"]
+                      if d["minimum_graduation_rate"] is not None
+                      else -1
+                  ),
+                  -d["coins_tracked"]
+              )
+          )
+
+          for index, dev in enumerate(developers, 1):
+              dev["graduation_rank"] = index
+
+          output = {
+              "updated_at": datetime.now(
+                  timezone.utc
+              ).isoformat(),
+              "period_start": cutoff,
+              "period_end": today.isoformat(),
+              "coins_tracked": len(tracked),
+              "confirmed_graduations": len(confirmed),
+              "launch_feeds_loaded": successful_launches,
+              "graduation_feeds_loaded": successful_graduations,
+              "method": (
+                  "Confirmed observed migrations only. "
+                  "Graduations outside retained feed coverage "
+                  "may be missing. Rates are lower bounds, "
+                  "not verified final graduation rates."
+              ),
+              "developers": developers,
+              "confirmed_coins": sorted(
+                  confirmed.values(),
+                  key=lambda x: (
+                      x["launch_date"],
+                      x["coin_id"]
+                  ),
+                  reverse=True
+              )
+          }
+
+          output_path.write_text(
+              json.dumps(output, indent=2) + "\n"
+          )
+
+          print("SUCCESS")
+          print("Tracked coins:", len(tracked))
+          print("Confirmed graduations:", len(confirmed))
+          print("Developers ranked:", len(developers))
+          PY
+
+      - name: Commit graduation results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add -- data/graduation-results.json
+
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Update confirmed graduations"
+            git pull --rebase origin main
+            git push
+          fi
