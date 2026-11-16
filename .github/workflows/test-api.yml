@@ -1,5 +1,5 @@
 
-name: Test Pump.fun API
+name: Test Pumpdata API
 
 on:
   workflow_dispatch:
@@ -9,53 +9,48 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Test API connection
+      - name: Test Pumpdata connection
         env:
           PUMP_API_KEY: ${{ secrets.PUMP_API_KEY }}
         run: |
           python3 - <<'PY'
           import os
+          import json
           import urllib.request
           import urllib.error
 
           key = os.environ.get("PUMP_API_KEY", "")
-
           if not key:
-              raise SystemExit(
-                  "ERROR: PUMP_API_KEY secret missing"
-              )
+              raise SystemExit("API key secret missing")
 
-          url = "https://api.pump.fun/v1/users"
+          wallet = (
+              "7ufmve7ZSFCzuNcKRunYrGtyb2Ka1MXzkWwf7jZhVsmL"
+          )
+          url = "https://pumpdata.fun/deployer/" + wallet
 
           request = urllib.request.Request(
               url,
-              headers={
-                  "Authorization": "Bearer " + key,
-                  "Accept": "application/json"
-              }
+              headers={"x-api-key": key}
           )
 
           try:
               with urllib.request.urlopen(
-                  request, timeout=20
+                  request, timeout=30
               ) as response:
-                  print("SUCCESS: API connected!")
-                  print("HTTP status:", response.status)
-                  print("Authentication test passed.")
+                  data = json.load(response)
+                  print("SUCCESS: Pumpdata API connected!")
+                  print("Developer:", data.get("address"))
+                  print("Developer record:")
+                  print(json.dumps(
+                      data.get("record", {}),
+                      indent=2
+                  ))
 
           except urllib.error.HTTPError as error:
-                  print("HTTP status:", error.code)
-                  import json
-                  try:
-                      details = json.loads(error.read().decode())
-                      print("API error code:", details.get("error"))
-                      print("API message:", details.get("message"))
-                  except (ValueError, UnicodeDecodeError):
-                      print("Could not read API error details.")
-                  raise SystemExit(1)
+              print("HTTP error:", error.code)
+              raise SystemExit(1)
 
           except Exception as error:
-              print("Connection error:",
-                    type(error).__name__)
+              print("Error:", type(error).__name__)
               raise SystemExit(1)
           PY
