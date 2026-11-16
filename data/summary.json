@@ -1,0 +1,25 @@
+{
+  "updated_at": "2026-11-16T17:08:38.632855+00:00",
+  "period_start": "2026-10-18",
+  "period_end": "2026-11-16",
+  "days_collected": 3,
+  "note": "Daily counts only. Developer counts cannot be summed across days to get unique 30-day developers.",
+  "total_launches_collected": 101348,
+  "daily": {
+    "2026-11-14": {
+      "tokens": 40767,
+      "unique_developers": 9042,
+      "developers_with_previous_graduations": 1327
+    },
+    "2026-11-15": {
+      "tokens": 39113,
+      "unique_developers": 8409,
+      "developers_with_previous_graduations": 1318
+    },
+    "2026-11-16": {
+      "tokens": 21468,
+      "unique_developers": 5351,
+      "developers_with_previous_graduations": 927
+    }
+  }
+}
