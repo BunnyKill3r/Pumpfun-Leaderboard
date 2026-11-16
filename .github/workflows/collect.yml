@@ -1,4 +1,3 @@
-
 name: Collect Pumpfun Developers
 
 on:
@@ -26,6 +25,8 @@ jobs:
           python3 - <<'PY'
           import json
           import pathlib
+          import re
+          import time
           import urllib.request
           import urllib.error
           from datetime import datetime, timezone, timedelta
@@ -37,84 +38,95 @@ jobs:
           today = datetime.now(timezone.utc).date()
           cutoff = today - timedelta(days=29)
 
-          # Store one file per UTC launch date.
-          # Refresh the latest three days each run.
+          # Reject suspicious credential-like identifiers before writing public files.
+          # This is deliberately conservative; excluded records are counted.
+          suspicious = re.compile(r"AKLT[A-Za-z0-9_\-]{12,}", re.IGNORECASE)
+          excluded = 0
+
+          def safe_identifier(value):
+              return (isinstance(value, str)
+                      and bool(value)
+                      and not suspicious.search(value))
+
+          # Refresh the latest three available UTC daily feeds.
           for offset in range(3):
               day = today - timedelta(days=offset)
               name = day.isoformat()
-              url = (
-                  "https://pumpdata.fun/launches/"
-                  + name + ".json"
-              )
+              url = "https://pumpdata.fun/launches/" + name + ".json"
+              print("Fetching:", name, flush=True)
 
-              print("Fetching:", name)
+              data = None
+              for attempt in range(1, 4):
+                  try:
+                      request = urllib.request.Request(
+                          url,
+                          headers={"User-Agent": "PumpLeaderboard/1.0"}
+                      )
+                      with urllib.request.urlopen(request, timeout=180) as response:
+                          data = json.load(response)
+                      print("Download successful:", name, flush=True)
+                      break
+                  except (urllib.error.URLError, ConnectionError, TimeoutError, OSError,
+                          json.JSONDecodeError) as error:
+                      print("Download attempt", attempt, "failed:",
+                            type(error).__name__, flush=True)
+                      if attempt < 3:
+                          time.sleep(10 * attempt)
 
-              request = urllib.request.Request(
-                  url,
-                  headers={
-                      "User-Agent": "PumpLeaderboard/1.0"
-                  }
-              )
-
-              try:
-                  with urllib.request.urlopen(
-                      request, timeout=120
-                  ) as response:
-                      data = json.load(response)
-
-              except urllib.error.HTTPError as error:
-                  print("Feed unavailable:", error.code)
+              if data is None:
+                  print("Skipping unavailable feed:", name, flush=True)
                   continue
 
               columns = data["columns"]
               launches = data["launches"]
-
-              # Preserve only fields needed for
-              # discovery and rankings.
               compact = []
               for row in launches:
                   coin = dict(zip(columns, row))
                   wallet = coin.get("creator")
-
                   if not wallet:
                       continue
-
-                  mint = (
-                      coin.get("mint")
-                      or coin.get("token_address")
-                      or coin.get("coin_mint")
-                      or coin.get("address")
-                  )
-
+                  mint = (coin.get("mint") or coin.get("token_address")
+                          or coin.get("coin_mint") or coin.get("address"))
+                  # Do not publish any row containing a suspicious identifier.
+                  if not safe_identifier(wallet) or (
+                      mint is not None and not safe_identifier(mint)
+                  ):
+                      excluded += 1
+                      continue
                   compact.append({
                       "wallet": wallet,
                       "mint": mint,
-                      "previous_graduations":
-                          coin.get(
-                              "deployer_graduations_before",
-                              0
-                          )
+                      "previous_graduations": coin.get("deployer_graduations_before", 0)
                   })
 
               path = folder / (name + ".json")
-              path.write_text(
-                  json.dumps(compact, separators=(",", ":"))
-              )
+              path.write_text(json.dumps(compact, separators=(",", ":")) + "\n")
+              print("Launches saved:", len(compact), flush=True)
+              print("Feed columns:", columns, flush=True)
 
-              print("Launches saved:", len(compact))
-              print("Feed columns:", columns)
-
-          # Remove daily files older than 30 days.
           for path in folder.glob("????-??-??.json"):
               try:
-                  day = datetime.strptime(
-                      path.stem, "%Y-%m-%d"
-                  ).date()
+                  day = datetime.strptime(path.stem, "%Y-%m-%d").date()
               except ValueError:
                   continue
-
               if day < cutoff:
                   path.unlink()
+
+          # Also sanitise existing daily files before including them in output.
+          # This protects files produced by older versions of this workflow.
+          for path in folder.glob("????-??-??.json"):
+              original = json.loads(path.read_text())
+              cleaned = []
+              for coin in original:
+                  wallet, mint = coin.get("wallet"), coin.get("mint")
+                  if not safe_identifier(wallet) or (
+                      mint is not None and not safe_identifier(mint)
+                  ):
+                      excluded += 1
+                      continue
+                  cleaned.append(coin)
+              if len(cleaned) != len(original):
+                  path.write_text(json.dumps(cleaned, separators=(",", ":")) + "\n")
 
           developers = defaultdict(lambda: {
               "launches_30d": 0,
@@ -122,66 +134,39 @@ jobs:
               "tokens": [],
               "active_days": set()
           })
-
           total = 0
           days = []
 
-          for path in sorted(
-              folder.glob("????-??-??.json")
-          ):
+          for path in sorted(folder.glob("????-??-??.json")):
               day = path.stem
               days.append(day)
-
               for coin in json.loads(path.read_text()):
                   wallet = coin["wallet"]
                   record = developers[wallet]
-
                   record["launches_30d"] += 1
                   record["active_days"].add(day)
-
-                  previous = (
-                      coin.get("previous_graduations")
-                      or 0
-                  )
+                  previous = coin.get("previous_graduations") or 0
                   record["previous_graduations_max"] = max(
-                      record["previous_graduations_max"],
-                      previous
-                  )
-
+                      record["previous_graduations_max"], previous)
                   if coin.get("mint"):
-                      record["tokens"].append({
-                          "mint": coin["mint"],
-                          "date": day
-                      })
-
+                      record["tokens"].append({"mint": coin["mint"], "date": day})
                   total += 1
 
           leaderboard = []
-
           for wallet, record in developers.items():
               leaderboard.append({
                   "wallet": wallet,
-                  "launches_30d":
-                      record["launches_30d"],
-                  "previous_graduations":
-                      record["previous_graduations_max"],
-                  "active_days":
-                      len(record["active_days"]),
+                  "launches_30d": record["launches_30d"],
+                  "previous_graduations": record["previous_graduations_max"],
+                  "active_days": len(record["active_days"]),
                   "tokens": record["tokens"]
               })
-
           leaderboard.sort(
-              key=lambda d: (
-                  d["launches_30d"],
-                  d["previous_graduations"]
-              ),
+              key=lambda d: (d["launches_30d"], d["previous_graduations"]),
               reverse=True
           )
-
           output = {
-              "updated_at": datetime.now(
-                  timezone.utc
-              ).isoformat(),
+              "updated_at": datetime.now(timezone.utc).isoformat(),
               "period_start": cutoff.isoformat(),
               "period_end": today.isoformat(),
               "days_collected": len(days),
@@ -190,28 +175,17 @@ jobs:
               "ranking_method": "launches_30d",
               "developers": leaderboard
           }
-
           (folder / "leaderboard.json").write_text(
-              json.dumps(output, separators=(",", ":"))
+              json.dumps(output, separators=(",", ":")) + "\n"
           )
-
           print("TOTAL LAUNCHES:", total)
           print("UNIQUE DEVELOPERS:", len(leaderboard))
           print("DAYS COLLECTED:", len(days))
           print("TOP 10 DEVELOPERS:")
-
-          for rank, dev in enumerate(
-              leaderboard[:10], start=1
-          ):
-              print(
-                  rank,
-                  dev["wallet"],
-                  "Launches:",
-                  dev["launches_30d"],
-                  "Previous graduations:",
-                  dev["previous_graduations"]
-              )
-
+          for rank, dev in enumerate(leaderboard[:10], start=1):
+              print(rank, dev["wallet"], "Launches:", dev["launches_30d"],
+                    "Previous graduations:", dev["previous_graduations"])
+          print("Excluded suspicious records:", excluded)
           print("LEADERBOARD DATA READY")
           PY
 
@@ -221,6 +195,18 @@ jobs:
           git config user.email \
             "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/
+          # Check the staged JSON for suspicious credentials before committing.
+          python3 - <<'PY'
+          import pathlib
+          import re
+          pattern = re.compile(rb"AKLT[A-Za-z0-9_\-]{12,}", re.IGNORECASE)
+          files = list(pathlib.Path("data").glob("*.json"))
+          flagged = [p.name for p in files if pattern.search(p.read_bytes())]
+          if flagged:
+              print("SAFETY CHECK FAILED: suspicious data remains in:", ", ".join(flagged))
+              raise SystemExit(1)
+          print("Safety check passed")
+          PY
           if git diff --cached --quiet; then
             echo "No data changes"
           else
