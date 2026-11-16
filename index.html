@@ -1,28 +1,959 @@
+
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#090e1a"><title>Pump.fun Launch Monitor</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#090e1a">
+<title>Pumpwatch | Pump.fun Developer Analytics</title>
 <style>
-:root{color-scheme:dark;--bg:#090e1a;--panel:#141c2c;--line:#293448;--text:#f4f7ff;--muted:#a4b2ca;--accent:#5de3bb}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}main{max-width:960px;margin:auto;padding:28px 18px 70px}header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:30px}.logo{font-size:23px;font-weight:800;letter-spacing:-.6px}.logo span{color:var(--accent)}.status{font-size:12px;color:var(--muted);text-align:right}.eyebrow{color:var(--accent);text-transform:uppercase;letter-spacing:2px;font-size:11px;font-weight:800}h1{font-size:clamp(28px,7vw,48px);letter-spacing:-1.2px;margin:10px 0}p{color:var(--muted);line-height:1.55}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:26px 0}.card,.panel{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:19px}.card label{display:block;color:var(--muted);font-size:12px;line-height:1.5}.value{font-size:clamp(23px,5.5vw,37px);font-weight:800;letter-spacing:-1px;margin:12px 0 4px}.small{color:var(--muted);font-size:12px}.panel{margin-top:15px}.panel h2{margin:0 0 6px;font-size:19px}.panel-header{display:flex;justify-content:space-between;align-items:center;gap:10px}.pill{font-size:11px;color:var(--accent);border:1px solid #397d6d;border-radius:99px;padding:6px 10px;white-space:nowrap}canvas{width:100%;height:240px;display:block;margin-top:18px}table{width:100%;border-collapse:collapse;font-size:13px;margin-top:14px}th{text-align:left;color:var(--muted);font-weight:500}th,td{padding:13px 6px;border-bottom:1px solid var(--line)}th:not(:first-child),td:not(:first-child){text-align:right}td{font-variant-numeric:tabular-nums}footer{font-size:12px;color:var(--muted);margin-top:25px}button,select,input{background:#26394a;color:#fff;border:1px solid #456074;border-radius:10px;padding:9px 13px;font-weight:600}button:active{transform:scale(.98)}.error{color:#ffacac}.empty{padding:30px 8px;text-align:center;color:var(--muted)}.controls{display:flex;gap:9px;flex-wrap:wrap;margin:14px 0}.controls input{flex:1;min-width:140px;font-size:14px}.controls select{max-width:100%;font-size:13px}.table-scroll{overflow-x:auto}.rank-table{min-width:560px}.rank-table th:first-child,.rank-table td:first-child{text-align:left}.rank-table th:nth-child(2),.rank-table td:nth-child(2){text-align:left}.rank-table td:nth-child(2){font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--accent);font-size:12px}.note{font-size:12px;color:var(--muted);line-height:1.55}.rank-summary{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:12px 0}.rank-summary strong{color:var(--text)}@media(min-width:700px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+:root {
+  color-scheme:dark;
+  --bg:#090e1a;
+  --panel:#141c2c;
+  --line:#293448;
+  --text:#f4f7ff;
+  --muted:#a4b2ca;
+  --accent:#5de3bb;
+}
+* {box-sizing:border-box}
+body {
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+main {
+  max-width:1100px;
+  margin:auto;
+  padding:28px 18px 70px;
+}
+header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin-bottom:30px;
+}
+.logo {
+  font-size:23px;
+  font-weight:800;
+  letter-spacing:-.6px;
+}
+.logo span {color:var(--accent)}
+.status {
+  font-size:12px;
+  color:var(--muted);
+  text-align:right;
+}
+.eyebrow {
+  color:var(--accent);
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-size:11px;
+  font-weight:800;
+}
+h1 {
+  font-size:clamp(28px,7vw,48px);
+  letter-spacing:-1.2px;
+  margin:10px 0;
+}
+h2 {font-size:19px;margin:0 0 8px}
+p {color:var(--muted);line-height:1.55}
+.grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+  margin:26px 0;
+}
+.card,.panel {
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:19px;
+}
+.card label {
+  display:block;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.5;
+}
+.value {
+  font-size:clamp(22px,5.5vw,37px);
+  font-weight:800;
+  letter-spacing:-1px;
+  margin:12px 0 4px;
+  overflow-wrap:anywhere;
+}
+.small {
+  color:var(--muted);
+  font-size:12px;
+}
+.panel {margin-top:15px}
+.panel-header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+}
+.pill {
+  font-size:11px;
+  color:var(--accent);
+  border:1px solid #397d6d;
+  border-radius:99px;
+  padding:6px 10px;
+  white-space:nowrap;
+}
+canvas {
+  width:100%;
+  height:240px;
+  display:block;
+  margin-top:18px;
+}
+table {
+  width:100%;
+  border-collapse:collapse;
+  font-size:13px;
+  margin-top:14px;
+}
+th {
+  text-align:left;
+  color:var(--muted);
+  font-weight:500;
+}
+th,td {
+  padding:13px 8px;
+  border-bottom:1px solid var(--line);
+}
+td {font-variant-numeric:tabular-nums}
+th:not(:first-child),td:not(:first-child) {
+  text-align:right;
+}
+footer {
+  font-size:12px;
+  color:var(--muted);
+  margin-top:25px;
+  line-height:1.6;
+}
+button,select,input {
+  background:#26394a;
+  color:#fff;
+  border:1px solid #456074;
+  border-radius:10px;
+  padding:10px 13px;
+  font-weight:600;
+  font-family:inherit;
+}
+button {cursor:pointer}
+button:active {transform:scale(.98)}
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline:2px solid var(--accent);
+}
+.error {color:#ffacac}
+.empty {
+  padding:30px 8px;
+  text-align:center;
+  color:var(--muted);
+}
+.controls {
+  display:flex;
+  gap:9px;
+  flex-wrap:wrap;
+  margin:14px 0;
+}
+.controls input {
+  flex:1;
+  min-width:140px;
+  font-size:14px;
+}
+.controls select {
+  max-width:100%;
+  font-size:13px;
+}
+.table-scroll {overflow-x:auto}
+.rank-table {min-width:830px}
+.rank-table th:first-child,
+.rank-table td:first-child,
+.rank-table th:nth-child(2),
+.rank-table td:nth-child(2) {
+  text-align:left;
+}
+.dev-button {
+  color:var(--accent);
+  background:transparent;
+  border:0;
+  padding:4px 0;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:12px;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+.note {
+  font-size:12px;
+  color:var(--muted);
+  line-height:1.6;
+  margin-top:12px;
+}
+.rank-summary {
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+  margin:12px 0;
+}
+.good {color:var(--accent)}
+.money {color:#ffd67e;font-weight:700}
+.metric-grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+  margin:16px 0;
+}
+.metric {
+  background:#101827;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:15px;
+}
+.metric-label {
+  color:var(--muted);
+  font-size:12px;
+}
+.metric-value {
+  font-size:clamp(18px,4vw,26px);
+  font-weight:800;
+  margin-top:8px;
+  overflow-wrap:anywhere;
+}
+dialog {
+  width:min(92vw,560px);
+  max-height:85vh;
+  overflow:auto;
+  background:var(--panel);
+  color:var(--text);
+  border:1px solid #456074;
+  border-radius:20px;
+  padding:22px;
+}
+dialog::backdrop {
+  background:rgba(0,0,0,.78);
+}
+.modal-header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+}
+.modal-header h2 {margin:0}
+.modal-id {
+  color:var(--accent);
+  font-family:monospace;
+  font-size:13px;
+  overflow-wrap:anywhere;
+}
+@media(min-width:700px) {
+  .grid {grid-template-columns:repeat(4,minmax(0,1fr))}
+}
 </style>
 </head>
-<body><main>
-<header><div class="logo">pump<span>watch</span><span style="color:#fff">.</span></div><div class="status" id="status">Loading data…</div></header>
-<div class="eyebrow">Pump.fun launch analytics</div><h1>Launch activity, tracked.</h1><p>Daily token launches and developer activity from the available Pumpdata feeds. Statistics refresh when new data is published.</p>
-<section class="grid"><div class="card"><label>Launches collected</label><div class="value" id="total">—</div><div class="small">Available dates only</div></div><div class="card"><label>Days collected</label><div class="value" id="days">—</div><div class="small">30-day target</div></div><div class="card"><label>Latest day developers</label><div class="value" id="devs">—</div><div class="small" id="devDate">Unique on that day</div></div><div class="card"><label>Previously graduated devs</label><div class="value" id="experienced">—</div><div class="small">Latest available day</div></div></section>
-<section class="panel"><div class="panel-header"><h2>Daily token launches</h2><button type="button" id="refresh">Refresh</button></div><p>Tap a chart bar to see its count. The current UTC day may be incomplete.</p><canvas id="chart" role="img" aria-label="Bar chart of daily token launches"></canvas><div class="small" id="chartDetail">Loading chart…</div></section>
-<section class="panel"><h2>Daily breakdown</h2><p>Developer figures are unique within each day; adding them across days would double-count returning wallets.</p><div class="table-scroll"><table><thead><tr><th>UTC date</th><th>Tokens</th><th>Devs</th><th>Prior grads</th></tr></thead><tbody id="rows"><tr><td colspan="4">Loading…</td></tr></tbody></table></div></section>
-<section class="panel" id="leaderboard"><div class="panel-header"><h2>Top 100 developers</h2><span class="pill">Launch activity</span></div><p>Rankings from the collected days within the last 30-day window. These are <strong>not</strong> rankings by peak market cap. Developer IDs are hashed identifiers, not wallet addresses.</p><div class="rank-summary"><span class="small" id="rankCoverage">Loading ranking coverage…</span><span class="small" id="rankUpdated"></span></div><div class="controls"><input id="rankSearch" type="search" placeholder="Search developer ID" aria-label="Search developer ID"><select id="rankSort" aria-label="Sort developers"><option value="rank">Most launches</option><option value="graduated">Most observed graduations</option><option value="previous">Most prior graduations</option><option value="days">Most active days</option></select></div><div class="table-scroll"><table class="rank-table"><thead><tr><th>#</th><th>Developer ID</th><th>Launches</th><th>Observed grads</th><th>Prior grads*</th><th>Days</th></tr></thead><tbody id="rankRows"><tr><td colspan="6">Loading leaderboard…</td></tr></tbody></table></div><div class="note" id="rankNote">* Prior grads is the highest previously recorded graduation count in the launch feed; it may include activity before this 30-day period. Observed grads depend on whether migration data was present when collected. The search covers the published Top 100 only.</div></section>
-<footer id="updated">Data is historical and may be incomplete. Not investment advice.</footer>
+<body>
+<main>
+
+<header>
+  <div class="logo">pump<span>watch</span>.</div>
+  <div class="status" id="status">Loading data…</div>
+</header>
+
+<div class="eyebrow">Pump.fun developer analytics</div>
+<h1>Launch activity, tracked.</h1>
+<p>
+  Track token launches, developer activity and historical
+  developer performance using Pumpdata statistics.
+</p>
+
+<section class="grid">
+  <div class="card">
+    <label>Launches collected</label>
+    <div class="value" id="total">—</div>
+    <div class="small">Available dates only</div>
+  </div>
+  <div class="card">
+    <label>Days collected</label>
+    <div class="value" id="days">—</div>
+    <div class="small">30-day target</div>
+  </div>
+  <div class="card">
+    <label>Latest day developers</label>
+    <div class="value" id="devs">—</div>
+    <div class="small" id="devDate">Unique on that day</div>
+  </div>
+  <div class="card">
+    <label>Previously graduated devs</label>
+    <div class="value" id="experienced">—</div>
+    <div class="small">Latest available day</div>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="panel-header">
+    <h2>Daily token launches</h2>
+    <button type="button" id="refresh">Refresh</button>
+  </div>
+  <p>
+    Tap a chart bar to see its count.
+    The current UTC day may be incomplete.
+  </p>
+  <canvas id="chart"
+    role="img"
+    aria-label="Daily token launch chart"></canvas>
+  <div class="small" id="chartDetail">Loading chart…</div>
+</section>
+
+<section class="panel">
+  <h2>Daily breakdown</h2>
+  <p>
+    Developer counts are unique within each day.
+    Adding them across days would double-count returning wallets.
+  </p>
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr>
+          <th>UTC date</th>
+          <th>Tokens</th>
+          <th>Devs</th>
+          <th>Prior grads</th>
+        </tr>
+      </thead>
+      <tbody id="rows">
+        <tr><td colspan="4">Loading…</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="panel" id="leaderboard">
+  <div class="panel-header">
+    <h2>Top 100 Developers</h2>
+    <span class="pill">Performance + activity</span>
+  </div>
+
+  <p>
+    Developers selected by launches during the collected
+    rolling 30-day window. Peak market caps and lifetime
+    graduation statistics are all-time figures.
+  </p>
+
+  <div class="metric-grid">
+    <div class="metric">
+      <div class="metric-label">Performance records</div>
+      <div class="metric-value" id="performanceCount">—</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Highest all-time peak</div>
+      <div class="metric-value money" id="highestPeak">—</div>
+    </div>
+  </div>
+
+  <div class="rank-summary">
+    <span class="small" id="rankCoverage">
+      Loading ranking coverage…
+    </span>
+    <span class="small" id="rankUpdated"></span>
+  </div>
+
+  <div class="controls">
+    <input
+      id="rankSearch"
+      type="search"
+      placeholder="Search developer ID"
+      aria-label="Search developer ID">
+
+    <select id="rankSort" aria-label="Sort developers">
+      <option value="rank">Most 30-day launches</option>
+      <option value="peak">Highest all-time peak MC</option>
+      <option value="rate">Highest graduation rate</option>
+      <option value="lifetime">Most lifetime graduations</option>
+      <option value="graduated">Most observed graduations</option>
+      <option value="previous">Most prior graduations</option>
+      <option value="days">Most active days</option>
+    </select>
+  </div>
+
+  <div class="table-scroll">
+    <table class="rank-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Developer ID</th>
+          <th>30d launches</th>
+          <th>All-time peak MC</th>
+          <th>Grad rate</th>
+          <th>Lifetime grads</th>
+          <th>Observed grads</th>
+          <th>Active days</th>
+        </tr>
+      </thead>
+      <tbody id="rankRows">
+        <tr><td colspan="8">Loading leaderboard…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note" id="rankNote">
+    Rankings cover only the published Top 100 developers
+    selected by launch count, not every Pump.fun developer.
+    Market-cap figures are all-time developer peaks, not
+    necessarily from coins launched in the last 30 days.
+    Developer IDs are hashed, not wallet addresses.
+    Missing performance figures are shown as —.
+  </div>
+</section>
+
+<footer id="updated">
+  Data is historical and may be incomplete.
+  Not investment advice.
+</footer>
+
 </main>
+
+<dialog id="developerDialog">
+  <div class="modal-header">
+    <h2>Developer details</h2>
+    <button type="button" id="closeDialog">Close</button>
+  </div>
+  <p class="modal-id" id="modalId"></p>
+  <div class="metric-grid" id="modalMetrics"></div>
+  <p class="note">
+    Lifetime statistics may include launches before
+    the collected 30-day window. Peak market cap is
+    the developer's best all-time recorded peak.
+  </p>
+</dialog>
+
 <script>
-const $=id=>document.getElementById(id),fmt=n=>Number(n||0).toLocaleString('en-GB');let chartData=[],rankData=[];
-async function getJSON(path){const r=await fetch(path+'?ts='+Date.now(),{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);return r.json()}
-async function loadSummary(){const data=await getJSON('./data/summary.json');const entries=Object.entries(data.daily||{}).sort((a,b)=>a[0].localeCompare(b[0]));if(!entries.length)throw Error('No daily records available');const [latestDate,latest]=entries[entries.length-1];$('total').textContent=fmt(data.total_launches_collected);$('days').textContent=fmt(data.days_collected);$('devs').textContent=fmt(latest.unique_developers);$('experienced').textContent=fmt(latest.developers_with_previous_graduations);$('devDate').textContent=latestDate+' UTC';$('rows').replaceChildren(...entries.slice().reverse().map(([date,d])=>{const tr=document.createElement('tr');for(const v of [date,fmt(d.tokens),fmt(d.unique_developers),fmt(d.developers_with_previous_graduations)]){const td=document.createElement('td');td.textContent=v;tr.append(td)}return tr}));chartData=entries.map(([date,d])=>({date,value:Number(d.tokens)||0}));draw();const updated=new Date(data.updated_at);$('updated').textContent='Last summary collected: '+(isNaN(updated)?data.updated_at:updated.toLocaleString('en-GB',{timeZone:'UTC',dateStyle:'medium',timeStyle:'short'})+' UTC')+'. Only '+entries.length+' of the target 30 days currently collected. Figures are not investment advice.'}
-function renderRanks(){const query=$('rankSearch').value.trim().toLowerCase(),sort=$('rankSort').value;let rows=rankData.filter(d=>String(d.developer_id||'').toLowerCase().includes(query));if(sort==='graduated')rows.sort((a,b)=>(b.graduated_launches_observed||0)-(a.graduated_launches_observed||0)||(b.launches_30d||0)-(a.launches_30d||0));else if(sort==='previous')rows.sort((a,b)=>(b.previous_graduations_max||0)-(a.previous_graduations_max||0)||(b.launches_30d||0)-(a.launches_30d||0));else if(sort==='days')rows.sort((a,b)=>(b.active_days||0)-(a.active_days||0)||(b.launches_30d||0)-(a.launches_30d||0));else rows.sort((a,b)=>(a.rank||0)-(b.rank||0));const tbody=$('rankRows');tbody.replaceChildren();if(!rows.length){const tr=document.createElement('tr'),td=document.createElement('td');td.colSpan=6;td.className='empty';td.textContent='No matching developers in the published Top 100.';tr.append(td);tbody.append(tr);return}for(const d of rows){const tr=document.createElement('tr');for(const v of [d.rank,d.developer_id,fmt(d.launches_30d),fmt(d.graduated_launches_observed),fmt(d.previous_graduations_max),fmt(d.active_days)]){const td=document.createElement('td');td.textContent=v;tr.append(td)}tbody.append(tr)}}
-async function loadRanks(){try{const data=await getJSON('./data/top100.json');if(!Array.isArray(data.top_100))throw Error('Invalid Top 100 format');rankData=data.top_100;$('rankCoverage').textContent=fmt(data.total_developers)+' developers found · '+fmt(data.days_collected)+' days collected';const dt=new Date(data.updated_at);$('rankUpdated').textContent=isNaN(dt)?'':('Updated '+dt.toLocaleString('en-GB',{timeZone:'UTC',dateStyle:'short',timeStyle:'short'})+' UTC');renderRanks()}catch(e){$('rankCoverage').textContent='Leaderboard unavailable';$('rankRows').replaceChildren();const tr=document.createElement('tr'),td=document.createElement('td');td.colSpan=6;td.className='error';td.textContent='Could not load top100.json: '+e.message;tr.append(td);$('rankRows').append(tr)}}
-async function load(){ $('status').textContent='Updating…';$('status').classList.remove('error');const results=await Promise.allSettled([loadSummary(),loadRanks()]);if(results[0].status==='rejected'){$('rows').innerHTML='<tr><td colspan="4">Could not load summary.json. Check GitHub Pages and the data file.</td></tr>';$('chartDetail').textContent='Unable to display chart: '+results[0].reason.message}$('status').textContent=results.every(r=>r.status==='fulfilled')?'Data loaded':'Some data unavailable';if(results.some(r=>r.status==='rejected'))$('status').classList.add('error')}
-function draw(){if(!chartData.length)return;const canvas=$('chart'),rect=canvas.getBoundingClientRect(),w=Math.max(200,rect.width),h=240,dpr=Math.min(devicePixelRatio||1,2);canvas.width=w*dpr;canvas.height=h*dpr;const c=canvas.getContext('2d');c.scale(dpr,dpr);c.clearRect(0,0,w,h);const pad={l:45,r:10,t:16,b:38},cw=w-pad.l-pad.r,ch=h-pad.t-pad.b,max=Math.max(1,...chartData.map(x=>x.value));c.font='11px -apple-system, sans-serif';c.fillStyle='#a4b2ca';c.strokeStyle='#293448';for(let i=0;i<=4;i++){let y=pad.t+ch*i/4;c.beginPath();c.moveTo(pad.l,y);c.lineTo(w-pad.r,y);c.stroke();c.textAlign='right';c.fillText(fmt(Math.round(max*(1-i/4))),pad.l-8,y+4)}let slot=cw/chartData.length;chartData.forEach((d,i)=>{let bar=Math.max(3,slot*.65),x=pad.l+i*slot+(slot-bar)/2,bh=d.value/max*ch;c.fillStyle='#5de3bb';c.fillRect(x,pad.t+ch-bh,bar,bh);if(chartData.length<=12||i%Math.ceil(chartData.length/8)===0){c.fillStyle='#a4b2ca';c.textAlign='center';c.fillText(d.date.slice(5),x+bar/2,h-12)}});$('chartDetail').textContent='Latest: '+chartData.at(-1).date+' — '+fmt(chartData.at(-1).value)+' launches'}
-$('chart').addEventListener('click',e=>{if(!chartData.length)return;const r=e.currentTarget.getBoundingClientRect(),x=e.clientX-r.left,i=Math.floor((x-45)/((r.width-55)/chartData.length));if(chartData[i])$('chartDetail').textContent=chartData[i].date+': '+fmt(chartData[i].value)+' launches'});$('refresh').addEventListener('click',load);$('rankSearch').addEventListener('input',renderRanks);$('rankSort').addEventListener('change',renderRanks);window.addEventListener('resize',()=>{if(chartData.length)draw()});load();
-</script></body></html>
+const $ = id => document.getElementById(id);
+
+const fmt = n =>
+  Number(n || 0).toLocaleString('en-GB');
+
+function money(n) {
+  if (n === null || n === undefined || n === '') {
+    return '—';
+  }
+  const v = Number(n);
+  if (!Number.isFinite(v)) return '—';
+  if (Math.abs(v) >= 1000000000)
+    return '$' + (v / 1000000000).toFixed(2) + 'B';
+  if (Math.abs(v) >= 1000000)
+    return '$' + (v / 1000000).toFixed(2) + 'M';
+  if (Math.abs(v) >= 1000)
+    return '$' + (v / 1000).toFixed(1) + 'K';
+  return '$' + v.toLocaleString('en-GB', {
+    maximumFractionDigits:2
+  });
+}
+
+function rate(n) {
+  if (n === null || n === undefined || n === '') {
+    return '—';
+  }
+  const v = Number(n);
+  if (!Number.isFinite(v)) return '—';
+  return (v <= 1 && v >= 0 ? v * 100 : v)
+    .toFixed(1) + '%';
+}
+
+function numOrNull(n) {
+  if (n === null || n === undefined || n === '') {
+    return null;
+  }
+  const v = Number(n);
+  return Number.isFinite(v) ? v : null;
+}
+
+function formatDate(value) {
+  if (!value) return 'Unknown';
+  const d = new Date(value);
+  if (Number.isNaN(d.getTime())) return String(value);
+  return d.toLocaleString('en-GB', {
+    timeZone:'UTC',
+    dateStyle:'medium',
+    timeStyle:'short'
+  }) + ' UTC';
+}
+
+let chartData = [];
+let rankData = [];
+let performanceData = new Map();
+
+async function getJSON(path) {
+  const response = await fetch(
+    path + '?ts=' + Date.now(),
+    {cache:'no-store'}
+  );
+  if (!response.ok) {
+    throw Error('HTTP ' + response.status);
+  }
+  return response.json();
+}
+
+async function loadSummary() {
+  const data = await getJSON('./data/summary.json');
+
+  const entries = Object.entries(data.daily || {})
+    .sort((a,b) => a[0].localeCompare(b[0]));
+
+  if (!entries.length) {
+    throw Error('No daily records available');
+  }
+
+  const [latestDate,latest] = entries[entries.length - 1];
+
+  $('total').textContent = fmt(data.total_launches_collected);
+  $('days').textContent = fmt(data.days_collected);
+  $('devs').textContent = fmt(latest.unique_developers);
+  $('experienced').textContent = fmt(
+    latest.developers_with_previous_graduations
+  );
+  $('devDate').textContent = latestDate + ' UTC';
+
+  const tableRows = entries.slice().reverse().map(([date,d]) => {
+    const tr = document.createElement('tr');
+    const values = [
+      date,
+      fmt(d.tokens),
+      fmt(d.unique_developers),
+      fmt(d.developers_with_previous_graduations)
+    ];
+    values.forEach(value => {
+      const td = document.createElement('td');
+      td.textContent = value;
+      tr.append(td);
+    });
+    return tr;
+  });
+
+  $('rows').replaceChildren(...tableRows);
+
+  chartData = entries.map(([date,d]) => ({
+    date,
+    value:Number(d.tokens) || 0
+  }));
+
+  draw();
+
+  $('updated').textContent =
+    'Last summary collected: ' +
+    formatDate(data.updated_at) +
+    '. ' + entries.length +
+    ' of the target 30 days currently collected. ' +
+    'Figures may be incomplete. Not investment advice.';
+}
+
+function draw() {
+  if (!chartData.length) return;
+
+  const canvas = $('chart');
+  const rect = canvas.getBoundingClientRect();
+  const w = Math.max(200,rect.width);
+  const h = 240;
+  const dpr = Math.min(window.devicePixelRatio || 1,2);
+
+  canvas.width = w * dpr;
+  canvas.height = h * dpr;
+
+  const c = canvas.getContext('2d');
+  c.scale(dpr,dpr);
+  c.clearRect(0,0,w,h);
+
+  const pad = {l:45,r:10,t:16,b:38};
+  const cw = w - pad.l - pad.r;
+  const ch = h - pad.t - pad.b;
+  const max = Math.max(1,...chartData.map(x => x.value));
+
+  c.font = '11px -apple-system, sans-serif';
+  c.fillStyle = '#a4b2ca';
+  c.strokeStyle = '#293448';
+
+  for (let i=0;i<=4;i++) {
+    const y = pad.t + ch*i/4;
+    c.beginPath();
+    c.moveTo(pad.l,y);
+    c.lineTo(w-pad.r,y);
+    c.stroke();
+    c.textAlign = 'right';
+    c.fillText(
+      fmt(Math.round(max*(1-i/4))),
+      pad.l-8,
+      y+4
+    );
+  }
+
+  const slot = cw/chartData.length;
+
+  chartData.forEach((d,i) => {
+    const bar = Math.max(3,slot*.65);
+    const x = pad.l+i*slot+(slot-bar)/2;
+    const bh = d.value/max*ch;
+
+    c.fillStyle = '#5de3bb';
+    c.fillRect(x,pad.t+ch-bh,bar,bh);
+
+    if (
+      chartData.length <= 12 ||
+      i % Math.ceil(chartData.length/8) === 0
+    ) {
+      c.fillStyle = '#a4b2ca';
+      c.textAlign = 'center';
+      c.fillText(d.date.slice(5),x+bar/2,h-12);
+    }
+  });
+
+  const latest = chartData[chartData.length-1];
+  $('chartDetail').textContent =
+    'Latest: ' + latest.date +
+    ' — ' + fmt(latest.value) + ' launches';
+}
+
+$('chart').addEventListener('click', e => {
+  if (!chartData.length) return;
+
+  const r = e.currentTarget.getBoundingClientRect();
+  const x = e.clientX-r.left;
+  const slot = (r.width-55)/chartData.length;
+  const i = Math.floor((x-45)/slot);
+
+  if (chartData[i]) {
+    $('chartDetail').textContent =
+      chartData[i].date + ': ' +
+      fmt(chartData[i].value) + ' launches';
+  }
+});
+
+function getPerformance(id) {
+  return performanceData.get(String(id)) || {};
+}
+
+function performanceNumber(d,key) {
+  const p = getPerformance(d.developer_id);
+  return numOrNull(p[key]);
+}
+
+function renderRanks() {
+  const query = $('rankSearch').value.trim().toLowerCase();
+  const sort = $('rankSort').value;
+
+  const rows = rankData.filter(d =>
+    String(d.developer_id || '')
+      .toLowerCase().includes(query)
+  );
+
+  if (sort === 'peak') {
+    rows.sort((a,b) =>
+      (performanceNumber(b,'all_time_best_peak_usd') ?? -1) -
+      (performanceNumber(a,'all_time_best_peak_usd') ?? -1) ||
+      (b.launches_30d || 0) - (a.launches_30d || 0)
+    );
+  } else if (sort === 'rate') {
+    rows.sort((a,b) =>
+      (performanceNumber(b,'all_time_graduation_rate') ?? -1) -
+      (performanceNumber(a,'all_time_graduation_rate') ?? -1) ||
+      (b.launches_30d || 0) - (a.launches_30d || 0)
+    );
+  } else if (sort === 'lifetime') {
+    rows.sort((a,b) =>
+      (performanceNumber(b,'all_time_graduations') ?? -1) -
+      (performanceNumber(a,'all_time_graduations') ?? -1)
+    );
+  } else if (sort === 'graduated') {
+    rows.sort((a,b) =>
+      (b.graduated_launches_observed || 0) -
+      (a.graduated_launches_observed || 0)
+    );
+  } else if (sort === 'previous') {
+    rows.sort((a,b) =>
+      (b.previous_graduations_max || 0) -
+      (a.previous_graduations_max || 0)
+    );
+  } else if (sort === 'days') {
+    rows.sort((a,b) =>
+      (b.active_days || 0) - (a.active_days || 0)
+    );
+  } else {
+    rows.sort((a,b) => (a.rank || 0) - (b.rank || 0));
+  }
+
+  const tbody = $('rankRows');
+  tbody.replaceChildren();
+
+  if (!rows.length) {
+    const tr = document.createElement('tr');
+    const td = document.createElement('td');
+    td.colSpan = 8;
+    td.className = 'empty';
+    td.textContent =
+      'No matching developers in the published Top 100.';
+    tr.append(td);
+    tbody.append(tr);
+    return;
+  }
+
+  for (const d of rows) {
+    const p = getPerformance(d.developer_id);
+    const tr = document.createElement('tr');
+
+    const values = [
+      d.rank,
+      d.developer_id,
+      fmt(d.launches_30d),
+      money(p.all_time_best_peak_usd),
+      rate(p.all_time_graduation_rate),
+      p.all_time_graduations == null
+        ? '—' : fmt(p.all_time_graduations),
+      fmt(d.graduated_launches_observed),
+      fmt(d.active_days)
+    ];
+
+    values.forEach((value,index) => {
+      const td = document.createElement('td');
+
+      if (index === 1) {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'dev-button';
+        button.textContent = value;
+        button.addEventListener('click',() =>
+          openDeveloper(d)
+        );
+        td.append(button);
+      } else {
+        td.textContent = value;
+      }
+
+      if (index === 3 && value !== '—') {
+        td.className = 'money';
+      }
+
+      tr.append(td);
+    });
+
+    tbody.append(tr);
+  }
+}
+
+function addMetric(container,label,value) {
+  const card = document.createElement('div');
+  card.className = 'metric';
+
+  const title = document.createElement('div');
+  title.className = 'metric-label';
+  title.textContent = label;
+
+  const number = document.createElement('div');
+  number.className = 'metric-value';
+  number.textContent = value;
+
+  card.append(title,number);
+  container.append(card);
+}
+
+function openDeveloper(d) {
+  const p = getPerformance(d.developer_id);
+
+  $('modalId').textContent =
+    'Developer ID: ' + d.developer_id;
+
+  const container = $('modalMetrics');
+  container.replaceChildren();
+
+  addMetric(
+    container,'30-day launches',
+    fmt(d.launches_30d)
+  );
+  addMetric(
+    container,'All-time peak MC',
+    money(p.all_time_best_peak_usd)
+  );
+  addMetric(
+    container,'All-time graduation rate',
+    rate(p.all_time_graduation_rate)
+  );
+  addMetric(
+    container,'Lifetime launches',
+    p.all_time_launches == null
+      ? '—' : fmt(p.all_time_launches)
+  );
+  addMetric(
+    container,'Lifetime graduations',
+    p.all_time_graduations == null
+      ? '—' : fmt(p.all_time_graduations)
+  );
+  addMetric(
+    container,'Observed graduations',
+    fmt(d.graduated_launches_observed)
+  );
+  addMetric(
+    container,'Prior graduations recorded',
+    fmt(d.previous_graduations_max)
+  );
+  addMetric(
+    container,'Active days',
+    fmt(d.active_days)
+  );
+
+  $('developerDialog').showModal();
+}
+
+async function loadRanks() {
+  const data = await getJSON('./data/top100.json');
+
+  if (!Array.isArray(data.top_100)) {
+    throw Error('Invalid Top 100 format');
+  }
+
+  rankData = data.top_100;
+
+  $('rankCoverage').textContent =
+    fmt(data.total_developers) +
+    ' developers found · ' +
+    fmt(data.days_collected) +
+    ' days collected';
+
+  $('rankUpdated').textContent =
+    'Rankings updated ' + formatDate(data.updated_at);
+
+  renderRanks();
+}
+
+async function loadPerformance() {
+  const data = await getJSON(
+    './data/developer-performance.json'
+  );
+
+  if (!Array.isArray(data.developers)) {
+    throw Error('Invalid performance data');
+  }
+
+  performanceData = new Map(
+    data.developers.map(d => [
+      String(d.developer_id),
+      d
+    ])
+  );
+
+  const available = data.developers.filter(
+    d => d.performance_available
+  );
+
+  $('performanceCount').textContent =
+    fmt(available.length) +
+    ' / ' + fmt(rankData.length);
+
+  const peaks = available
+    .map(d => numOrNull(d.all_time_best_peak_usd))
+    .filter(n => n !== null);
+
+  $('highestPeak').textContent =
+    peaks.length ? money(Math.max(...peaks)) : '—';
+
+  $('rankNote').textContent =
+    'Performance last collected: ' +
+    formatDate(data.updated_at) +
+    '. The market-cap and graduation-rate figures ' +
+    'are all-time developer statistics. Rankings ' +
+    'include only developers selected by recent ' +
+    'launch activity. Missing values are shown as —. ' +
+    'Developer IDs are hashed, not wallet addresses.';
+
+  renderRanks();
+}
+
+async function load() {
+  $('status').textContent = 'Updating…';
+  $('status').classList.remove('error');
+
+  performanceData = new Map();
+  $('performanceCount').textContent = '—';
+  $('highestPeak').textContent = '—';
+
+  const results = await Promise.allSettled([
+    loadSummary(),
+    loadRanks()
+  ]);
+
+  if (results[0].status === 'rejected') {
+    $('rows').innerHTML =
+      '<tr><td colspan="4">Could not load summary.json.</td></tr>';
+    $('chartDetail').textContent =
+      'Summary unavailable: ' +
+      results[0].reason.message;
+  }
+
+  let performanceError = null;
+
+  if (results[1].status === 'fulfilled') {
+    try {
+      await loadPerformance();
+    } catch (e) {
+      performanceError = e;
+      $('performanceCount').textContent = 'Unavailable';
+      $('rankNote').textContent =
+        'Could not load developer-performance.json: ' +
+        e.message +
+        '. Launch rankings are still available.';
+      renderRanks();
+    }
+  } else {
+    $('rankCoverage').textContent =
+      'Leaderboard unavailable';
+
+    const tbody = $('rankRows');
+    tbody.replaceChildren();
+
+    const tr = document.createElement('tr');
+    const td = document.createElement('td');
+    td.colSpan = 8;
+    td.className = 'error';
+    td.textContent =
+      'Could not load top100.json: ' +
+      results[1].reason.message;
+    tr.append(td);
+    tbody.append(tr);
+  }
+
+  const failed = results.some(
+    r => r.status === 'rejected'
+  ) || Boolean(performanceError);
+
+  $('status').textContent = failed
+    ? 'Some data unavailable'
+    : 'Data loaded';
+
+  if (failed) $('status').classList.add('error');
+}
+
+$('refresh').addEventListener('click',load);
+
+$('rankSearch').addEventListener(
+  'input',renderRanks
+);
+
+$('rankSort').addEventListener(
+  'change',renderRanks
+);
+
+$('closeDialog').addEventListener('click',() =>
+  $('developerDialog').close()
+);
+
+window.addEventListener('resize',() => {
+  if (chartData.length) draw();
+});
+
+load();
+</script>
+</body>
+</html>
