@@ -44,12 +44,15 @@ jobs:
                   print("Authentication test passed.")
 
           except urllib.error.HTTPError as error:
-              print("HTTP status:", error.code)
-              print("API request was rejected.")
-              print(
-                  "Check key, permissions or region."
-              )
-              raise SystemExit(1)
+                  print("HTTP status:", error.code)
+                  import json
+                  try:
+                      details = json.loads(error.read().decode())
+                      print("API error code:", details.get("error"))
+                      print("API message:", details.get("message"))
+                  except (ValueError, UnicodeDecodeError):
+                      print("Could not read API error details.")
+                  raise SystemExit(1)
 
           except Exception as error:
               print("Connection error:",
