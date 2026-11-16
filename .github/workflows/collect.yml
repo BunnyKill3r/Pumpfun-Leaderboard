@@ -1,5 +1,5 @@
 
-name: Collect Pumpfun Developers
+name: Collect Pumpfun Statistics
 
 on:
   workflow_dispatch:
@@ -16,103 +16,53 @@ concurrency:
 jobs:
   collect:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Collect and validate launch data
+      - name: Collect aggregate statistics
         run: |
           python3 - <<'PY'
           import json
           import pathlib
-          import re
           import time
           import urllib.error
           import urllib.request
-          from collections import defaultdict
           from datetime import datetime, timedelta, timezone
 
-          folder = pathlib.Path("data")
+          folder = pathlib.Path('data')
           folder.mkdir(exist_ok=True)
-
-          today = datetime.now(timezone.utc).date()
+          destination = folder / 'summary.json'
+          now = datetime.now(timezone.utc)
+          today = now.date()
           cutoff = today - timedelta(days=29)
 
-          base58 = re.compile(
-              r"^[1-9A-HJ-NP-Za-km-z]{32,44}$"
-          )
-
-          # Quarantine identifiers matching the
-          # credential prefix flagged by GitHub.
-          suspicious = re.compile(
-              r"AKLT", re.IGNORECASE
-          )
-
-          excluded = 0
-
-          def valid_address(value):
-              return (
-                  isinstance(value, str)
-                  and bool(base58.fullmatch(value))
-                  and not suspicious.search(value)
-              )
-
-          def clean_row(coin):
-              global excluded
-
-              wallet = coin.get("wallet")
-              mint = coin.get("mint")
-
-              if not valid_address(wallet):
-                  excluded += 1
-                  return None
-
-              if mint is not None:
-                  if not valid_address(mint):
-                      excluded += 1
-                      return None
-
-              return {
-                  "wallet": wallet,
-                  "mint": mint,
-                  "previous_graduations":
-                      coin.get(
-                          "previous_graduations"
-                      ) or 0
-              }
+          if destination.exists():
+              existing = json.loads(destination.read_text())
+              daily = existing.get('daily', {})
+          else:
+              daily = {}
 
           for offset in range(3):
               day = today - timedelta(days=offset)
-              name = day.isoformat()
-
-              url = (
-                  "https://pumpdata.fun/launches/"
-                  + name + ".json"
-              )
-
-              print("Fetching:", name, flush=True)
-
-              data = None
+              date = day.isoformat()
+              url = f'https://pumpdata.fun/launches/{date}.json'
+              print('Fetching:', date, flush=True)
+              feed = None
 
               for attempt in range(1, 4):
                   try:
                       request = urllib.request.Request(
                           url,
                           headers={
-                              "User-Agent":
-                                  "PumpLeaderboard/1.0"
+                              'User-Agent': 'PumpLeaderboard/1.0'
                           }
                       )
-
                       with urllib.request.urlopen(
                           request, timeout=180
                       ) as response:
-                          data = json.load(response)
-
-                      print("Download successful")
+                          feed = json.load(response)
                       break
-
                   except (
                       urllib.error.URLError,
                       ConnectionError,
@@ -120,223 +70,113 @@ jobs:
                       OSError,
                       json.JSONDecodeError
                   ) as error:
-
                       print(
-                          "Attempt", attempt,
-                          "failed:",
-                          type(error).__name__
+                          'Attempt', attempt,
+                          'failed:', type(error).__name__
                       )
-
                       if attempt < 3:
                           time.sleep(10 * attempt)
 
-              if data is None:
+              if feed is None:
                   print(
-                      "Retaining existing file:",
-                      name
+                      'Feed unavailable; keeping previous summary for',
+                      date
                   )
                   continue
 
-              columns = data["columns"]
-              cleaned = []
+              columns = feed['columns']
+              if 'creator' not in columns:
+                  print('Creator field missing; skipping', date)
+                  continue
 
-              for row in data["launches"]:
-                  raw = dict(zip(columns, row))
-
-                  candidate = {
-                      "wallet": raw.get("creator"),
-                      "mint": (
-                          raw.get("mint")
-                          or raw.get("token_address")
-                          or raw.get("coin_mint")
-                          or raw.get("address")
-                      ),
-                      "previous_graduations":
-                          raw.get(
-                              "deployer_graduations_before",
-                              0
-                          )
-                  }
-
-                  item = clean_row(candidate)
-
-                  if item:
-                      cleaned.append(item)
-
-              path = folder / (name + ".json")
-
-              path.write_text(
-                  json.dumps(
-                      cleaned,
-                      separators=(",", ":")
-                  ) + "\n"
+              creator_idx = columns.index('creator')
+              graduation_idx = (
+                  columns.index('deployer_graduations_before')
+                  if 'deployer_graduations_before' in columns
+                  else None
               )
+
+              creators = set()
+              experienced = set()
+              total = 0
+
+              for row in feed['launches']:
+                  total += 1
+                  creator = row[creator_idx]
+                  if not isinstance(creator, str) or not creator:
+                      continue
+                  creators.add(creator)
+
+                  if graduation_idx is not None:
+                      try:
+                          prior = float(
+                              row[graduation_idx] or 0
+                          )
+                      except (TypeError, ValueError):
+                          prior = 0
+                      if prior >= 1:
+                          experienced.add(creator)
+
+              daily[date] = {
+                  'tokens': total,
+                  'unique_developers': len(creators),
+                  'developers_with_previous_graduations':
+                      len(experienced)
+              }
 
               print(
-                  "Launches saved:",
-                  len(cleaned)
+                  'Summarised:', date,
+                  'tokens:', total,
+                  'developers:', len(creators),
+                  flush=True
               )
 
-              print("Feed columns:", columns)
-
-          # Clean existing daily files.
-          for path in folder.glob(
-              "????-??-??.json"
-          ):
-              try:
-                  day = datetime.strptime(
-                      path.stem, "%Y-%m-%d"
-                  ).date()
-              except ValueError:
-                  continue
-
-              if day < cutoff or day > today:
-                  path.unlink()
-                  continue
-
-              original = json.loads(
-                  path.read_text()
-              )
-
-              cleaned = []
-
-              for coin in original:
-                  item = clean_row(coin)
-                  if item:
-                      cleaned.append(item)
-
-              path.write_text(
-                  json.dumps(
-                      cleaned,
-                      separators=(",", ":")
-                  ) + "\n"
-              )
-
-          developers = defaultdict(
-              lambda: {
-                  "launches_30d": 0,
-                  "previous_graduations": 0,
-                  "active_days": set(),
-                  "tokens": []
-              }
-          )
-
-          total = 0
-          days = []
-
-          for path in sorted(
-              folder.glob("????-??-??.json")
-          ):
-              days.append(path.stem)
-
-              for coin in json.loads(
-                  path.read_text()
-              ):
-                  wallet = coin["wallet"]
-                  record = developers[wallet]
-
-                  record["launches_30d"] += 1
-                  record["active_days"].add(
-                      path.stem
-                  )
-
-                  record["previous_graduations"] = max(
-                      record["previous_graduations"],
-                      coin["previous_graduations"]
-                  )
-
-                  if coin.get("mint"):
-                      record["tokens"].append({
-                          "mint": coin["mint"],
-                          "date": path.stem
-                      })
-
-                  total += 1
-
-          leaderboard = []
-
-          for wallet, record in developers.items():
-              leaderboard.append({
-                  "wallet": wallet,
-                  "launches_30d":
-                      record["launches_30d"],
-                  "previous_graduations":
-                      record["previous_graduations"],
-                  "active_days":
-                      len(record["active_days"]),
-                  "tokens": record["tokens"]
-              })
-
-          leaderboard.sort(
-              key=lambda d: (
-                  d["launches_30d"],
-                  d["previous_graduations"]
-              ),
-              reverse=True
-          )
-
-          output = {
-              "updated_at": datetime.now(
-                  timezone.utc
-              ).isoformat(),
-              "period_start": cutoff.isoformat(),
-              "period_end": today.isoformat(),
-              "days_collected": len(days),
-              "total_launches": total,
-              "total_developers": len(leaderboard),
-              "ranking_method": "launches_30d",
-              "developers": leaderboard
+          daily = {
+              date: value
+              for date, value in sorted(daily.items())
+              if cutoff.isoformat() <= date <= today.isoformat()
           }
 
-          path = folder / "leaderboard.json"
+          result = {
+              'updated_at': now.isoformat(),
+              'period_start': cutoff.isoformat(),
+              'period_end': today.isoformat(),
+              'days_collected': len(daily),
+              'note': (
+                  'Daily counts only. Developer counts '
+                  'cannot be summed across days to get '
+                  'unique 30-day developers.'
+              ),
+              'total_launches_collected': sum(
+                  v['tokens'] for v in daily.values()
+              ),
+              'daily': daily
+          }
 
-          path.write_text(
-              json.dumps(
-                  output,
-                  separators=(",", ":")
-              ) + "\n"
+          destination.write_text(
+              json.dumps(result, indent=2) + '\n'
           )
 
-          print("TOTAL LAUNCHES:", total)
+          print('DAYS COLLECTED:', len(daily))
           print(
-              "UNIQUE DEVELOPERS:",
-              len(leaderboard)
+              'TOTAL LAUNCHES COLLECTED:',
+              result['total_launches_collected']
           )
-          print("DAYS COLLECTED:", len(days))
-          print(
-              "Excluded suspicious records:",
-              excluded
-          )
-
-          # Do not publish files still matching
-          # the known suspicious pattern.
-          flagged = [
-              p.name
-              for p in folder.glob("*.json")
-              if suspicious.search(p.read_text())
-          ]
-
-          if flagged:
-              raise SystemExit(
-                  "SECURITY CHECK FAILED: "
-                  + ", ".join(flagged)
-              )
-
-          print("LEADERBOARD DATA READY")
-          print("Security check passed")
+          print('AGGREGATE SUMMARY READY')
           PY
 
-      - name: Save results to GitHub
+      - name: Save summary to GitHub
         run: |
-          git config user.name "github-actions[bot]"
+          git config user.name 'github-actions[bot]'
           git config user.email \
-            "41898282+github-actions[bot]@users.noreply.github.com"
+            '41898282+github-actions[bot]@users.noreply.github.com'
 
-          git add data/
+          # Only stage the aggregate summary.
+          git add -- data/summary.json
 
           if git diff --cached --quiet; then
-            echo "No data changes"
+            echo 'No changes'
           else
-            git commit -m "Update Pumpfun leaderboard"
+            git commit -m 'Update aggregate Pumpfun statistics'
             git push
           fi
