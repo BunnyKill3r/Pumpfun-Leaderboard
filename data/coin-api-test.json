@@ -1,0 +1,4617 @@
+{
+  "tested_at": "2026-11-16T23:25:14.212708+00:00",
+  "coins_tested": 5,
+  "note": "API field inspection only. No raw mints, wallet addresses or API keys are included.",
+  "results": [
+    {
+      "sample": 1,
+      "coin_id": "561c1b63e46eb8fdfbd61c1c24729287636458464a5a7c850af3fdffdbcbbb16",
+      "endpoints": {
+        "launch": {
+          "http_status": 200,
+          "fields": [
+            {
+              "field": "mint",
+              "type": "string"
+            },
+            {
+              "field": "created",
+              "type": "string"
+            },
+            {
+              "field": "deployer",
+              "type": "object"
+            },
+            {
+              "field": "deployer.address",
+              "type": "string"
+            },
+            {
+              "field": "deployer.as_of",
+              "type": "string"
+            },
+            {
+              "field": "deployer.launches",
+              "type": "number"
+            },
+            {
+              "field": "deployer.graduations",
+              "type": "number",
+              "value": 3
+            },
+            {
+              "field": "deployer.best_peak",
+              "type": "number",
+              "value": 44909.5
+            },
+            {
+              "field": "deployer.last_launch_gap_s",
+              "type": "number"
+            },
+            {
+              "field": "deployer.launches_last_day",
+              "type": "number"
+            },
+            {
+              "field": "deployer.now",
+              "type": "object"
+            },
+            {
+              "field": "deployer.now.launches",
+              "type": "number"
+            },
+            {
+              "field": "deployer.now.graduations",
+              "type": "number",
+              "value": 3
+            },
+            {
+              "field": "deployer.now.best_peak",
+              "type": "number",
+              "value": 44909.5
+            },
+            {
+              "field": "deployer.now.last_launch_gap_s",
+              "type": "number"
+            },
+            {
+              "field": "deployer.now.launches_last_day",
+              "type": "number"
+            },
+            {
+              "field": "deployer.now.own_coins",
+              "type": "object"
+            },
+            {
+              "field": "deployer.now.own_coins.coins",
+              "type": "number"
+            },
+            {
+              "field": "deployer.now.own_coins.bought_at_launch_share",
+              "type": "number"
+            },
+            {
+              "field": "deployer.now.own_coins.out_within_10s_share",
+              "type": "number"
+            },
+            {
+              "field": "deployer.now.own_coins.median_exit_s",
+              "type": "number"
+            },
+            {
+              "field": "deployer.now.own_coins.net_sol",
+              "type": "number"
+            },
+            {
+              "field": "deployer.now.own_coins.over",
+              "type": "string"
+            },
+            {
+              "field": "bundle_at_creation",
+              "type": "object"
+            },
+            {
+              "field": "bundle_at_creation.buyers_first_10s",
+              "type": "number"
+            },
+            {
+              "field": "bundle_at_creation.supply_share",
+              "type": "number"
+            },
+            {
+              "field": "bundle_at_creation.top_buyer",
+              "type": "string"
+            },
+            {
+              "field": "bundle_at_creation.top_buyer_share",
+              "type": "number"
+            },
+            {
+              "field": "insider_supply_share",
+              "type": "number"
+            },
+            {
+              "field": "curve_bought_at_launch",
+              "type": "object"
+            },
+            {
+              "field": "curve_bought_at_launch.yes",
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "field": "curve_bought_at_launch.buyers",
+              "type": "number"
+            },
+            {
+              "field": "curve_bought_at_launch.supply_share",
+              "type": "number"
+            },
+            {
+              "field": "curve_bought_at_launch.migrated_after_s",
+              "type": "null"
+            },
+            {
+              "field": "curve_bought_at_launch.launching_wallets_hold_now",
+              "type": "number"
+            },
+            {
+              "field": "sold_together",
+              "type": "string"
+            },
+            {
+              "field": "age_s",
+              "type": "number"
+            },
+            {
+              "field": "curve_progress",
+              "type": "number"
+            },
+            {
+              "field": "migrated_at",
+              "type": "null"
+            },
+            {
+              "field": "market_cap_usd_at_age",
+              "type": "object"
+            },
+            {
+              "field": "market_cap_usd_at_age.usd",
+              "type": "number",
+              "value": 4222.38
+            },
+            {
+              "field": "market_cap_usd_at_age.at_age_s",
+              "type": "number",
+              "value": 14400
+            },
+            {
+              "field": "matches",
+              "type": "object"
+            },
+            {
+              "field": "matches.n",
+              "type": "number"
+            },
+            {
+              "field": "matches.graduated_share",
+              "type": "number",
+              "value": 0.0004
+            },
+            {
+              "field": "matches.peak_day1",
+              "type": "object"
+            },
+            {
+              "field": "matches.peak_day1.p10",
+              "type": "number",
+              "value": 1
+            },
+            {
+              "field": "matches.peak_day1.p25",
+              "type": "number",
+              "value": 1
+            },
+            {
+              "field": "matches.peak_day1.p50",
+              "type": "number",
+              "value": 1
+            },
+            {
+              "field": "matches.peak_day1.p75",
+              "type": "number",
+              "value": 1
+            },
+            {
+              "field": "matches.peak_day1.p90",
+              "type": "number",
+              "value": 1
+            },
+            {
+              "field": "matches.peak_day1.dead",
+              "type": "number",
+              "value": 1872721
+            },
+            {
+              "field": "matches.close_day1",
+              "type": "object"
+            },
+            {
+              "field": "matches.close_day1.p10",
+              "type": "number"
+            },
+            {
+              "field": "matches.close_day1.p25",
+              "type": "number"
+            },
+            {
+              "field": "matches.close_day1.p50",
+              "type": "number"
+            },
+            {
+              "field": "matches.close_day1.p75",
+              "type": "number"
+            },
+            {
+              "field": "matches.close_day1.p90",
+              "type": "number"
+            },
+            {
+              "field": "matches.close_day1.dead",
+              "type": "number"
+            },
+            {
+              "field": "matches.at_age_s",
+              "type": "number"
+            },
+            {
+              "field": "matches.buckets",
+              "type": "object"
+            },
+            {
+              "field": "matches.buckets.age_s",
+              "type": "number"
+            },
+            {
+              "field": "matches.buckets.b_launches",
+              "type": "string"
+            },
+            {
+              "field": "matches.buckets.b_grads",
+              "type": "string"
+            },
+            {
+              "field": "matches.buckets.b_bundle",
+              "type": "string"
+            },
+            {
+              "field": "matches.buckets.b_insider",
+              "type": "string"
+            },
+            {
+              "field": "matches.buckets.b_curve",
+              "type": "string"
+            },
+            {
+              "field": "note",
+              "type": "string"
+            },
+            {
+              "field": "market_cap_usd_now",
+              "type": "number",
+              "value": 4225
+            },
+            {
+              "field": "market_cap_as_of",
+              "type": "string"
+            },
+            {
+              "field": "sol_reserve_now",
+              "type": "number"
+            },
+            {
+              "field": "liquidity_share_of_cap",
+              "type": "number"
+            },
+            {
+              "field": "holders",
+              "type": "number"
+            },
+            {
+              "field": "holders_as_of",
+              "type": "string"
+            },
+            {
+              "field": "top_holders",
+              "type": "array",
+              "length": 0
+            },
+            {
+              "field": "top_holders_same_size",
+              "type": "null"
+            },
+            {
+              "field": "top_holders_as_of",
+              "type": "string"
+            },
+            {
+              "field": "supply_held_by_programs",
+              "type": "number"
+            },
+            {
+              "field": "top_traders",
+              "type": "null"
+            },
+            {
+              "field": "top_traders_as_of",
+              "type": "null"
+            },
+            {
+              "field": "attention",
+              "type": "object"
+            },
+            {
+              "field": "attention.window_h",
+              "type": "number"
+            },
+            {
+              "field": "attention.people",
+              "type": "number"
+            },
+            {
+              "field": "attention.assistants",
+              "type": "number"
+            },
+            {
+              "field": "attention.crawlers",
+              "type": "number"
+            },
+            {
+              "field": "attention.to_hour",
+              "type": "string"
+            },
+            {
+              "field": "copies",
+              "type": "null"
+            },
+            {
+              "field": "stream",
+              "type": "object"
+            },
+            {
+              "field": "stream.what",
+              "type": "string"
+            },
+            {
+              "field": "stream.trial",
+              "type": "string"
+            },
+            {
+              "field": "stream.docs",
+              "type": "string"
+            },
+            {
+              "field": "summary",
+              "type": "string"
+            },
+            {
+              "field": "compare_to",
+              "type": "object"
+            },
+            {
+              "field": "compare_to.band",
+              "type": "string"
+            },
+            {
+              "field": "compare_to.venue",
+              "type": "string"
+            },
+            {
+              "field": "compare_to.from",
+              "type": "string"
+            },
+            {
+              "field": "compare_to.to",
+              "type": "string"
+            },
+            {
+              "field": "compare_to.crossed",
+              "type": "number"
+            },
+            {
+              "field": "compare_to.reached",
+              "type": "object"
+            },
+            {
+              "field": "compare_to.reached.2x",
+              "type": "number"
+            },
+            {
+              "field": "compare_to.reached.5x",
+              "type": "number"
+            },
+            {
+              "field": "compare_to.reached.10x",
+              "type": "number"
+            },
+            {
+              "field": "compare_to.reached.20x",
+              "type": "number"
+            },
+            {
+              "field": "compare_to.median_peak",
+              "type": "number",
+              "value": 1.579
+            },
+            {
+              "field": "compare_to.basis",
+              "type": "string"
+            },
+            {
+              "field": "compare_to.source",
+              "type": "string"
+            },
+            {
+              "field": "next_steps",
+              "type": "array",
+              "length": 3
+            },
+            {
+              "field": "freshness",
+              "type": "object"
+            },
+            {
+              "field": "freshness.data_as_of",
+              "type": "string"
+            },
+            {
+              "field": "freshness.lag_s",
+              "type": "number"
+            },
+            {
+              "field": "freshness.history_as_of",
+              "type": "string"
+            }
+          ]
+        },
+        "check": {
+          "http_status": 200,
+          "fields": [
+            {
+              "field": "mint",
+              "type": "string"
+            },
+            {
+              "field": "checked_at",
+              "type": "string"
+            },
+            {
+              "field": "data_as_of",
+              "type": "string"
+            },
+            {
+              "field": "answer",
+              "type": "array",
+              "length": 6
+            },
+            {
+              "field": "flags",
+              "type": "array",
+              "length": 1
+            },
+            {
+              "field": "rules_say",
+              "type": "string"
+            },
+            {
+              "field": "questions",
+              "type": "array",
+              "length": 7
+            },
+            {
+              "field": "launch",
+              "type": "object"
+            },
+            {
+              "field": "launch.mint",
+              "type": "string"
+            },
+            {
+              "field": "launch.created",
+              "type": "string"
+            },
+            {
+              "field": "launch.deployer",
+              "type": "object"
+            },
+            {
+              "field": "launch.deployer.address",
+              "type": "string"
+            },
+            {
+              "field": "launch.deployer.as_of",
+              "type": "string"
+            },
+            {
+              "field": "launch.deployer.launches",
+              "type": "number"
+            },
+            {
+              "field": "launch.deployer.graduations",
+              "type": "number",
+              "value": 3
+            },
+            {
+              "field": "launch.deployer.best_peak",
+              "type": "number",
+              "value": 44909.5
+            },
+            {
+              "field": "launch.deployer.last_launch_gap_s",
+              "type": "number"
+            },
+            {
+              "field": "launch.deployer.launches_last_day",
+              "type": "number"
+            },
+            {
+              "field": "launch.deployer.now",
+              "type": "object"
+            },
+            {
+              "field": "launch.deployer.now.launches",
+              "type": "number"
+            },
+            {
+              "field": "launch.deployer.now.graduations",
+              "type": "number",
+              "value": 3
+            },
+            {
+              "field": "launch.deployer.now.best_peak",
+              "type": "number",
+              "value": 44909.5
+            },
+            {
+              "field": "launch.deployer.now.last_launch_gap_s",
+              "type": "number"
+            },
+            {
+              "field": "launch.deployer.now.launches_last_day",
+              "type": "number"
+            },
+            {
+              "field": "launch.deployer.now.own_coins",
+              "type": "object"
+            },
+            {
+              "field": "launch.bundle_at_creation",
+              "type": "object"
+            },
+            {
+              "field": "launch.bundle_at_creation.buyers_first_10s",
+              "type": "number"
+            },
+            {
+              "field": "launch.bundle_at_creation.supply_share",
+              "type": "number"
+            },
+            {
+              "field": "launch.bundle_at_creation.top_buyer",
+              "type": "string"
+            },
+            {
+              "field": "launch.bundle_at_creation.top_buyer_share",
+              "type": "number"
+            },
+            {
+              "field": "launch.insider_supply_share",
+              "type": "number"
+            },
+            {
+              "field": "launch.curve_bought_at_launch",
+              "type": "object"
+            },
+            {
+              "field": "launch.curve_bought_at_launch.yes",
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "field": "launch.curve_bought_at_launch.buyers",
+              "type": "number"
+            },
+            {
+              "field": "launch.curve_bought_at_launch.supply_share",
+              "type": "number"
+            },
+            {
+              "field": "launch.curve_bought_at_launch.migrated_after_s",
+              "type": "null"
+            },
+            {
+              "field": "launch.curve_bought_at_launch.launching_wallets_hold_now",
+              "type": "number"
+            },
+            {
+              "field": "launch.sold_together",
+              "type": "string"
+            },
+            {
+              "field": "launch.age_s",
+              "type": "number"
+            },
+            {
+              "field": "launch.curve_progress",
+              "type": "number"
+            },
+            {
+              "field": "launch.migrated_at",
+              "type": "null"
+            },
+            {
+              "field": "launch.market_cap_usd_at_age",
+              "type": "object"
+            },
+            {
+              "field": "launch.market_cap_usd_at_age.usd",
+              "type": "number",
+              "value": 4222.38
+            },
+            {
+              "field": "launch.market_cap_usd_at_age.at_age_s",
+              "type": "number",
+              "value": 14400
+            },
+            {
+              "field": "launch.matches",
+              "type": "object"
+            },
+            {
+              "field": "launch.matches.n",
+              "type": "number"
+            },
+            {
+              "field": "launch.matches.graduated_share",
+              "type": "number",
+              "value": 0.0004
+            },
+            {
+              "field": "launch.matches.peak_day1",
+              "type": "object"
+            },
+            {
+              "field": "launch.matches.peak_day1.p10",
+              "type": "number",
+              "value": 1
+            },
+            {
+              "field": "launch.matches.peak_day1.p25",
+              "type": "number",
+              "value": 1
+            },
+            {
+              "field": "launch.matches.peak_day1.p50",
+              "type": "number",
+              "value": 1
+            },
+            {
+              "field": "launch.matches.peak_day1.p75",
+              "type": "number",
+              "value": 1
+            },
+            {
+              "field": "launch.matches.peak_day1.p90",
+              "type": "number",
+              "value": 1
+            },
+            {
+              "field": "launch.matches.peak_day1.dead",
+              "type": "number",
+              "value": 1872721
+            },
+            {
+              "field": "launch.matches.close_day1",
+              "type": "object"
+            },
+            {
+              "field": "launch.matches.close_day1.p10",
+              "type": "number"
+            },
+            {
+              "field": "launch.matches.close_day1.p25",
+              "type": "number"
+            },
+            {
+              "field": "launch.matches.close_day1.p50",
+              "type": "number"
+            },
+            {
+              "field": "launch.matches.close_day1.p75",
+              "type": "number"
+            },
+            {
+              "field": "launch.matches.close_day1.p90",
+              "type": "number"
+            },
+            {
+              "field": "launch.matches.close_day1.dead",
+              "type": "number"
+            },
+            {
+              "field": "launch.matches.at_age_s",
+              "type": "number"
+            },
+            {
+              "field": "launch.matches.buckets",
+              "type": "object"
+            },
+            {
+              "field": "launch.matches.buckets.age_s",
+              "type": "number"
+            },
+            {
+              "field": "launch.matches.buckets.b_launches",
+              "type": "string"
+            },
+            {
+              "field": "launch.matches.buckets.b_grads",
+              "type": "string"
+            },
+            {
+              "field": "launch.matches.buckets.b_bundle",
+              "type": "string"
+            },
+            {
+              "field": "launch.matches.buckets.b_insider",
+              "type": "string"
+            },
+            {
+              "field": "launch.matches.buckets.b_curve",
+              "type": "string"
+            },
+            {
+              "field": "launch.note",
+              "type": "string"
+            },
+            {
+              "field": "launch.market_cap_usd_now",
+              "type": "number",
+              "value": 4225
+            },
+            {
+              "field": "launch.market_cap_as_of",
+              "type": "string"
+            },
+            {
+              "field": "launch.sol_reserve_now",
+              "type": "number"
+            },
+            {
+              "field": "launch.liquidity_share_of_cap",
+              "type": "number"
+            },
+            {
+              "field": "launch.holders",
+              "type": "null"
+            },
+            {
+              "field": "launch.holders_as_of",
+              "type": "null"
+            },
+            {
+              "field": "launch.top_traders_as_of",
+              "type": "null"
+            },
+            {
+              "field": "launch.attention",
+              "type": "object"
+            },
+            {
+              "field": "launch.attention.window_h",
+              "type": "number"
+            },
+            {
+              "field": "launch.attention.people",
+              "type": "number"
+            },
+            {
+              "field": "launch.attention.assistants",
+              "type": "number"
+            },
+            {
+              "field": "launch.attention.crawlers",
+              "type": "number"
+            },
+            {
+              "field": "launch.attention.to_hour",
+              "type": "string"
+            },
+            {
+              "field": "launch.copies",
+              "type": "null"
+            },
+            {
+              "field": "launch.stream",
+              "type": "object"
+            },
+            {
+              "field": "launch.stream.what",
+              "type": "string"
+            },
+            {
+              "field": "launch.stream.trial",
+              "type": "string"
+            },
+            {
+              "field": "launch.stream.docs",
+              "type": "string"
+            },
+            {
+              "field": "similar",
+              "type": "object"
+            },
+            {
+              "field": "similar.mint",
+              "type": "string"
+            },
+            {
+              "field": "similar.at_age_s",
+              "type": "number"
+            },
+            {
+              "field": "similar.key",
+              "type": "object"
+            },
+            {
+              "field": "similar.key.age_s",
+              "type": "number"
+            },
+            {
+              "field": "similar.key.b_launches",
+              "type": "string"
+            },
+            {
+              "field": "similar.key.b_grads",
+              "type": "string"
+            },
+            {
+              "field": "similar.key.b_bundle",
+              "type": "string"
+            },
+            {
+              "field": "similar.key.b_insider",
+              "type": "string"
+            },
+            {
+              "field": "similar.key.b_curve",
+              "type": "string"
+            },
+            {
+              "field": "similar.yours",
+              "type": "object"
+            },
+            {
+              "field": "similar.yours.deployer_launches",
+              "type": "number"
+            },
+            {
+              "field": "similar.yours.deployer_graduations",
+              "type": "number",
+              "value": 3
+            },
+            {
+              "field": "similar.yours.buyers_first_10s",
+              "type": "number"
+            },
+            {
+              "field": "similar.yours.insider_share",
+              "type": "number"
+            },
+            {
+              "field": "similar.yours.curve_progress",
+              "type": "number"
+            },
+            {
+              "field": "similar.yours.graduated",
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "field": "similar.same_bucket_n",
+              "type": "number"
+            },
+            {
+              "field": "similar.comparables",
+              "type": "array",
+              "length": 5
+            },
+            {
+              "field": "similar.summary",
+              "type": "string"
+            },
+            {
+              "field": "similar.definitions",
+              "type": "object"
+            },
+            {
+              "field": "similar.definitions.comparables",
+              "type": "string"
+            },
+            {
+              "field": "similar.definitions.next_24h",
+              "type": "string"
+            },
+            {
+              "field": "similar.definitions.not_a_prediction",
+              "type": "string"
+            },
+            {
+              "field": "similar.stream",
+              "type": "object"
+            },
+            {
+              "field": "similar.stream.what",
+              "type": "string"
+            },
+            {
+              "field": "similar.stream.trial",
+              "type": "string"
+            },
+            {
+              "field": "similar.stream.docs",
+              "type": "string"
+            },
+            {
+              "field": "page",
+              "type": "string"
+            },
+            {
+              "field": "not_built_yet",
+              "type": "object"
+            },
+            {
+              "field": "not_built_yet.holders_funding",
+              "type": "object"
+            },
+            {
+              "field": "not_built_yet.holders_funding.status",
+              "type": "string"
+            },
+            {
+              "field": "not_built_yet.holders_funding.would_answer",
+              "type": "string"
+            },
+            {
+              "field": "not_built_yet.holders_funding.vote",
+              "type": "string"
+            },
+            {
+              "field": "holders",
+              "type": "object"
+            },
+            {
+              "field": "holders.302",
+              "type": "string"
+            },
+            {
+              "field": "holders.price_usd",
+              "type": "number"
+            },
+            {
+              "field": "holders.realtime",
+              "type": "boolean",
+              "value": true
+            },
+            {
+              "field": "holders.why",
+              "type": "string"
+            },
+            {
+              "field": "buy",
+              "type": "object"
+            },
+            {
+              "field": "buy.fee",
+              "type": "string"
+            },
+            {
+              "field": "buy.page",
+              "type": "string"
+            },
+            {
+              "field": "buy.call",
+              "type": "string"
+            },
+            {
+              "field": "buy.quote",
+              "type": "string"
+            },
+            {
+              "field": "now",
+              "type": "string"
+            },
+            {
+              "field": "not_advice",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sample": 2,
+      "coin_id": "308788ff32d3c39a7bfe9540bcf0a288a8d99000c776f76e286f0d8a55de2730",
+      "endpoints": {
+        "launch": {
+          "http_status": 200,
+          "fields": [
+            {
+              "field": "mint",
+              "type": "string"
+            },
+            {
+              "field": "created",
+              "type": "string"
+            },
+            {
+              "field": "deployer",
+              "type": "object"
+            },
+            {
+              "field": "deployer.address",
+              "type": "string"
+            },
+            {
+              "field": "deployer.as_of",
+              "type": "string"
+            },
+            {
+              "field": "deployer.launches",
+              "type": "number"
+            },
+            {
+              "field": "deployer.graduations",
+              "type": "number",
+              "value": 946
+            },
+            {
+              "field": "deployer.best_peak",
+              "type": "number",
+              "value": 25352567.71
+            },
+            {
+              "field": "deployer.last_launch_gap_s",
+              "type": "number"
+            },
+            {
+              "field": "deployer.launches_last_day",
+              "type": "number"
+            },
+            {
+              "field": "deployer.now",
+              "type": "object"
+            },
+            {
+              "field": "deployer.now.launches",
+              "type": "number"
+            },
+            {
+              "field": "deployer.now.graduations",
+              "type": "number",
+              "value": 948
+            },
+            {
+              "field": "deployer.now.best_peak",
+              "type": "number",
+              "value": 25352567.71
+            },
+            {
+              "field": "deployer.now.last_launch_gap_s",
+              "type": "number"
+            },
+            {
+              "field": "deployer.now.launches_last_day",
+              "type": "number"
+            },
+            {
+              "field": "deployer.now.own_coins",
+              "type": "object"
+            },
+            {
+              "field": "deployer.now.own_coins.coins",
+              "type": "number"
+            },
+            {
+              "field": "deployer.now.own_coins.bought_at_launch_share",
+              "type": "number"
+            },
+            {
+              "field": "deployer.now.own_coins.out_within_10s_share",
+              "type": "number"
+            },
+            {
+              "field": "deployer.now.own_coins.median_exit_s",
+              "type": "number"
+            },
+            {
+              "field": "deployer.now.own_coins.net_sol",
+              "type": "number"
+            },
+            {
+              "field": "deployer.now.own_coins.over",
+              "type": "string"
+            },
+            {
+              "field": "bundle_at_creation",
+              "type": "object"
+            },
+            {
+              "field": "bundle_at_creation.buyers_first_10s",
+              "type": "number"
+            },
+            {
+              "field": "bundle_at_creation.supply_share",
+              "type": "number"
+            },
+            {
+              "field": "bundle_at_creation.top_buyer",
+              "type": "string"
+            },
+            {
+              "field": "bundle_at_creation.top_buyer_share",
+              "type": "number"
+            },
+            {
+              "field": "insider_supply_share",
+              "type": "number"
+            },
+            {
+              "field": "curve_bought_at_launch",
+              "type": "object"
+            },
+            {
+              "field": "curve_bought_at_launch.yes",
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "field": "curve_bought_at_launch.buyers",
+              "type": "number"
+            },
+            {
+              "field": "curve_bought_at_launch.supply_share",
+              "type": "number"
+            },
+            {
+              "field": "curve_bought_at_launch.migrated_after_s",
+              "type": "null"
+            },
+            {
+              "field": "curve_bought_at_launch.launching_wallets_hold_now",
+              "type": "number"
+            },
+            {
+              "field": "sold_together",
+              "type": "string"
+            },
+            {
+              "field": "age_s",
+              "type": "number"
+            },
+            {
+              "field": "curve_progress",
+              "type": "number"
+            },
+            {
+              "field": "migrated_at",
+              "type": "null"
+            },
+            {
+              "field": "market_cap_usd_at_age",
+              "type": "object"
+            },
+            {
+              "field": "market_cap_usd_at_age.usd",
+              "type": "number",
+              "value": 1995.16
+            },
+            {
+              "field": "market_cap_usd_at_age.at_age_s",
+              "type": "number",
+              "value": 14400
+            },
+            {
+              "field": "matches",
+              "type": "object"
+            },
+            {
+              "field": "matches.n",
+              "type": "number"
+            },
+            {
+              "field": "matches.graduated_share",
+              "type": "number",
+              "value": 0.0007
+            },
+            {
+              "field": "matches.peak_day1",
+              "type": "object"
+            },
+            {
+              "field": "matches.peak_day1.p10",
+              "type": "number",
+              "value": 1
+            },
+            {
+              "field": "matches.peak_day1.p25",
+              "type": "number",
+              "value": 1
+            },
+            {
+              "field": "matches.peak_day1.p50",
+              "type": "number",
+              "value": 1
+            },
+            {
+              "field": "matches.peak_day1.p75",
+              "type": "number",
+              "value": 1
+            },
+            {
+              "field": "matches.peak_day1.p90",
+              "type": "number",
+              "value": 1.0121
+            },
+            {
+              "field": "matches.peak_day1.dead",
+              "type": "number",
+              "value": 696621
+            },
+            {
+              "field": "matches.close_day1",
+              "type": "object"
+            },
+            {
+              "field": "matches.close_day1.p10",
+              "type": "number"
+            },
+            {
+              "field": "matches.close_day1.p25",
+              "type": "number"
+            },
+            {
+              "field": "matches.close_day1.p50",
+              "type": "number"
+            },
+            {
+              "field": "matches.close_day1.p75",
+              "type": "number"
+            },
+            {
+              "field": "matches.close_day1.p90",
+              "type": "number"
+            },
+            {
+              "field": "matches.close_day1.dead",
+              "type": "number"
+            },
+            {
+              "field": "matches.at_age_s",
+              "type": "number"
+            },
+            {
+              "field": "matches.buckets",
+              "type": "object"
+            },
+            {
+              "field": "matches.buckets.age_s",
+              "type": "number"
+            },
+            {
+              "field": "matches.buckets.b_launches",
+              "type": "string"
+            },
+            {
+              "field": "matches.buckets.b_grads",
+              "type": "string"
+            },
+            {
+              "field": "matches.buckets.b_bundle",
+              "type": "string"
+            },
+            {
+              "field": "matches.buckets.b_insider",
+              "type": "string"
+            },
+            {
+              "field": "matches.buckets.b_curve",
+              "type": "string"
+            },
+            {
+              "field": "note",
+              "type": "string"
+            },
+            {
+              "field": "market_cap_usd_now",
+              "type": "number",
+              "value": 2011
+            },
+            {
+              "field": "market_cap_as_of",
+              "type": "string"
+            },
+            {
+              "field": "sol_reserve_now",
+              "type": "number"
+            },
+            {
+              "field": "liquidity_share_of_cap",
+              "type": "number"
+            },
+            {
+              "field": "holders",
+              "type": "number"
+            },
+            {
+              "field": "holders_as_of",
+              "type": "string"
+            },
+            {
+              "field": "top_holders",
+              "type": "array",
+              "length": 1
+            },
+            {
+              "field": "top_holders_same_size",
+              "type": "null"
+            },
+            {
+              "field": "top_holders_as_of",
+              "type": "string"
+            },
+            {
+              "field": "supply_held_by_programs",
+              "type": "number"
+            },
+            {
+              "field": "top_traders",
+              "type": "null"
+            },
+            {
+              "field": "top_traders_as_of",
+              "type": "null"
+            },
+            {
+              "field": "attention",
+              "type": "object"
+            },
+            {
+              "field": "attention.window_h",
+              "type": "number"
+            },
+            {
+              "field": "attention.people",
+              "type": "number"
+            },
+            {
+              "field": "attention.assistants",
+              "type": "number"
+            },
+            {
+              "field": "attention.crawlers",
+              "type": "number"
+            },
+            {
+              "field": "attention.to_hour",
+              "type": "string"
+            },
+            {
+              "field": "copies",
+              "type": "null"
+            },
+            {
+              "field": "stream",
+              "type": "object"
+            },
+            {
+              "field": "stream.what",
+              "type": "string"
+            },
+            {
+              "field": "stream.trial",
+              "type": "string"
+            },
+            {
+              "field": "stream.docs",
+              "type": "string"
+            },
+            {
+              "field": "summary",
+              "type": "string"
+            },
+            {
+              "field": "compare_to",
+              "type": "object"
+            },
+            {
+              "field": "compare_to.band",
+              "type": "string"
+            },
+            {
+              "field": "compare_to.venue",
+              "type": "string"
+            },
+            {
+              "field": "compare_to.from",
+              "type": "string"
+            },
+            {
+              "field": "compare_to.to",
+              "type": "string"
+            },
+            {
+              "field": "compare_to.crossed",
+              "type": "number"
+            },
+            {
+              "field": "compare_to.reached",
+              "type": "object"
+            },
+            {
+              "field": "compare_to.reached.2x",
+              "type": "number"
+            },
+            {
+              "field": "compare_to.reached.5x",
+              "type": "number"
+            },
+            {
+              "field": "compare_to.reached.10x",
+              "type": "number"
+            },
+            {
+              "field": "compare_to.reached.20x",
+              "type": "number"
+            },
+            {
+              "field": "compare_to.median_peak",
+              "type": "number",
+              "value": 1.579
+            },
+            {
+              "field": "compare_to.basis",
+              "type": "string"
+            },
+            {
+              "field": "compare_to.source",
+              "type": "string"
+            },
+            {
+              "field": "next_steps",
+              "type": "array",
+              "length": 3
+            },
+            {
+              "field": "freshness",
+              "type": "object"
+            },
+            {
+              "field": "freshness.data_as_of",
+              "type": "string"
+            },
+            {
+              "field": "freshness.lag_s",
+              "type": "number"
+            },
+            {
+              "field": "freshness.history_as_of",
+              "type": "string"
+            }
+          ]
+        },
+        "check": {
+          "http_status": 200,
+          "fields": [
+            {
+              "field": "mint",
+              "type": "string"
+            },
+            {
+              "field": "checked_at",
+              "type": "string"
+            },
+            {
+              "field": "data_as_of",
+              "type": "string"
+            },
+            {
+              "field": "answer",
+              "type": "array",
+              "length": 6
+            },
+            {
+              "field": "flags",
+              "type": "array",
+              "length": 2
+            },
+            {
+              "field": "rules_say",
+              "type": "string"
+            },
+            {
+              "field": "questions",
+              "type": "array",
+              "length": 7
+            },
+            {
+              "field": "launch",
+              "type": "object"
+            },
+            {
+              "field": "launch.mint",
+              "type": "string"
+            },
+            {
+              "field": "launch.created",
+              "type": "string"
+            },
+            {
+              "field": "launch.deployer",
+              "type": "object"
+            },
+            {
+              "field": "launch.deployer.address",
+              "type": "string"
+            },
+            {
+              "field": "launch.deployer.as_of",
+              "type": "string"
+            },
+            {
+              "field": "launch.deployer.launches",
+              "type": "number"
+            },
+            {
+              "field": "launch.deployer.graduations",
+              "type": "number",
+              "value": 946
+            },
+            {
+              "field": "launch.deployer.best_peak",
+              "type": "number",
+              "value": 25352567.71
+            },
+            {
+              "field": "launch.deployer.last_launch_gap_s",
+              "type": "number"
+            },
+            {
+              "field": "launch.deployer.launches_last_day",
+              "type": "number"
+            },
+            {
+              "field": "launch.deployer.now",
+              "type": "object"
+            },
+            {
+              "field": "launch.deployer.now.launches",
+              "type": "number"
+            },
+            {
+              "field": "launch.deployer.now.graduations",
+              "type": "number",
+              "value": 948
+            },
+            {
+              "field": "launch.deployer.now.best_peak",
+              "type": "number",
+              "value": 25352567.71
+            },
+            {
+              "field": "launch.deployer.now.last_launch_gap_s",
+              "type": "number"
+            },
+            {
+              "field": "launch.deployer.now.launches_last_day",
+              "type": "number"
+            },
+            {
+              "field": "launch.deployer.now.own_coins",
+              "type": "object"
+            },
+            {
+              "field": "launch.bundle_at_creation",
+              "type": "object"
+            },
+            {
+              "field": "launch.bundle_at_creation.buyers_first_10s",
+              "type": "number"
+            },
+            {
+              "field": "launch.bundle_at_creation.supply_share",
+              "type": "number"
+            },
+            {
+              "field": "launch.bundle_at_creation.top_buyer",
+              "type": "string"
+            },
+            {
+              "field": "launch.bundle_at_creation.top_buyer_share",
+              "type": "number"
+            },
+            {
+              "field": "launch.insider_supply_share",
+              "type": "number"
+            },
+            {
+              "field": "launch.curve_bought_at_launch",
+              "type": "object"
+            },
+            {
+              "field": "launch.curve_bought_at_launch.yes",
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "field": "launch.curve_bought_at_launch.buyers",
+              "type": "number"
+            },
+            {
+              "field": "launch.curve_bought_at_launch.supply_share",
+              "type": "number"
+            },
+            {
+              "field": "launch.curve_bought_at_launch.migrated_after_s",
+              "type": "null"
+            },
+            {
+              "field": "launch.curve_bought_at_launch.launching_wallets_hold_now",
+              "type": "number"
+            },
+            {
+              "field": "launch.sold_together",
+              "type": "string"
+            },
+            {
+              "field": "launch.age_s",
+              "type": "number"
+            },
+            {
+              "field": "launch.curve_progress",
+              "type": "number"
+            },
+            {
+              "field": "launch.migrated_at",
+              "type": "null"
+            },
+            {
+              "field": "launch.market_cap_usd_at_age",
+              "type": "object"
+            },
+            {
+              "field": "launch.market_cap_usd_at_age.usd",
+              "type": "number",
+              "value": 1995.16
+            },
+            {
+              "field": "launch.market_cap_usd_at_age.at_age_s",
+              "type": "number",
+              "value": 14400
+            },
+            {
+              "field": "launch.matches",
+              "type": "object"
+            },
+            {
+              "field": "launch.matches.n",
+              "type": "number"
+            },
+            {
+              "field": "launch.matches.graduated_share",
+              "type": "number",
+              "value": 0.0007
+            },
+            {
+              "field": "launch.matches.peak_day1",
+              "type": "object"
+            },
+            {
+              "field": "launch.matches.peak_day1.p10",
+              "type": "number",
+              "value": 1
+            },
+            {
+              "field": "launch.matches.peak_day1.p25",
+              "type": "number",
+              "value": 1
+            },
+            {
+              "field": "launch.matches.peak_day1.p50",
+              "type": "number",
+              "value": 1
+            },
+            {
+              "field": "launch.matches.peak_day1.p75",
+              "type": "number",
+              "value": 1
+            },
+            {
+              "field": "launch.matches.peak_day1.p90",
+              "type": "number",
+              "value": 1.0121
+            },
+            {
+              "field": "launch.matches.peak_day1.dead",
+              "type": "number",
+              "value": 696621
+            },
+            {
+              "field": "launch.matches.close_day1",
+              "type": "object"
+            },
+            {
+              "field": "launch.matches.close_day1.p10",
+              "type": "number"
+            },
+            {
+              "field": "launch.matches.close_day1.p25",
+              "type": "number"
+            },
+            {
+              "field": "launch.matches.close_day1.p50",
+              "type": "number"
+            },
+            {
+              "field": "launch.matches.close_day1.p75",
+              "type": "number"
+            },
+            {
+              "field": "launch.matches.close_day1.p90",
+              "type": "number"
+            },
+            {
+              "field": "launch.matches.close_day1.dead",
+              "type": "number"
+            },
+            {
+              "field": "launch.matches.at_age_s",
+              "type": "number"
+            },
+            {
+              "field": "launch.matches.buckets",
+              "type": "object"
+            },
+            {
+              "field": "launch.matches.buckets.age_s",
+              "type": "number"
+            },
+            {
+              "field": "launch.matches.buckets.b_launches",
+              "type": "string"
+            },
+            {
+              "field": "launch.matches.buckets.b_grads",
+              "type": "string"
+            },
+            {
+              "field": "launch.matches.buckets.b_bundle",
+              "type": "string"
+            },
+            {
+              "field": "launch.matches.buckets.b_insider",
+              "type": "string"
+            },
+            {
+              "field": "launch.matches.buckets.b_curve",
+              "type": "string"
+            },
+            {
+              "field": "launch.note",
+              "type": "string"
+            },
+            {
+              "field": "launch.market_cap_usd_now",
+              "type": "number",
+              "value": 2011
+            },
+            {
+              "field": "launch.market_cap_as_of",
+              "type": "string"
+            },
+            {
+              "field": "launch.sol_reserve_now",
+              "type": "number"
+            },
+            {
+              "field": "launch.liquidity_share_of_cap",
+              "type": "number"
+            },
+            {
+              "field": "launch.holders",
+              "type": "null"
+            },
+            {
+              "field": "launch.holders_as_of",
+              "type": "null"
+            },
+            {
+              "field": "launch.top_traders_as_of",
+              "type": "null"
+            },
+            {
+              "field": "launch.attention",
+              "type": "object"
+            },
+            {
+              "field": "launch.attention.window_h",
+              "type": "number"
+            },
+            {
+              "field": "launch.attention.people",
+              "type": "number"
+            },
+            {
+              "field": "launch.attention.assistants",
+              "type": "number"
+            },
+            {
+              "field": "launch.attention.crawlers",
+              "type": "number"
+            },
+            {
+              "field": "launch.attention.to_hour",
+              "type": "string"
+            },
+            {
+              "field": "launch.copies",
+              "type": "null"
+            },
+            {
+              "field": "launch.stream",
+              "type": "object"
+            },
+            {
+              "field": "launch.stream.what",
+              "type": "string"
+            },
+            {
+              "field": "launch.stream.trial",
+              "type": "string"
+            },
+            {
+              "field": "launch.stream.docs",
+              "type": "string"
+            },
+            {
+              "field": "similar",
+              "type": "object"
+            },
+            {
+              "field": "similar.mint",
+              "type": "string"
+            },
+            {
+              "field": "similar.at_age_s",
+              "type": "number"
+            },
+            {
+              "field": "similar.key",
+              "type": "object"
+            },
+            {
+              "field": "similar.key.age_s",
+              "type": "number"
+            },
+            {
+              "field": "similar.key.b_launches",
+              "type": "string"
+            },
+            {
+              "field": "similar.key.b_grads",
+              "type": "string"
+            },
+            {
+              "field": "similar.key.b_bundle",
+              "type": "string"
+            },
+            {
+              "field": "similar.key.b_insider",
+              "type": "string"
+            },
+            {
+              "field": "similar.key.b_curve",
+              "type": "string"
+            },
+            {
+              "field": "similar.yours",
+              "type": "object"
+            },
+            {
+              "field": "similar.yours.deployer_launches",
+              "type": "number"
+            },
+            {
+              "field": "similar.yours.deployer_graduations",
+              "type": "number",
+              "value": 946
+            },
+            {
+              "field": "similar.yours.buyers_first_10s",
+              "type": "number"
+            },
+            {
+              "field": "similar.yours.insider_share",
+              "type": "number"
+            },
+            {
+              "field": "similar.yours.curve_progress",
+              "type": "number"
+            },
+            {
+              "field": "similar.yours.graduated",
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "field": "similar.same_bucket_n",
+              "type": "number"
+            },
+            {
+              "field": "similar.comparables",
+              "type": "array",
+              "length": 5
+            },
+            {
+              "field": "similar.summary",
+              "type": "string"
+            },
+            {
+              "field": "similar.definitions",
+              "type": "object"
+            },
+            {
+              "field": "similar.definitions.comparables",
+              "type": "string"
+            },
+            {
+              "field": "similar.definitions.next_24h",
+              "type": "string"
+            },
+            {
+              "field": "similar.definitions.not_a_prediction",
+              "type": "string"
+            },
+            {
+              "field": "similar.stream",
+              "type": "object"
+            },
+            {
+              "field": "similar.stream.what",
+              "type": "string"
+            },
+            {
+              "field": "similar.stream.trial",
+              "type": "string"
+            },
+            {
+              "field": "similar.stream.docs",
+              "type": "string"
+            },
+            {
+              "field": "page",
+              "type": "string"
+            },
+            {
+              "field": "not_built_yet",
+              "type": "object"
+            },
+            {
+              "field": "not_built_yet.holders_funding",
+              "type": "object"
+            },
+            {
+              "field": "not_built_yet.holders_funding.status",
+              "type": "string"
+            },
+            {
+              "field": "not_built_yet.holders_funding.would_answer",
+              "type": "string"
+            },
+            {
+              "field": "not_built_yet.holders_funding.vote",
+              "type": "string"
+            },
+            {
+              "field": "holders",
+              "type": "object"
+            },
+            {
+              "field": "holders.302",
+              "type": "string"
+            },
+            {
+              "field": "holders.price_usd",
+              "type": "number"
+            },
+            {
+              "field": "holders.realtime",
+              "type": "boolean",
+              "value": true
+            },
+            {
+              "field": "holders.why",
+              "type": "string"
+            },
+            {
+              "field": "buy",
+              "type": "object"
+            },
+            {
+              "field": "buy.fee",
+              "type": "string"
+            },
+            {
+              "field": "buy.page",
+              "type": "string"
+            },
+            {
+              "field": "buy.call",
+              "type": "string"
+            },
+            {
+              "field": "buy.quote",
+              "type": "string"
+            },
+            {
+              "field": "now",
+              "type": "string"
+            },
+            {
+              "field": "not_advice",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sample": 3,
+      "coin_id": "bb0bbc37b6abeb0b3d2ab40a5b2a3f2f0e595cd3d060579081b27bc6cfc5e1ad",
+      "endpoints": {
+        "launch": {
+          "http_status": 200,
+          "fields": [
+            {
+              "field": "mint",
+              "type": "string"
+            },
+            {
+              "field": "created",
+              "type": "string"
+            },
+            {
+              "field": "deployer",
+              "type": "object"
+            },
+            {
+              "field": "deployer.address",
+              "type": "string"
+            },
+            {
+              "field": "deployer.as_of",
+              "type": "string"
+            },
+            {
+              "field": "deployer.launches",
+              "type": "number"
+            },
+            {
+              "field": "deployer.graduations",
+              "type": "number",
+              "value": 5
+            },
+            {
+              "field": "deployer.best_peak",
+              "type": "number",
+              "value": 148146.73
+            },
+            {
+              "field": "deployer.last_launch_gap_s",
+              "type": "number"
+            },
+            {
+              "field": "deployer.launches_last_day",
+              "type": "number"
+            },
+            {
+              "field": "deployer.now",
+              "type": "object"
+            },
+            {
+              "field": "deployer.now.launches",
+              "type": "number"
+            },
+            {
+              "field": "deployer.now.graduations",
+              "type": "number",
+              "value": 6
+            },
+            {
+              "field": "deployer.now.best_peak",
+              "type": "number",
+              "value": 148146.73
+            },
+            {
+              "field": "deployer.now.last_launch_gap_s",
+              "type": "number"
+            },
+            {
+              "field": "deployer.now.launches_last_day",
+              "type": "number"
+            },
+            {
+              "field": "deployer.now.own_coins",
+              "type": "object"
+            },
+            {
+              "field": "deployer.now.own_coins.coins",
+              "type": "number"
+            },
+            {
+              "field": "deployer.now.own_coins.bought_at_launch_share",
+              "type": "number"
+            },
+            {
+              "field": "deployer.now.own_coins.out_within_10s_share",
+              "type": "number"
+            },
+            {
+              "field": "deployer.now.own_coins.median_exit_s",
+              "type": "number"
+            },
+            {
+              "field": "deployer.now.own_coins.net_sol",
+              "type": "number"
+            },
+            {
+              "field": "deployer.now.own_coins.over",
+              "type": "string"
+            },
+            {
+              "field": "bundle_at_creation",
+              "type": "object"
+            },
+            {
+              "field": "bundle_at_creation.buyers_first_10s",
+              "type": "number"
+            },
+            {
+              "field": "bundle_at_creation.supply_share",
+              "type": "number"
+            },
+            {
+              "field": "bundle_at_creation.top_buyer",
+              "type": "string"
+            },
+            {
+              "field": "bundle_at_creation.top_buyer_share",
+              "type": "number"
+            },
+            {
+              "field": "insider_supply_share",
+              "type": "number"
+            },
+            {
+              "field": "curve_bought_at_launch",
+              "type": "object"
+            },
+            {
+              "field": "curve_bought_at_launch.yes",
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "field": "curve_bought_at_launch.buyers",
+              "type": "number"
+            },
+            {
+              "field": "curve_bought_at_launch.supply_share",
+              "type": "number"
+            },
+            {
+              "field": "curve_bought_at_launch.migrated_after_s",
+              "type": "null"
+            },
+            {
+              "field": "curve_bought_at_launch.launching_wallets_hold_now",
+              "type": "number"
+            },
+            {
+              "field": "sold_together",
+              "type": "string"
+            },
+            {
+              "field": "age_s",
+              "type": "number"
+            },
+            {
+              "field": "curve_progress",
+              "type": "number"
+            },
+            {
+              "field": "migrated_at",
+              "type": "null"
+            },
+            {
+              "field": "market_cap_usd_at_age",
+              "type": "null"
+            },
+            {
+              "field": "matches",
+              "type": "null"
+            },
+            {
+              "field": "note",
+              "type": "string"
+            },
+            {
+              "field": "market_cap_usd_now",
+              "type": "number",
+              "value": 10
+            },
+            {
+              "field": "market_cap_as_of",
+              "type": "string"
+            },
+            {
+              "field": "sol_reserve_now",
+              "type": "number"
+            },
+            {
+              "field": "liquidity_share_of_cap",
+              "type": "number"
+            },
+            {
+              "field": "holders",
+              "type": "number"
+            },
+            {
+              "field": "holders_as_of",
+              "type": "string"
+            },
+            {
+              "field": "top_holders",
+              "type": "array",
+              "length": 1
+            },
+            {
+              "field": "top_holders_same_size",
+              "type": "null"
+            },
+            {
+              "field": "top_holders_as_of",
+              "type": "string"
+            },
+            {
+              "field": "supply_held_by_programs",
+              "type": "number"
+            },
+            {
+              "field": "top_traders",
+              "type": "null"
+            },
+            {
+              "field": "top_traders_as_of",
+              "type": "null"
+            },
+            {
+              "field": "attention",
+              "type": "null"
+            },
+            {
+              "field": "copies",
+              "type": "null"
+            },
+            {
+              "field": "stream",
+              "type": "object"
+            },
+            {
+              "field": "stream.what",
+              "type": "string"
+            },
+            {
+              "field": "stream.trial",
+              "type": "string"
+            },
+            {
+              "field": "stream.docs",
+              "type": "string"
+            },
+            {
+              "field": "summary",
+              "type": "string"
+            },
+            {
+              "field": "compare_to",
+              "type": "object"
+            },
+            {
+              "field": "compare_to.band",
+              "type": "string"
+            },
+            {
+              "field": "compare_to.venue",
+              "type": "string"
+            },
+            {
+              "field": "compare_to.from",
+              "type": "string"
+            },
+            {
+              "field": "compare_to.to",
+              "type": "string"
+            },
+            {
+              "field": "compare_to.crossed",
+              "type": "number"
+            },
+            {
+              "field": "compare_to.reached",
+              "type": "object"
+            },
+            {
+              "field": "compare_to.reached.2x",
+              "type": "number"
+            },
+            {
+              "field": "compare_to.reached.5x",
+              "type": "number"
+            },
+            {
+              "field": "compare_to.reached.10x",
+              "type": "number"
+            },
+            {
+              "field": "compare_to.reached.20x",
+              "type": "number"
+            },
+            {
+              "field": "compare_to.median_peak",
+              "type": "number",
+              "value": 1.579
+            },
+            {
+              "field": "compare_to.basis",
+              "type": "string"
+            },
+            {
+              "field": "compare_to.source",
+              "type": "string"
+            },
+            {
+              "field": "next_steps",
+              "type": "array",
+              "length": 3
+            },
+            {
+              "field": "freshness",
+              "type": "object"
+            },
+            {
+              "field": "freshness.data_as_of",
+              "type": "string"
+            },
+            {
+              "field": "freshness.lag_s",
+              "type": "number"
+            },
+            {
+              "field": "freshness.history_as_of",
+              "type": "string"
+            }
+          ]
+        },
+        "check": {
+          "http_status": 200,
+          "fields": [
+            {
+              "field": "mint",
+              "type": "string"
+            },
+            {
+              "field": "checked_at",
+              "type": "string"
+            },
+            {
+              "field": "data_as_of",
+              "type": "string"
+            },
+            {
+              "field": "answer",
+              "type": "array",
+              "length": 5
+            },
+            {
+              "field": "flags",
+              "type": "array",
+              "length": 1
+            },
+            {
+              "field": "rules_say",
+              "type": "string"
+            },
+            {
+              "field": "questions",
+              "type": "array",
+              "length": 6
+            },
+            {
+              "field": "launch",
+              "type": "object"
+            },
+            {
+              "field": "launch.mint",
+              "type": "string"
+            },
+            {
+              "field": "launch.created",
+              "type": "string"
+            },
+            {
+              "field": "launch.deployer",
+              "type": "object"
+            },
+            {
+              "field": "launch.deployer.address",
+              "type": "string"
+            },
+            {
+              "field": "launch.deployer.as_of",
+              "type": "string"
+            },
+            {
+              "field": "launch.deployer.launches",
+              "type": "number"
+            },
+            {
+              "field": "launch.deployer.graduations",
+              "type": "number",
+              "value": 5
+            },
+            {
+              "field": "launch.deployer.best_peak",
+              "type": "number",
+              "value": 148146.73
+            },
+            {
+              "field": "launch.deployer.last_launch_gap_s",
+              "type": "number"
+            },
+            {
+              "field": "launch.deployer.launches_last_day",
+              "type": "number"
+            },
+            {
+              "field": "launch.deployer.now",
+              "type": "object"
+            },
+            {
+              "field": "launch.deployer.now.launches",
+              "type": "number"
+            },
+            {
+              "field": "launch.deployer.now.graduations",
+              "type": "number",
+              "value": 6
+            },
+            {
+              "field": "launch.deployer.now.best_peak",
+              "type": "number",
+              "value": 148146.73
+            },
+            {
+              "field": "launch.deployer.now.last_launch_gap_s",
+              "type": "number"
+            },
+            {
+              "field": "launch.deployer.now.launches_last_day",
+              "type": "number"
+            },
+            {
+              "field": "launch.deployer.now.own_coins",
+              "type": "object"
+            },
+            {
+              "field": "launch.bundle_at_creation",
+              "type": "object"
+            },
+            {
+              "field": "launch.bundle_at_creation.buyers_first_10s",
+              "type": "number"
+            },
+            {
+              "field": "launch.bundle_at_creation.supply_share",
+              "type": "number"
+            },
+            {
+              "field": "launch.bundle_at_creation.top_buyer",
+              "type": "string"
+            },
+            {
+              "field": "launch.bundle_at_creation.top_buyer_share",
+              "type": "number"
+            },
+            {
+              "field": "launch.insider_supply_share",
+              "type": "number"
+            },
+            {
+              "field": "launch.curve_bought_at_launch",
+              "type": "object"
+            },
+            {
+              "field": "launch.curve_bought_at_launch.yes",
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "field": "launch.curve_bought_at_launch.buyers",
+              "type": "number"
+            },
+            {
+              "field": "launch.curve_bought_at_launch.supply_share",
+              "type": "number"
+            },
+            {
+              "field": "launch.curve_bought_at_launch.migrated_after_s",
+              "type": "null"
+            },
+            {
+              "field": "launch.curve_bought_at_launch.launching_wallets_hold_now",
+              "type": "number"
+            },
+            {
+              "field": "launch.sold_together",
+              "type": "string"
+            },
+            {
+              "field": "launch.age_s",
+              "type": "number"
+            },
+            {
+              "field": "launch.curve_progress",
+              "type": "number"
+            },
+            {
+              "field": "launch.migrated_at",
+              "type": "null"
+            },
+            {
+              "field": "launch.market_cap_usd_at_age",
+              "type": "null"
+            },
+            {
+              "field": "launch.matches",
+              "type": "null"
+            },
+            {
+              "field": "launch.note",
+              "type": "string"
+            },
+            {
+              "field": "launch.market_cap_usd_now",
+              "type": "number",
+              "value": 10
+            },
+            {
+              "field": "launch.market_cap_as_of",
+              "type": "string"
+            },
+            {
+              "field": "launch.sol_reserve_now",
+              "type": "number"
+            },
+            {
+              "field": "launch.liquidity_share_of_cap",
+              "type": "number"
+            },
+            {
+              "field": "launch.holders",
+              "type": "null"
+            },
+            {
+              "field": "launch.holders_as_of",
+              "type": "null"
+            },
+            {
+              "field": "launch.top_traders_as_of",
+              "type": "null"
+            },
+            {
+              "field": "launch.attention",
+              "type": "null"
+            },
+            {
+              "field": "launch.copies",
+              "type": "null"
+            },
+            {
+              "field": "launch.stream",
+              "type": "object"
+            },
+            {
+              "field": "launch.stream.what",
+              "type": "string"
+            },
+            {
+              "field": "launch.stream.trial",
+              "type": "string"
+            },
+            {
+              "field": "launch.stream.docs",
+              "type": "string"
+            },
+            {
+              "field": "similar",
+              "type": "object"
+            },
+            {
+              "field": "similar.mint",
+              "type": "string"
+            },
+            {
+              "field": "similar.at_age_s",
+              "type": "number"
+            },
+            {
+              "field": "similar.key",
+              "type": "object"
+            },
+            {
+              "field": "similar.key.age_s",
+              "type": "number"
+            },
+            {
+              "field": "similar.key.b_launches",
+              "type": "string"
+            },
+            {
+              "field": "similar.key.b_grads",
+              "type": "string"
+            },
+            {
+              "field": "similar.key.b_bundle",
+              "type": "string"
+            },
+            {
+              "field": "similar.key.b_insider",
+              "type": "string"
+            },
+            {
+              "field": "similar.key.b_curve",
+              "type": "string"
+            },
+            {
+              "field": "similar.yours",
+              "type": "object"
+            },
+            {
+              "field": "similar.yours.deployer_launches",
+              "type": "number"
+            },
+            {
+              "field": "similar.yours.deployer_graduations",
+              "type": "number",
+              "value": 5
+            },
+            {
+              "field": "similar.yours.buyers_first_10s",
+              "type": "number"
+            },
+            {
+              "field": "similar.yours.insider_share",
+              "type": "number"
+            },
+            {
+              "field": "similar.yours.curve_progress",
+              "type": "number"
+            },
+            {
+              "field": "similar.yours.graduated",
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "field": "similar.same_bucket_n",
+              "type": "number"
+            },
+            {
+              "field": "similar.comparables",
+              "type": "array",
+              "length": 5
+            },
+            {
+              "field": "similar.summary",
+              "type": "string"
+            },
+            {
+              "field": "similar.definitions",
+              "type": "object"
+            },
+            {
+              "field": "similar.definitions.comparables",
+              "type": "string"
+            },
+            {
+              "field": "similar.definitions.next_24h",
+              "type": "string"
+            },
+            {
+              "field": "similar.definitions.not_a_prediction",
+              "type": "string"
+            },
+            {
+              "field": "similar.stream",
+              "type": "object"
+            },
+            {
+              "field": "similar.stream.what",
+              "type": "string"
+            },
+            {
+              "field": "similar.stream.trial",
+              "type": "string"
+            },
+            {
+              "field": "similar.stream.docs",
+              "type": "string"
+            },
+            {
+              "field": "page",
+              "type": "string"
+            },
+            {
+              "field": "not_built_yet",
+              "type": "object"
+            },
+            {
+              "field": "not_built_yet.holders_funding",
+              "type": "object"
+            },
+            {
+              "field": "not_built_yet.holders_funding.status",
+              "type": "string"
+            },
+            {
+              "field": "not_built_yet.holders_funding.would_answer",
+              "type": "string"
+            },
+            {
+              "field": "not_built_yet.holders_funding.vote",
+              "type": "string"
+            },
+            {
+              "field": "holders",
+              "type": "object"
+            },
+            {
+              "field": "holders.302",
+              "type": "string"
+            },
+            {
+              "field": "holders.price_usd",
+              "type": "number"
+            },
+            {
+              "field": "holders.realtime",
+              "type": "boolean",
+              "value": true
+            },
+            {
+              "field": "holders.why",
+              "type": "string"
+            },
+            {
+              "field": "buy",
+              "type": "object"
+            },
+            {
+              "field": "buy.fee",
+              "type": "string"
+            },
+            {
+              "field": "buy.page",
+              "type": "string"
+            },
+            {
+              "field": "buy.call",
+              "type": "string"
+            },
+            {
+              "field": "buy.quote",
+              "type": "string"
+            },
+            {
+              "field": "now",
+              "type": "string"
+            },
+            {
+              "field": "not_advice",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sample": 4,
+      "coin_id": "dc72b81bac4f79a07389e04e85736d31bf5b8dc07e88ba6d9be76fd9371ce342",
+      "endpoints": {
+        "launch": {
+          "http_status": 200,
+          "fields": [
+            {
+              "field": "mint",
+              "type": "string"
+            },
+            {
+              "field": "created",
+              "type": "string"
+            },
+            {
+              "field": "deployer",
+              "type": "object"
+            },
+            {
+              "field": "deployer.address",
+              "type": "string"
+            },
+            {
+              "field": "deployer.as_of",
+              "type": "string"
+            },
+            {
+              "field": "deployer.launches",
+              "type": "number"
+            },
+            {
+              "field": "deployer.graduations",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "field": "deployer.best_peak",
+              "type": "null"
+            },
+            {
+              "field": "deployer.last_launch_gap_s",
+              "type": "number"
+            },
+            {
+              "field": "deployer.launches_last_day",
+              "type": "number"
+            },
+            {
+              "field": "deployer.now",
+              "type": "object"
+            },
+            {
+              "field": "deployer.now.launches",
+              "type": "number"
+            },
+            {
+              "field": "deployer.now.graduations",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "field": "deployer.now.best_peak",
+              "type": "number",
+              "value": 2868.27
+            },
+            {
+              "field": "deployer.now.last_launch_gap_s",
+              "type": "number"
+            },
+            {
+              "field": "deployer.now.launches_last_day",
+              "type": "number"
+            },
+            {
+              "field": "deployer.now.own_coins",
+              "type": "object"
+            },
+            {
+              "field": "deployer.now.own_coins.coins",
+              "type": "number"
+            },
+            {
+              "field": "deployer.now.own_coins.bought_at_launch_share",
+              "type": "number"
+            },
+            {
+              "field": "deployer.now.own_coins.out_within_10s_share",
+              "type": "number"
+            },
+            {
+              "field": "deployer.now.own_coins.median_exit_s",
+              "type": "null"
+            },
+            {
+              "field": "deployer.now.own_coins.net_sol",
+              "type": "number"
+            },
+            {
+              "field": "deployer.now.own_coins.over",
+              "type": "string"
+            },
+            {
+              "field": "bundle_at_creation",
+              "type": "object"
+            },
+            {
+              "field": "bundle_at_creation.buyers_first_10s",
+              "type": "number"
+            },
+            {
+              "field": "bundle_at_creation.supply_share",
+              "type": "number"
+            },
+            {
+              "field": "bundle_at_creation.top_buyer",
+              "type": "string"
+            },
+            {
+              "field": "bundle_at_creation.top_buyer_share",
+              "type": "number"
+            },
+            {
+              "field": "insider_supply_share",
+              "type": "number"
+            },
+            {
+              "field": "curve_bought_at_launch",
+              "type": "object"
+            },
+            {
+              "field": "curve_bought_at_launch.yes",
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "field": "curve_bought_at_launch.buyers",
+              "type": "number"
+            },
+            {
+              "field": "curve_bought_at_launch.supply_share",
+              "type": "number"
+            },
+            {
+              "field": "curve_bought_at_launch.migrated_after_s",
+              "type": "null"
+            },
+            {
+              "field": "curve_bought_at_launch.launching_wallets_hold_now",
+              "type": "number"
+            },
+            {
+              "field": "sold_together",
+              "type": "string"
+            },
+            {
+              "field": "age_s",
+              "type": "number"
+            },
+            {
+              "field": "curve_progress",
+              "type": "number"
+            },
+            {
+              "field": "migrated_at",
+              "type": "null"
+            },
+            {
+              "field": "market_cap_usd_at_age",
+              "type": "object"
+            },
+            {
+              "field": "market_cap_usd_at_age.usd",
+              "type": "number",
+              "value": 2011.05
+            },
+            {
+              "field": "market_cap_usd_at_age.at_age_s",
+              "type": "number",
+              "value": 14400
+            },
+            {
+              "field": "matches",
+              "type": "object"
+            },
+            {
+              "field": "matches.n",
+              "type": "number"
+            },
+            {
+              "field": "matches.graduated_share",
+              "type": "number",
+              "value": 0.0002
+            },
+            {
+              "field": "matches.peak_day1",
+              "type": "object"
+            },
+            {
+              "field": "matches.peak_day1.p10",
+              "type": "number",
+              "value": 1
+            },
+            {
+              "field": "matches.peak_day1.p25",
+              "type": "number",
+              "value": 1
+            },
+            {
+              "field": "matches.peak_day1.p50",
+              "type": "number",
+              "value": 1
+            },
+            {
+              "field": "matches.peak_day1.p75",
+              "type": "number",
+              "value": 1
+            },
+            {
+              "field": "matches.peak_day1.p90",
+              "type": "number",
+              "value": 1
+            },
+            {
+              "field": "matches.peak_day1.dead",
+              "type": "number",
+              "value": 2180132
+            },
+            {
+              "field": "matches.close_day1",
+              "type": "object"
+            },
+            {
+              "field": "matches.close_day1.p10",
+              "type": "number"
+            },
+            {
+              "field": "matches.close_day1.p25",
+              "type": "number"
+            },
+            {
+              "field": "matches.close_day1.p50",
+              "type": "number"
+            },
+            {
+              "field": "matches.close_day1.p75",
+              "type": "number"
+            },
+            {
+              "field": "matches.close_day1.p90",
+              "type": "number"
+            },
+            {
+              "field": "matches.close_day1.dead",
+              "type": "number"
+            },
+            {
+              "field": "matches.at_age_s",
+              "type": "number"
+            },
+            {
+              "field": "matches.buckets",
+              "type": "object"
+            },
+            {
+              "field": "matches.buckets.age_s",
+              "type": "number"
+            },
+            {
+              "field": "matches.buckets.b_launches",
+              "type": "string"
+            },
+            {
+              "field": "matches.buckets.b_grads",
+              "type": "string"
+            },
+            {
+              "field": "matches.buckets.b_bundle",
+              "type": "string"
+            },
+            {
+              "field": "matches.buckets.b_insider",
+              "type": "string"
+            },
+            {
+              "field": "matches.buckets.b_curve",
+              "type": "string"
+            },
+            {
+              "field": "note",
+              "type": "string"
+            },
+            {
+              "field": "market_cap_usd_now",
+              "type": "number",
+              "value": 2012
+            },
+            {
+              "field": "market_cap_as_of",
+              "type": "string"
+            },
+            {
+              "field": "sol_reserve_now",
+              "type": "number"
+            },
+            {
+              "field": "liquidity_share_of_cap",
+              "type": "number"
+            },
+            {
+              "field": "holders",
+              "type": "number"
+            },
+            {
+              "field": "holders_as_of",
+              "type": "string"
+            },
+            {
+              "field": "top_holders",
+              "type": "array",
+              "length": 1
+            },
+            {
+              "field": "top_holders_same_size",
+              "type": "null"
+            },
+            {
+              "field": "top_holders_as_of",
+              "type": "string"
+            },
+            {
+              "field": "supply_held_by_programs",
+              "type": "number"
+            },
+            {
+              "field": "top_traders",
+              "type": "null"
+            },
+            {
+              "field": "top_traders_as_of",
+              "type": "null"
+            },
+            {
+              "field": "attention",
+              "type": "null"
+            },
+            {
+              "field": "copies",
+              "type": "null"
+            },
+            {
+              "field": "stream",
+              "type": "object"
+            },
+            {
+              "field": "stream.what",
+              "type": "string"
+            },
+            {
+              "field": "stream.trial",
+              "type": "string"
+            },
+            {
+              "field": "stream.docs",
+              "type": "string"
+            },
+            {
+              "field": "summary",
+              "type": "string"
+            },
+            {
+              "field": "compare_to",
+              "type": "object"
+            },
+            {
+              "field": "compare_to.band",
+              "type": "string"
+            },
+            {
+              "field": "compare_to.venue",
+              "type": "string"
+            },
+            {
+              "field": "compare_to.from",
+              "type": "string"
+            },
+            {
+              "field": "compare_to.to",
+              "type": "string"
+            },
+            {
+              "field": "compare_to.crossed",
+              "type": "number"
+            },
+            {
+              "field": "compare_to.reached",
+              "type": "object"
+            },
+            {
+              "field": "compare_to.reached.2x",
+              "type": "number"
+            },
+            {
+              "field": "compare_to.reached.5x",
+              "type": "number"
+            },
+            {
+              "field": "compare_to.reached.10x",
+              "type": "number"
+            },
+            {
+              "field": "compare_to.reached.20x",
+              "type": "number"
+            },
+            {
+              "field": "compare_to.median_peak",
+              "type": "number",
+              "value": 1.579
+            },
+            {
+              "field": "compare_to.basis",
+              "type": "string"
+            },
+            {
+              "field": "compare_to.source",
+              "type": "string"
+            },
+            {
+              "field": "next_steps",
+              "type": "array",
+              "length": 3
+            },
+            {
+              "field": "freshness",
+              "type": "object"
+            },
+            {
+              "field": "freshness.data_as_of",
+              "type": "string"
+            },
+            {
+              "field": "freshness.lag_s",
+              "type": "number"
+            },
+            {
+              "field": "freshness.history_as_of",
+              "type": "string"
+            }
+          ]
+        },
+        "check": {
+          "http_status": 200,
+          "fields": [
+            {
+              "field": "mint",
+              "type": "string"
+            },
+            {
+              "field": "checked_at",
+              "type": "string"
+            },
+            {
+              "field": "data_as_of",
+              "type": "string"
+            },
+            {
+              "field": "answer",
+              "type": "array",
+              "length": 6
+            },
+            {
+              "field": "flags",
+              "type": "array",
+              "length": 2
+            },
+            {
+              "field": "rules_say",
+              "type": "string"
+            },
+            {
+              "field": "questions",
+              "type": "array",
+              "length": 7
+            },
+            {
+              "field": "launch",
+              "type": "object"
+            },
+            {
+              "field": "launch.mint",
+              "type": "string"
+            },
+            {
+              "field": "launch.created",
+              "type": "string"
+            },
+            {
+              "field": "launch.deployer",
+              "type": "object"
+            },
+            {
+              "field": "launch.deployer.address",
+              "type": "string"
+            },
+            {
+              "field": "launch.deployer.as_of",
+              "type": "string"
+            },
+            {
+              "field": "launch.deployer.launches",
+              "type": "number"
+            },
+            {
+              "field": "launch.deployer.graduations",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "field": "launch.deployer.best_peak",
+              "type": "null"
+            },
+            {
+              "field": "launch.deployer.last_launch_gap_s",
+              "type": "number"
+            },
+            {
+              "field": "launch.deployer.launches_last_day",
+              "type": "number"
+            },
+            {
+              "field": "launch.deployer.now",
+              "type": "object"
+            },
+            {
+              "field": "launch.deployer.now.launches",
+              "type": "number"
+            },
+            {
+              "field": "launch.deployer.now.graduations",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "field": "launch.deployer.now.best_peak",
+              "type": "number",
+              "value": 2868.27
+            },
+            {
+              "field": "launch.deployer.now.last_launch_gap_s",
+              "type": "number"
+            },
+            {
+              "field": "launch.deployer.now.launches_last_day",
+              "type": "number"
+            },
+            {
+              "field": "launch.deployer.now.own_coins",
+              "type": "object"
+            },
+            {
+              "field": "launch.bundle_at_creation",
+              "type": "object"
+            },
+            {
+              "field": "launch.bundle_at_creation.buyers_first_10s",
+              "type": "number"
+            },
+            {
+              "field": "launch.bundle_at_creation.supply_share",
+              "type": "number"
+            },
+            {
+              "field": "launch.bundle_at_creation.top_buyer",
+              "type": "string"
+            },
+            {
+              "field": "launch.bundle_at_creation.top_buyer_share",
+              "type": "number"
+            },
+            {
+              "field": "launch.insider_supply_share",
+              "type": "number"
+            },
+            {
+              "field": "launch.curve_bought_at_launch",
+              "type": "object"
+            },
+            {
+              "field": "launch.curve_bought_at_launch.yes",
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "field": "launch.curve_bought_at_launch.buyers",
+              "type": "number"
+            },
+            {
+              "field": "launch.curve_bought_at_launch.supply_share",
+              "type": "number"
+            },
+            {
+              "field": "launch.curve_bought_at_launch.migrated_after_s",
+              "type": "null"
+            },
+            {
+              "field": "launch.curve_bought_at_launch.launching_wallets_hold_now",
+              "type": "number"
+            },
+            {
+              "field": "launch.sold_together",
+              "type": "string"
+            },
+            {
+              "field": "launch.age_s",
+              "type": "number"
+            },
+            {
+              "field": "launch.curve_progress",
+              "type": "number"
+            },
+            {
+              "field": "launch.migrated_at",
+              "type": "null"
+            },
+            {
+              "field": "launch.market_cap_usd_at_age",
+              "type": "object"
+            },
+            {
+              "field": "launch.market_cap_usd_at_age.usd",
+              "type": "number",
+              "value": 2011.05
+            },
+            {
+              "field": "launch.market_cap_usd_at_age.at_age_s",
+              "type": "number",
+              "value": 14400
+            },
+            {
+              "field": "launch.matches",
+              "type": "object"
+            },
+            {
+              "field": "launch.matches.n",
+              "type": "number"
+            },
+            {
+              "field": "launch.matches.graduated_share",
+              "type": "number",
+              "value": 0.0002
+            },
+            {
+              "field": "launch.matches.peak_day1",
+              "type": "object"
+            },
+            {
+              "field": "launch.matches.peak_day1.p10",
+              "type": "number",
+              "value": 1
+            },
+            {
+              "field": "launch.matches.peak_day1.p25",
+              "type": "number",
+              "value": 1
+            },
+            {
+              "field": "launch.matches.peak_day1.p50",
+              "type": "number",
+              "value": 1
+            },
+            {
+              "field": "launch.matches.peak_day1.p75",
+              "type": "number",
+              "value": 1
+            },
+            {
+              "field": "launch.matches.peak_day1.p90",
+              "type": "number",
+              "value": 1
+            },
+            {
+              "field": "launch.matches.peak_day1.dead",
+              "type": "number",
+              "value": 2180132
+            },
+            {
+              "field": "launch.matches.close_day1",
+              "type": "object"
+            },
+            {
+              "field": "launch.matches.close_day1.p10",
+              "type": "number"
+            },
+            {
+              "field": "launch.matches.close_day1.p25",
+              "type": "number"
+            },
+            {
+              "field": "launch.matches.close_day1.p50",
+              "type": "number"
+            },
+            {
+              "field": "launch.matches.close_day1.p75",
+              "type": "number"
+            },
+            {
+              "field": "launch.matches.close_day1.p90",
+              "type": "number"
+            },
+            {
+              "field": "launch.matches.close_day1.dead",
+              "type": "number"
+            },
+            {
+              "field": "launch.matches.at_age_s",
+              "type": "number"
+            },
+            {
+              "field": "launch.matches.buckets",
+              "type": "object"
+            },
+            {
+              "field": "launch.matches.buckets.age_s",
+              "type": "number"
+            },
+            {
+              "field": "launch.matches.buckets.b_launches",
+              "type": "string"
+            },
+            {
+              "field": "launch.matches.buckets.b_grads",
+              "type": "string"
+            },
+            {
+              "field": "launch.matches.buckets.b_bundle",
+              "type": "string"
+            },
+            {
+              "field": "launch.matches.buckets.b_insider",
+              "type": "string"
+            },
+            {
+              "field": "launch.matches.buckets.b_curve",
+              "type": "string"
+            },
+            {
+              "field": "launch.note",
+              "type": "string"
+            },
+            {
+              "field": "launch.market_cap_usd_now",
+              "type": "number",
+              "value": 2012
+            },
+            {
+              "field": "launch.market_cap_as_of",
+              "type": "string"
+            },
+            {
+              "field": "launch.sol_reserve_now",
+              "type": "number"
+            },
+            {
+              "field": "launch.liquidity_share_of_cap",
+              "type": "number"
+            },
+            {
+              "field": "launch.holders",
+              "type": "null"
+            },
+            {
+              "field": "launch.holders_as_of",
+              "type": "null"
+            },
+            {
+              "field": "launch.top_traders_as_of",
+              "type": "null"
+            },
+            {
+              "field": "launch.attention",
+              "type": "null"
+            },
+            {
+              "field": "launch.copies",
+              "type": "null"
+            },
+            {
+              "field": "launch.stream",
+              "type": "object"
+            },
+            {
+              "field": "launch.stream.what",
+              "type": "string"
+            },
+            {
+              "field": "launch.stream.trial",
+              "type": "string"
+            },
+            {
+              "field": "launch.stream.docs",
+              "type": "string"
+            },
+            {
+              "field": "similar",
+              "type": "object"
+            },
+            {
+              "field": "similar.mint",
+              "type": "string"
+            },
+            {
+              "field": "similar.at_age_s",
+              "type": "number"
+            },
+            {
+              "field": "similar.key",
+              "type": "object"
+            },
+            {
+              "field": "similar.key.age_s",
+              "type": "number"
+            },
+            {
+              "field": "similar.key.b_launches",
+              "type": "string"
+            },
+            {
+              "field": "similar.key.b_grads",
+              "type": "string"
+            },
+            {
+              "field": "similar.key.b_bundle",
+              "type": "string"
+            },
+            {
+              "field": "similar.key.b_insider",
+              "type": "string"
+            },
+            {
+              "field": "similar.key.b_curve",
+              "type": "string"
+            },
+            {
+              "field": "similar.yours",
+              "type": "object"
+            },
+            {
+              "field": "similar.yours.deployer_launches",
+              "type": "number"
+            },
+            {
+              "field": "similar.yours.deployer_graduations",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "field": "similar.yours.buyers_first_10s",
+              "type": "number"
+            },
+            {
+              "field": "similar.yours.insider_share",
+              "type": "number"
+            },
+            {
+              "field": "similar.yours.curve_progress",
+              "type": "number"
+            },
+            {
+              "field": "similar.yours.graduated",
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "field": "similar.same_bucket_n",
+              "type": "number"
+            },
+            {
+              "field": "similar.comparables",
+              "type": "array",
+              "length": 3
+            },
+            {
+              "field": "similar.summary",
+              "type": "string"
+            },
+            {
+              "field": "similar.definitions",
+              "type": "object"
+            },
+            {
+              "field": "similar.definitions.comparables",
+              "type": "string"
+            },
+            {
+              "field": "similar.definitions.next_24h",
+              "type": "string"
+            },
+            {
+              "field": "similar.definitions.not_a_prediction",
+              "type": "string"
+            },
+            {
+              "field": "similar.stream",
+              "type": "object"
+            },
+            {
+              "field": "similar.stream.what",
+              "type": "string"
+            },
+            {
+              "field": "similar.stream.trial",
+              "type": "string"
+            },
+            {
+              "field": "similar.stream.docs",
+              "type": "string"
+            },
+            {
+              "field": "page",
+              "type": "string"
+            },
+            {
+              "field": "not_built_yet",
+              "type": "object"
+            },
+            {
+              "field": "not_built_yet.holders_funding",
+              "type": "object"
+            },
+            {
+              "field": "not_built_yet.holders_funding.status",
+              "type": "string"
+            },
+            {
+              "field": "not_built_yet.holders_funding.would_answer",
+              "type": "string"
+            },
+            {
+              "field": "not_built_yet.holders_funding.vote",
+              "type": "string"
+            },
+            {
+              "field": "holders",
+              "type": "object"
+            },
+            {
+              "field": "holders.302",
+              "type": "string"
+            },
+            {
+              "field": "holders.price_usd",
+              "type": "number"
+            },
+            {
+              "field": "holders.realtime",
+              "type": "boolean",
+              "value": true
+            },
+            {
+              "field": "holders.why",
+              "type": "string"
+            },
+            {
+              "field": "buy",
+              "type": "object"
+            },
+            {
+              "field": "buy.fee",
+              "type": "string"
+            },
+            {
+              "field": "buy.page",
+              "type": "string"
+            },
+            {
+              "field": "buy.call",
+              "type": "string"
+            },
+            {
+              "field": "buy.quote",
+              "type": "string"
+            },
+            {
+              "field": "now",
+              "type": "string"
+            },
+            {
+              "field": "not_advice",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sample": 5,
+      "coin_id": "14866145c733ccae145f2544b53a8019ea0d0266d110f51f0cfff87017d9cd74",
+      "endpoints": {
+        "launch": {
+          "http_status": 200,
+          "fields": [
+            {
+              "field": "mint",
+              "type": "string"
+            },
+            {
+              "field": "created",
+              "type": "string"
+            },
+            {
+              "field": "deployer",
+              "type": "object"
+            },
+            {
+              "field": "deployer.address",
+              "type": "string"
+            },
+            {
+              "field": "deployer.as_of",
+              "type": "string"
+            },
+            {
+              "field": "deployer.launches",
+              "type": "number"
+            },
+            {
+              "field": "deployer.graduations",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "field": "deployer.best_peak",
+              "type": "null"
+            },
+            {
+              "field": "deployer.last_launch_gap_s",
+              "type": "number"
+            },
+            {
+              "field": "deployer.launches_last_day",
+              "type": "number"
+            },
+            {
+              "field": "deployer.now",
+              "type": "object"
+            },
+            {
+              "field": "deployer.now.launches",
+              "type": "number"
+            },
+            {
+              "field": "deployer.now.graduations",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "field": "deployer.now.best_peak",
+              "type": "number",
+              "value": 4872.07
+            },
+            {
+              "field": "deployer.now.last_launch_gap_s",
+              "type": "number"
+            },
+            {
+              "field": "deployer.now.launches_last_day",
+              "type": "number"
+            },
+            {
+              "field": "deployer.now.own_coins",
+              "type": "object"
+            },
+            {
+              "field": "deployer.now.own_coins.coins",
+              "type": "number"
+            },
+            {
+              "field": "deployer.now.own_coins.bought_at_launch_share",
+              "type": "number"
+            },
+            {
+              "field": "deployer.now.own_coins.out_within_10s_share",
+              "type": "null"
+            },
+            {
+              "field": "deployer.now.own_coins.median_exit_s",
+              "type": "null"
+            },
+            {
+              "field": "deployer.now.own_coins.net_sol",
+              "type": "number"
+            },
+            {
+              "field": "deployer.now.own_coins.over",
+              "type": "string"
+            },
+            {
+              "field": "bundle_at_creation",
+              "type": "object"
+            },
+            {
+              "field": "bundle_at_creation.buyers_first_10s",
+              "type": "number"
+            },
+            {
+              "field": "bundle_at_creation.supply_share",
+              "type": "number"
+            },
+            {
+              "field": "bundle_at_creation.top_buyer",
+              "type": "null"
+            },
+            {
+              "field": "bundle_at_creation.top_buyer_share",
+              "type": "null"
+            },
+            {
+              "field": "insider_supply_share",
+              "type": "number"
+            },
+            {
+              "field": "curve_bought_at_launch",
+              "type": "object"
+            },
+            {
+              "field": "curve_bought_at_launch.yes",
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "field": "curve_bought_at_launch.buyers",
+              "type": "number"
+            },
+            {
+              "field": "curve_bought_at_launch.supply_share",
+              "type": "number"
+            },
+            {
+              "field": "curve_bought_at_launch.migrated_after_s",
+              "type": "null"
+            },
+            {
+              "field": "curve_bought_at_launch.launching_wallets_hold_now",
+              "type": "number"
+            },
+            {
+              "field": "sold_together",
+              "type": "string"
+            },
+            {
+              "field": "age_s",
+              "type": "number"
+            },
+            {
+              "field": "curve_progress",
+              "type": "number"
+            },
+            {
+              "field": "migrated_at",
+              "type": "null"
+            },
+            {
+              "field": "market_cap_usd_at_age",
+              "type": "null"
+            },
+            {
+              "field": "matches",
+              "type": "null"
+            },
+            {
+              "field": "quote_mint",
+              "type": "string"
+            },
+            {
+              "field": "note",
+              "type": "string"
+            },
+            {
+              "field": "market_cap_usd_now",
+              "type": "null"
+            },
+            {
+              "field": "market_cap_as_of",
+              "type": "null"
+            },
+            {
+              "field": "sol_reserve_now",
+              "type": "null"
+            },
+            {
+              "field": "liquidity_share_of_cap",
+              "type": "null"
+            },
+            {
+              "field": "holders",
+              "type": "number"
+            },
+            {
+              "field": "holders_as_of",
+              "type": "string"
+            },
+            {
+              "field": "top_holders",
+              "type": "array",
+              "length": 0
+            },
+            {
+              "field": "top_holders_same_size",
+              "type": "null"
+            },
+            {
+              "field": "top_holders_as_of",
+              "type": "string"
+            },
+            {
+              "field": "supply_held_by_programs",
+              "type": "number"
+            },
+            {
+              "field": "top_traders",
+              "type": "null"
+            },
+            {
+              "field": "top_traders_as_of",
+              "type": "null"
+            },
+            {
+              "field": "attention",
+              "type": "null"
+            },
+            {
+              "field": "copies",
+              "type": "null"
+            },
+            {
+              "field": "stream",
+              "type": "object"
+            },
+            {
+              "field": "stream.what",
+              "type": "string"
+            },
+            {
+              "field": "stream.trial",
+              "type": "string"
+            },
+            {
+              "field": "stream.docs",
+              "type": "string"
+            },
+            {
+              "field": "summary",
+              "type": "string"
+            },
+            {
+              "field": "compare_to",
+              "type": "object"
+            },
+            {
+              "field": "compare_to.band",
+              "type": "string"
+            },
+            {
+              "field": "compare_to.venue",
+              "type": "string"
+            },
+            {
+              "field": "compare_to.from",
+              "type": "string"
+            },
+            {
+              "field": "compare_to.to",
+              "type": "string"
+            },
+            {
+              "field": "compare_to.crossed",
+              "type": "number"
+            },
+            {
+              "field": "compare_to.reached",
+              "type": "object"
+            },
+            {
+              "field": "compare_to.reached.2x",
+              "type": "number"
+            },
+            {
+              "field": "compare_to.reached.5x",
+              "type": "number"
+            },
+            {
+              "field": "compare_to.reached.10x",
+              "type": "number"
+            },
+            {
+              "field": "compare_to.reached.20x",
+              "type": "number"
+            },
+            {
+              "field": "compare_to.median_peak",
+              "type": "number",
+              "value": 1.579
+            },
+            {
+              "field": "compare_to.basis",
+              "type": "string"
+            },
+            {
+              "field": "compare_to.source",
+              "type": "string"
+            },
+            {
+              "field": "next_steps",
+              "type": "array",
+              "length": 3
+            },
+            {
+              "field": "freshness",
+              "type": "object"
+            },
+            {
+              "field": "freshness.data_as_of",
+              "type": "string"
+            },
+            {
+              "field": "freshness.lag_s",
+              "type": "number"
+            },
+            {
+              "field": "freshness.history_as_of",
+              "type": "string"
+            }
+          ]
+        },
+        "check": {
+          "http_status": 200,
+          "fields": [
+            {
+              "field": "mint",
+              "type": "string"
+            },
+            {
+              "field": "checked_at",
+              "type": "string"
+            },
+            {
+              "field": "data_as_of",
+              "type": "string"
+            },
+            {
+              "field": "answer",
+              "type": "array",
+              "length": 4
+            },
+            {
+              "field": "flags",
+              "type": "array",
+              "length": 2
+            },
+            {
+              "field": "rules_say",
+              "type": "string"
+            },
+            {
+              "field": "questions",
+              "type": "array",
+              "length": 4
+            },
+            {
+              "field": "launch",
+              "type": "object"
+            },
+            {
+              "field": "launch.mint",
+              "type": "string"
+            },
+            {
+              "field": "launch.created",
+              "type": "string"
+            },
+            {
+              "field": "launch.deployer",
+              "type": "object"
+            },
+            {
+              "field": "launch.deployer.address",
+              "type": "string"
+            },
+            {
+              "field": "launch.deployer.as_of",
+              "type": "string"
+            },
+            {
+              "field": "launch.deployer.launches",
+              "type": "number"
+            },
+            {
+              "field": "launch.deployer.graduations",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "field": "launch.deployer.best_peak",
+              "type": "null"
+            },
+            {
+              "field": "launch.deployer.last_launch_gap_s",
+              "type": "number"
+            },
+            {
+              "field": "launch.deployer.launches_last_day",
+              "type": "number"
+            },
+            {
+              "field": "launch.deployer.now",
+              "type": "object"
+            },
+            {
+              "field": "launch.deployer.now.launches",
+              "type": "number"
+            },
+            {
+              "field": "launch.deployer.now.graduations",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "field": "launch.deployer.now.best_peak",
+              "type": "number",
+              "value": 4872.07
+            },
+            {
+              "field": "launch.deployer.now.last_launch_gap_s",
+              "type": "number"
+            },
+            {
+              "field": "launch.deployer.now.launches_last_day",
+              "type": "number"
+            },
+            {
+              "field": "launch.deployer.now.own_coins",
+              "type": "object"
+            },
+            {
+              "field": "launch.bundle_at_creation",
+              "type": "object"
+            },
+            {
+              "field": "launch.bundle_at_creation.buyers_first_10s",
+              "type": "number"
+            },
+            {
+              "field": "launch.bundle_at_creation.supply_share",
+              "type": "number"
+            },
+            {
+              "field": "launch.bundle_at_creation.top_buyer",
+              "type": "null"
+            },
+            {
+              "field": "launch.bundle_at_creation.top_buyer_share",
+              "type": "null"
+            },
+            {
+              "field": "launch.insider_supply_share",
+              "type": "number"
+            },
+            {
+              "field": "launch.curve_bought_at_launch",
+              "type": "object"
+            },
+            {
+              "field": "launch.curve_bought_at_launch.yes",
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "field": "launch.curve_bought_at_launch.buyers",
+              "type": "number"
+            },
+            {
+              "field": "launch.curve_bought_at_launch.supply_share",
+              "type": "number"
+            },
+            {
+              "field": "launch.curve_bought_at_launch.migrated_after_s",
+              "type": "null"
+            },
+            {
+              "field": "launch.curve_bought_at_launch.launching_wallets_hold_now",
+              "type": "number"
+            },
+            {
+              "field": "launch.sold_together",
+              "type": "string"
+            },
+            {
+              "field": "launch.age_s",
+              "type": "number"
+            },
+            {
+              "field": "launch.curve_progress",
+              "type": "number"
+            },
+            {
+              "field": "launch.migrated_at",
+              "type": "null"
+            },
+            {
+              "field": "launch.market_cap_usd_at_age",
+              "type": "null"
+            },
+            {
+              "field": "launch.matches",
+              "type": "null"
+            },
+            {
+              "field": "launch.quote_mint",
+              "type": "string"
+            },
+            {
+              "field": "launch.note",
+              "type": "string"
+            },
+            {
+              "field": "launch.market_cap_usd_now",
+              "type": "null"
+            },
+            {
+              "field": "launch.market_cap_as_of",
+              "type": "null"
+            },
+            {
+              "field": "launch.sol_reserve_now",
+              "type": "null"
+            },
+            {
+              "field": "launch.liquidity_share_of_cap",
+              "type": "null"
+            },
+            {
+              "field": "launch.holders",
+              "type": "null"
+            },
+            {
+              "field": "launch.holders_as_of",
+              "type": "null"
+            },
+            {
+              "field": "launch.top_traders_as_of",
+              "type": "null"
+            },
+            {
+              "field": "launch.attention",
+              "type": "null"
+            },
+            {
+              "field": "launch.copies",
+              "type": "null"
+            },
+            {
+              "field": "launch.stream",
+              "type": "object"
+            },
+            {
+              "field": "launch.stream.what",
+              "type": "string"
+            },
+            {
+              "field": "launch.stream.trial",
+              "type": "string"
+            },
+            {
+              "field": "launch.stream.docs",
+              "type": "string"
+            },
+            {
+              "field": "similar",
+              "type": "object"
+            },
+            {
+              "field": "similar.mint",
+              "type": "string"
+            },
+            {
+              "field": "similar.at_age_s",
+              "type": "number"
+            },
+            {
+              "field": "similar.key",
+              "type": "object"
+            },
+            {
+              "field": "similar.key.age_s",
+              "type": "number"
+            },
+            {
+              "field": "similar.key.b_launches",
+              "type": "string"
+            },
+            {
+              "field": "similar.key.b_grads",
+              "type": "string"
+            },
+            {
+              "field": "similar.key.b_bundle",
+              "type": "string"
+            },
+            {
+              "field": "similar.key.b_insider",
+              "type": "string"
+            },
+            {
+              "field": "similar.key.b_curve",
+              "type": "string"
+            },
+            {
+              "field": "similar.yours",
+              "type": "object"
+            },
+            {
+              "field": "similar.yours.deployer_launches",
+              "type": "number"
+            },
+            {
+              "field": "similar.yours.deployer_graduations",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "field": "similar.yours.buyers_first_10s",
+              "type": "number"
+            },
+            {
+              "field": "similar.yours.insider_share",
+              "type": "number"
+            },
+            {
+              "field": "similar.yours.curve_progress",
+              "type": "number"
+            },
+            {
+              "field": "similar.yours.graduated",
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "field": "similar.same_bucket_n",
+              "type": "number"
+            },
+            {
+              "field": "similar.comparables",
+              "type": "array",
+              "length": 3
+            },
+            {
+              "field": "similar.summary",
+              "type": "string"
+            },
+            {
+              "field": "similar.definitions",
+              "type": "object"
+            },
+            {
+              "field": "similar.definitions.comparables",
+              "type": "string"
+            },
+            {
+              "field": "similar.definitions.next_24h",
+              "type": "string"
+            },
+            {
+              "field": "similar.definitions.not_a_prediction",
+              "type": "string"
+            },
+            {
+              "field": "similar.stream",
+              "type": "object"
+            },
+            {
+              "field": "similar.stream.what",
+              "type": "string"
+            },
+            {
+              "field": "similar.stream.trial",
+              "type": "string"
+            },
+            {
+              "field": "similar.stream.docs",
+              "type": "string"
+            },
+            {
+              "field": "page",
+              "type": "string"
+            },
+            {
+              "field": "not_built_yet",
+              "type": "object"
+            },
+            {
+              "field": "not_built_yet.holders_funding",
+              "type": "object"
+            },
+            {
+              "field": "not_built_yet.holders_funding.status",
+              "type": "string"
+            },
+            {
+              "field": "not_built_yet.holders_funding.would_answer",
+              "type": "string"
+            },
+            {
+              "field": "not_built_yet.holders_funding.vote",
+              "type": "string"
+            },
+            {
+              "field": "holders",
+              "type": "object"
+            },
+            {
+              "field": "holders.302",
+              "type": "string"
+            },
+            {
+              "field": "holders.price_usd",
+              "type": "number"
+            },
+            {
+              "field": "holders.realtime",
+              "type": "boolean",
+              "value": true
+            },
+            {
+              "field": "holders.why",
+              "type": "string"
+            },
+            {
+              "field": "buy",
+              "type": "object"
+            },
+            {
+              "field": "buy.fee",
+              "type": "string"
+            },
+            {
+              "field": "buy.page",
+              "type": "string"
+            },
+            {
+              "field": "buy.call",
+              "type": "string"
+            },
+            {
+              "field": "buy.quote",
+              "type": "string"
+            },
+            {
+              "field": "now",
+              "type": "string"
+            },
+            {
+              "field": "not_advice",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
