@@ -1,0 +1,148 @@
+
+name: Collect Developer Wallets
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  wallets:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Match developer wallets
+        run: |
+          python3 - <<'PY'
+          import json
+          import hashlib
+          import pathlib
+          import time
+          import urllib.request
+          from datetime import datetime, timezone, timedelta
+
+          folder = pathlib.Path("data")
+
+          ranking = json.loads(
+              (folder / "top100.json").read_text()
+          )
+
+          top = ranking.get("top_100", [])
+          targets = {
+              item["developer_id"]
+              for item in top
+          }
+
+          matched = {}
+
+          today = datetime.now(timezone.utc).date()
+
+          for offset in range(3):
+              day = today - timedelta(days=offset)
+              url = (
+                  "https://pumpdata.fun/launches/"
+                  + day.isoformat() + ".json"
+              )
+
+              feed = None
+
+              for attempt in range(3):
+                  try:
+                      req = urllib.request.Request(
+                          url,
+                          headers={
+                              "User-Agent": "Pumpwatch/1.0"
+                          }
+                      )
+                      with urllib.request.urlopen(
+                          req, timeout=180
+                      ) as response:
+                          feed = json.load(response)
+                      break
+                  except Exception as error:
+                      print(
+                          "Fetch attempt failed:",
+                          day,
+                          type(error).__name__
+                      )
+                      if attempt < 2:
+                          time.sleep(10)
+
+              if feed is None:
+                  continue
+
+              columns = feed.get("columns", [])
+
+              if "creator" not in columns:
+                  continue
+
+              index = columns.index("creator")
+
+              for row in feed.get("launches", []):
+                  wallet = row[index]
+
+                  if not isinstance(wallet, str):
+                      continue
+
+                  identifier = hashlib.sha256(
+                      wallet.encode()
+                  ).hexdigest()[:16]
+
+                  if identifier in targets:
+                      matched[identifier] = wallet
+
+              print(
+                  day,
+                  "matched:", len(matched)
+              )
+
+          # Start with a small sample of ten wallets.
+          # Keep their original leaderboard order.
+          selected = []
+
+          for developer in top:
+              identifier = developer["developer_id"]
+
+              if identifier in matched:
+                  selected.append({
+                      "developer_id": identifier,
+                      "wallet": matched[identifier]
+                  })
+
+              if len(selected) >= 10:
+                  break
+
+          output = {
+              "updated_at": datetime.now(
+                  timezone.utc
+              ).isoformat(),
+              "matched": len(selected),
+              "developers": selected
+          }
+
+          (folder / "wallets.json").write_text(
+              json.dumps(output, indent=2)
+          )
+
+          print("WALLET MATCHES:", len(selected))
+          print("WALLET MAPPING READY")
+          PY
+
+      - name: Save wallet mapping
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add -- data/wallets.json
+
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Add public developer wallets"
+            git pull --rebase origin main
+            git push
+          fi
