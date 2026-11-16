@@ -1,0 +1,102 @@
+
+name: Discover Pumpfun Developers
+
+on:
+  workflow_dispatch:
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Discover developers
+        run: |
+          python3 - <<'PY'
+          import json
+          import urllib.request
+          from datetime import datetime, timezone
+
+          day = datetime.now(
+              timezone.utc
+          ).strftime("%Y-%m-%d")
+
+          url = (
+              "https://pumpdata.fun/launches/"
+              + day + ".json"
+          )
+
+          print("Downloading launches for:", day)
+
+          request = urllib.request.Request(
+              url,
+              headers={
+                  "User-Agent": "PumpLeaderboard/1.0"
+              }
+          )
+
+          with urllib.request.urlopen(
+              request, timeout=120
+          ) as response:
+              data = json.load(response)
+
+          columns = data["columns"]
+          launches = [
+              dict(zip(columns, row))
+              for row in data["launches"]
+          ]
+
+          developers = {}
+
+          for coin in launches:
+              wallet = coin.get("creator")
+              if not wallet:
+                  continue
+
+              if wallet not in developers:
+                  developers[wallet] = {
+                      "launches_today": 0,
+                      "previous_graduations":
+                          coin.get(
+                              "deployer_graduations_before",
+                              0
+                          )
+              }
+
+              developers[wallet][
+                  "launches_today"
+              ] += 1
+
+          experienced = {
+              wallet: record
+              for wallet, record
+              in developers.items()
+              if (
+                  record["previous_graduations"] or 0
+              ) >= 1
+          }
+
+          print("Total tokens:", len(launches))
+          print(
+              "Unique developers:",
+              len(developers)
+          )
+          print(
+              "Developers with previous graduations:",
+              len(experienced)
+          )
+
+          print("\nExample developers:")
+
+          for wallet, record in list(
+              experienced.items()
+          )[:10]:
+              print(
+                  wallet,
+                  "Launches today:",
+                  record["launches_today"],
+                  "Previous graduations:",
+                  record["previous_graduations"]
+              )
+
+          print("\nDISCOVERY TEST COMPLETE")
+          PY
