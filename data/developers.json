@@ -1,0 +1,25 @@
+{
+  "7ufmve7ZSFCzuNcKRunYrGtyb2Ka1MXzkWwf7jZhVsmL": {
+    "wallet": "7ufmve7ZSFCzuNcKRunYrGtyb2Ka1MXzkWwf7jZhVsmL",
+    "updated_at": "2026-11-16T13:29:36.089998+00:00",
+    "record": {
+      "launches": 948,
+      "graduations": 164,
+      "graduation_rate": 0.173,
+      "best_peak_usd": 921959.22,
+      "last_launch_gap_s": 344,
+      "launches_last_day": 17,
+      "last_launch": "2026-11-16T12:48:06Z",
+      "launches_after_build": 14,
+      "own_coins": {
+        "coins": 168,
+        "bought_at_launch_share": 1,
+        "out_within_10s_share": 0.018,
+        "median_exit_s": 14,
+        "net_sol": 557.5,
+        "over": "its launches in the tables' newest ~10 days"
+      },
+      "launches_live": 3
+    }
+  }
+}
