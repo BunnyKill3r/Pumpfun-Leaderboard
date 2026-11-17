@@ -1,0 +1,349 @@
+
+name: Merge Developer Graduations
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "58 */6 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: merge-developer-graduations
+  cancel-in-progress: false
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Merge confirmed graduations
+        run: |
+          python3 - <<'PY'
+          import json
+          import pathlib
+          from datetime import datetime, timezone
+
+          folder = pathlib.Path("data")
+
+          def read_file(name):
+              path = folder / name
+              if not path.exists():
+                  raise RuntimeError(
+                      "Missing required file: " + name
+                  )
+              return json.loads(path.read_text())
+
+          coin_data = read_file("developer-coins.json")
+          rank_data = read_file("top100.json")
+          feed_data = read_file("graduation-results.json")
+          api_data = read_file("coin-graduation-checks.json")
+
+          coins = {
+              c["coin_id"]: c
+              for c in coin_data.get("coins", [])
+              if c.get("coin_id")
+              and c.get("developer_id")
+          }
+
+          top = rank_data.get("top_100", [])
+
+          if not coins or not top:
+              raise RuntimeError(
+                  "Missing coin or developer records"
+              )
+
+          targets = {
+              d["developer_id"]
+              for d in top
+              if d.get("developer_id")
+          }
+
+          confirmed = {}
+
+          # Start with graduation feed confirmations.
+          for item in feed_data.get(
+              "confirmed_coins", []
+          ):
+              cid = item.get("coin_id")
+
+              if cid not in coins:
+                  continue
+
+              confirmed[cid] = {
+                  "coin_id": cid,
+                  "developer_id": coins[cid][
+                      "developer_id"
+                  ],
+                  "launch_date": coins[cid][
+                      "launch_date"
+                  ],
+                  "graduated_at": item.get(
+                      "graduated_at"
+                  ),
+                  "sources": ["graduation_feed"]
+              }
+
+          feed_confirmed = len(confirmed)
+
+          api_checked = set()
+          api_confirmed = set()
+          overlap = set()
+
+          # Merge individual API results.
+          for item in api_data.get("coins", []):
+              cid = item.get("coin_id")
+
+              if cid not in coins:
+                  continue
+
+              if item.get("checked_at"):
+                  api_checked.add(cid)
+
+              if item.get("graduated") is not True:
+                  continue
+
+              api_confirmed.add(cid)
+
+              if cid in confirmed:
+                  overlap.add(cid)
+
+                  if "individual_coin_api" not in (
+                      confirmed[cid]["sources"]
+                  ):
+                      confirmed[cid]["sources"].append(
+                          "individual_coin_api"
+                      )
+
+                  if (
+                      not confirmed[cid]["graduated_at"]
+                      and item.get("graduated_at")
+                  ):
+                      confirmed[cid]["graduated_at"] = (
+                          item["graduated_at"]
+                      )
+
+              else:
+                  confirmed[cid] = {
+                      "coin_id": cid,
+                      "developer_id": coins[cid][
+                          "developer_id"
+                      ],
+                      "launch_date": coins[cid][
+                          "launch_date"
+                      ],
+                      "graduated_at": item.get(
+                          "graduated_at"
+                      ),
+                      "sources": ["individual_coin_api"]
+                  }
+
+          # Also retain confirmed migration flags
+          # already stored by the coin collector.
+          coin_flags_added = 0
+
+          for cid, coin in coins.items():
+              if coin.get("graduated") is not True:
+                  continue
+
+              if cid not in confirmed:
+                  confirmed[cid] = {
+                      "coin_id": cid,
+                      "developer_id": coin[
+                          "developer_id"
+                      ],
+                      "launch_date": coin[
+                          "launch_date"
+                      ],
+                      "graduated_at": None,
+                      "sources": ["coin_launch_feed"]
+                  }
+                  coin_flags_added += 1
+              elif "coin_launch_feed" not in (
+                  confirmed[cid]["sources"]
+              ):
+                  confirmed[cid]["sources"].append(
+                      "coin_launch_feed"
+                  )
+
+          stats = {}
+
+          for dev in targets:
+              stats[dev] = {
+                  "coins_tracked": 0,
+                  "coins_api_checked": 0,
+                  "confirmed_graduations": 0
+              }
+
+          for cid, coin in coins.items():
+              dev = coin["developer_id"]
+
+              if dev not in stats:
+                  continue
+
+              stats[dev]["coins_tracked"] += 1
+
+              if cid in api_checked:
+                  stats[dev]["coins_api_checked"] += 1
+
+              if cid in confirmed:
+                  stats[dev][
+                      "confirmed_graduations"
+                  ] += 1
+
+          developers = []
+
+          for dev in top:
+              identifier = dev["developer_id"]
+              s = stats[identifier]
+
+              launches = s["coins_tracked"]
+              grads = s["confirmed_graduations"]
+              checked = s["coins_api_checked"]
+
+              developers.append({
+                  "developer_id": identifier,
+                  "launch_rank": dev.get("rank"),
+                  "coins_tracked": launches,
+                  "coins_api_checked": checked,
+                  "confirmed_graduations": grads,
+                  "minimum_graduation_rate": (
+                      round(100 * grads / launches, 2)
+                      if launches else None
+                  ),
+                  "api_check_coverage": (
+                      round(100 * checked / launches, 2)
+                      if launches else None
+                  )
+              })
+
+          developers.sort(
+              key=lambda d: (
+                  -d["confirmed_graduations"],
+                  -(
+                      d["minimum_graduation_rate"]
+                      if d["minimum_graduation_rate"]
+                      is not None else -1
+                  ),
+                  -d["coins_tracked"],
+                  d["developer_id"]
+              )
+          )
+
+          for index, dev in enumerate(developers, 1):
+              dev["graduation_rank"] = index
+
+          now = datetime.now(
+              timezone.utc
+          ).isoformat()
+
+          output = {
+              "updated_at": now,
+              "period_start": coin_data.get(
+                  "period_start"
+              ),
+              "period_end": coin_data.get(
+                  "period_end"
+              ),
+              "developers_ranked": len(developers),
+              "coins_tracked": len(coins),
+              "coins_api_checked": len(api_checked),
+              "confirmed_graduations": len(confirmed),
+              "feed_confirmed_in_window": (
+                  feed_confirmed
+              ),
+              "api_confirmed_in_window": len(
+                  api_confirmed
+              ),
+              "confirmed_in_both_sources": len(
+                  overlap
+              ),
+              "extra_coin_feed_confirmations": (
+                  coin_flags_added
+              ),
+              "note": (
+                  "Confirmed observed graduations "
+                  "within the tracked rolling window. "
+                  "Records are deduplicated by coin ID. "
+                  "API coverage counts successful "
+                  "individual checks only. "
+                  "Minimum graduation rates are lower "
+                  "bounds, not final success rates. "
+                  "The candidate set is the current "
+                  "launch-volume Top 100."
+              ),
+              "developers": developers,
+              "confirmed_coins": sorted(
+                  confirmed.values(),
+                  key=lambda c: (
+                      c["launch_date"],
+                      c["coin_id"]
+                  ),
+                  reverse=True
+              )
+          }
+
+          output_path = (
+              folder / "merged-graduations.json"
+          )
+
+          output_path.write_text(
+              json.dumps(
+                  output,
+                  separators=(",", ":")
+              ) + "\n"
+          )
+
+          print("SUCCESS")
+          print(
+              "Tracked coins:",
+              len(coins)
+          )
+          print(
+              "Feed-confirmed:",
+              feed_confirmed
+          )
+          print(
+              "API-confirmed:",
+              len(api_confirmed)
+          )
+          print(
+              "Confirmed by both:",
+              len(overlap)
+          )
+          print(
+              "Extra launch-feed confirmations:",
+              coin_flags_added
+          )
+          print(
+              "Unique confirmed graduations:",
+              len(confirmed)
+          )
+          print(
+              "Coins individually checked:",
+              len(api_checked)
+          )
+          print(
+              "Developers ranked:",
+              len(developers)
+          )
+          PY
+
+      - name: Commit merged graduation data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add -- data/merged-graduations.json
+
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Merge confirmed developer graduations"
+            git pull --rebase origin main
+            git push
+          fi
