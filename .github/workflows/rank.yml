@@ -1,5 +1,5 @@
 
-name: Build Top 100 Developers
+name: Build Top 100 and Top 500 Developers
 
 on:
   workflow_dispatch:
@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Build anonymous leaderboard
+      - name: Build developer leaderboards
         run: |
           python3 - <<'PY'
           import json
@@ -38,6 +38,7 @@ jobs:
           cutoff = today - timedelta(days=29)
 
           history_path = folder / "rank-history.json"
+
           if history_path.exists():
               history = json.loads(
                   history_path.read_text()
@@ -48,40 +49,49 @@ jobs:
           for offset in range(3):
               day = today - timedelta(days=offset)
               date = day.isoformat()
+
               url = (
                   "https://pumpdata.fun/launches/"
                   + date + ".json"
               )
 
               feed = None
+
               for attempt in range(3):
                   try:
                       req = urllib.request.Request(
                           url,
                           headers={
                               "User-Agent":
-                              "PumpLeaderboard/1.0"
+                              "PumpLeaderboard/1.1"
                           }
                       )
+
                       with urllib.request.urlopen(
                           req, timeout=180
                       ) as response:
                           feed = json.load(response)
+
                       break
+
                   except Exception as error:
                       print(
                           date,
                           "attempt", attempt + 1,
                           type(error).__name__
                       )
+
                       if attempt < 2:
-                          time.sleep(10 * (attempt + 1))
+                          time.sleep(
+                              10 * (attempt + 1)
+                          )
 
               if feed is None:
                   print("Unavailable:", date)
                   continue
 
-              columns = feed["columns"]
+              columns = feed.get("columns", [])
+
               positions = {
                   name: i
                   for i, name in enumerate(columns)
@@ -99,13 +109,25 @@ jobs:
                   }
               )
 
-              for row in feed["launches"]:
-                  wallet = row[positions["creator"]]
-                  if not isinstance(wallet, str) or not wallet:
+              for row in feed.get("launches", []):
+                  if not isinstance(
+                      row, (list, tuple)
+                  ):
                       continue
 
-                  # Hash wallet to avoid publishing
-                  # raw identifiers in GitHub.
+                  creator_index = positions["creator"]
+
+                  if len(row) <= creator_index:
+                      continue
+
+                  wallet = row[creator_index]
+
+                  if (
+                      not isinstance(wallet, str)
+                      or not wallet
+                  ):
+                      continue
+
                   dev_id = hashlib.sha256(
                       wallet.encode()
                   ).hexdigest()
@@ -113,28 +135,45 @@ jobs:
                   item = counts[dev_id]
                   item["launches"] += 1
 
-                  if "deployer_graduations_before" in positions:
+                  if (
+                      "deployer_graduations_before"
+                      in positions
+                  ):
+                      index = positions[
+                          "deployer_graduations_before"
+                      ]
+
                       try:
                           previous = int(
-                              row[
-                                  positions[
-                                      "deployer_graduations_before"
-                                  ]
-                              ] or 0
+                              row[index] or 0
                           )
-                      except (TypeError, ValueError):
+                      except (
+                          TypeError,
+                          ValueError,
+                          IndexError
+                      ):
                           previous = 0
 
-                      item["previous_graduations"] = max(
+                      item[
+                          "previous_graduations"
+                      ] = max(
                           item["previous_graduations"],
                           previous
                       )
 
                   if "migrated_at" in positions:
-                      if row[positions["migrated_at"]]:
-                          item["graduated_launches"] += 1
+                      index = positions["migrated_at"]
+
+                      if (
+                          len(row) > index
+                          and row[index]
+                      ):
+                          item[
+                              "graduated_launches"
+                          ] += 1
 
               history[date] = dict(counts)
+
               print(
                   "Processed:", date,
                   "developers:", len(counts)
@@ -142,8 +181,14 @@ jobs:
 
           history = {
               date: records
-              for date, records in sorted(history.items())
-              if cutoff.isoformat() <= date <= today.isoformat()
+              for date, records in sorted(
+                  history.items()
+              )
+              if (
+                  cutoff.isoformat()
+                  <= date
+                  <= today.isoformat()
+              )
           }
 
           developers = defaultdict(
@@ -158,73 +203,126 @@ jobs:
           for date, records in history.items():
               for dev_id, stats in records.items():
                   dev = developers[dev_id]
-                  dev["launches_30d"] += stats["launches"]
-                  dev["graduated_launches_observed"] += (
-                      stats["graduated_launches"]
+
+                  dev["launches_30d"] += (
+                      stats["launches"]
                   )
-                  dev["previous_graduations_max"] = max(
-                      dev["previous_graduations_max"],
-                      stats["previous_graduations"]
+
+                  dev[
+                      "graduated_launches_observed"
+                  ] += stats[
+                      "graduated_launches"
+                  ]
+
+                  dev[
+                      "previous_graduations_max"
+                  ] = max(
+                      dev[
+                          "previous_graduations_max"
+                      ],
+                      stats[
+                          "previous_graduations"
+                      ]
                   )
+
                   dev["active_days"] += 1
 
           ranking = sorted(
               developers.items(),
               key=lambda pair: (
-                  pair[1]["launches_30d"],
-                  pair[1]["graduated_launches_observed"]
-              ),
-              reverse=True
+                  -pair[1]["launches_30d"],
+                  -pair[1][
+                      "graduated_launches_observed"
+                  ],
+                  pair[0]
+              )
           )
 
-          top = []
-          for rank, (dev_id, stats) in enumerate(
-              ranking[:100], 1
-          ):
-              top.append({
+          # Build one consistent ranking.
+          ranked = []
+
+          for rank, (
+              dev_id, stats
+          ) in enumerate(ranking[:500], 1):
+
+              ranked.append({
                   "rank": rank,
                   "developer_id": dev_id[:16],
                   **stats
               })
 
-          result = {
-              "updated_at": datetime.now(
-                  timezone.utc
-              ).isoformat(),
+          now = datetime.now(
+              timezone.utc
+          ).isoformat()
+
+          common = {
+              "updated_at": now,
               "days_collected": len(history),
               "period_start": cutoff.isoformat(),
               "period_end": today.isoformat(),
               "ranking_method": "launch_count",
               "market_cap_ranking_available": False,
-              "total_developers": len(developers),
-              "top_100": top
+              "total_developers": len(developers)
+          }
+
+          # Preserve existing Top 100 format.
+          top100 = {
+              **common,
+              "top_100": ranked[:100]
+          }
+
+          # New Top 500 format.
+          top500 = {
+              **common,
+              "top_500": ranked[:500]
           }
 
           history_path.write_text(
-              json.dumps(history, separators=(",", ":"))
+              json.dumps(
+                  history,
+                  separators=(",", ":")
+              )
           )
 
           (folder / "top100.json").write_text(
-              json.dumps(result, indent=2)
+              json.dumps(top100, indent=2) + "\n"
+          )
+
+          (folder / "top500.json").write_text(
+              json.dumps(top500, indent=2) + "\n"
           )
 
           print("DAYS:", len(history))
-          print("DEVELOPERS:", len(developers))
-          print("TOP 100 READY")
+          print(
+              "TOTAL DEVELOPERS:",
+              len(developers)
+          )
+          print(
+              "TOP 100:",
+              len(top100["top_100"])
+          )
+          print(
+              "TOP 500:",
+              len(top500["top_500"])
+          )
+          print("SUCCESS")
           PY
 
-      - name: Save leaderboard
+      - name: Save leaderboards
         run: |
           git config user.name "github-actions[bot]"
           git config user.email \
             "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add data/rank-history.json data/top100.json
+          git add -- \
+            data/rank-history.json \
+            data/top100.json \
+            data/top500.json
 
           if git diff --cached --quiet; then
             echo "No changes"
           else
-            git commit -m "Update Top 100 developers"
+            git commit -m "Build Top 100 and Top 500 developers"
             git pull --rebase origin main
             git push
           fi
