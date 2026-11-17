@@ -1,5 +1,5 @@
 
-name: Collect Developer Wallets
+name: Collect Top 500 Developer Wallets
 
 on:
   workflow_dispatch:
@@ -33,22 +33,37 @@ jobs:
           folder = pathlib.Path("data")
           folder.mkdir(exist_ok=True)
 
+          ranking_path = folder / "top500.json"
+
+          if not ranking_path.exists():
+              raise RuntimeError(
+                  "top500.json missing. Run ranking workflow first."
+              )
+
           ranking = json.loads(
-              (folder / "top100.json").read_text()
+              ranking_path.read_text()
           )
 
-          top = ranking.get("top_100", [])
+          top = ranking.get("top_500", [])
+
           if not isinstance(top, list) or not top:
-              raise RuntimeError("Top 100 ranking is empty")
+              raise RuntimeError(
+                  "Top 500 ranking is empty"
+              )
 
           targets = {
               str(item["developer_id"])
               for item in top
+              if item.get("developer_id")
           }
+
+          print("Developers targeted:", len(targets))
 
           existing_path = folder / "wallets.json"
           known = {}
 
+          # Keep all previously verified wallet mappings,
+          # including wallets outside the current Top 500.
           if existing_path.exists():
               existing = json.loads(
                   existing_path.read_text()
@@ -61,6 +76,9 @@ jobs:
                   if not isinstance(wallet, str):
                       continue
 
+                  if not isinstance(identifier, str):
+                      continue
+
                   calculated = hashlib.sha256(
                       wallet.encode()
                   ).hexdigest()[:16]
@@ -70,15 +88,26 @@ jobs:
 
           print("Previously known wallets:", len(known))
 
+          missing = targets - set(known)
+
+          print("Initially missing:", len(missing))
+
           today = datetime.now(timezone.utc).date()
           successful_feeds = 0
 
-          for offset in range(3):
+          # Search newest dates first.
+          # Stop as soon as all current targets are found.
+          for offset in range(30):
+              if not missing:
+                  print("All target wallets recovered")
+                  break
+
               day = today - timedelta(days=offset)
+              date = day.isoformat()
 
               url = (
                   "https://pumpdata.fun/launches/"
-                  + day.isoformat() + ".json"
+                  + date + ".json"
               )
 
               feed = None
@@ -88,7 +117,7 @@ jobs:
                       request = urllib.request.Request(
                           url,
                           headers={
-                              "User-Agent": "Pumpwatch/1.0"
+                              "User-Agent": "Pumpwatch/1.1"
                           }
                       )
 
@@ -103,13 +132,16 @@ jobs:
                   except Exception as error:
                       print(
                           "Fetch failed:",
-                          day,
+                          date,
+                          "attempt:", attempt + 1,
                           type(error).__name__,
                           str(error)[:150]
                       )
 
                       if attempt < 2:
-                          time.sleep(10)
+                          time.sleep(
+                              10 * (attempt + 1)
+                          )
 
               if feed is None:
                   continue
@@ -117,44 +149,78 @@ jobs:
               columns = feed.get("columns", [])
 
               if "creator" not in columns:
-                  print("Creator column missing:", day)
+                  print(
+                      "Creator column missing:",
+                      date
+                  )
                   continue
 
               creator_index = columns.index("creator")
               successful_feeds += 1
+              found_today = 0
 
               for row in feed.get("launches", []):
+                  if not isinstance(
+                      row, (list, tuple)
+                  ):
+                      continue
+
                   if len(row) <= creator_index:
                       continue
 
                   wallet = row[creator_index]
 
-                  if not isinstance(wallet, str):
+                  if (
+                      not isinstance(wallet, str)
+                      or not wallet
+                  ):
                       continue
 
                   identifier = hashlib.sha256(
                       wallet.encode()
                   ).hexdigest()[:16]
 
-                  if identifier in targets:
+                  if identifier in missing:
                       known[identifier] = wallet
+                      missing.remove(identifier)
+                      found_today += 1
+
+                  if not missing:
+                      break
 
               print(
-                  day,
-                  "current Top 100 matches:",
-                  len(targets.intersection(known))
+                  date,
+                  "new matches:", found_today,
+                  "total matched:",
+                  len(targets - missing),
+                  "remaining:", len(missing)
               )
 
+          matched = len(targets - missing)
+
+          # If no feeds were available, don't destroy
+          # the mappings we already have.
           if successful_feeds == 0:
-              raise RuntimeError(
-                  "No daily feeds available; keeping old file"
+              print(
+                  "No new feeds processed.",
+                  "Retaining verified mappings."
               )
 
+          if matched == 0:
+              raise RuntimeError(
+                  "No target wallets available; "
+                  "existing file preserved."
+              )
+
+          # Publish current Top 500 first, in rank order.
+          # Then append previously known wallets outside
+          # the current Top 500 so they are not lost.
           selected = []
+          published_ids = set()
 
           for developer in top:
               identifier = str(
-                  developer["developer_id"]
+                  developer.get("developer_id", "")
               )
 
               if identifier in known:
@@ -162,22 +228,24 @@ jobs:
                       "developer_id": identifier,
                       "wallet": known[identifier]
                   })
+                  published_ids.add(identifier)
 
-              if len(selected) >= 100:
-                  break
-
-          # Do not overwrite a useful existing mapping
-          # with an empty result.
-          if not selected:
-              raise RuntimeError(
-                  "No matching wallets found"
-              )
+          for identifier in sorted(known):
+              if identifier not in published_ids:
+                  selected.append({
+                      "developer_id": identifier,
+                      "wallet": known[identifier]
+                  })
 
           output = {
               "updated_at": datetime.now(
                   timezone.utc
               ).isoformat(),
-              "matched": len(selected),
+              "target_developers": len(targets),
+              "matched": matched,
+              "missing": len(missing),
+              "total_wallets_retained": len(selected),
+              "feeds_processed": successful_feeds,
               "developers": selected
           }
 
@@ -185,7 +253,14 @@ jobs:
               json.dumps(output, indent=2) + "\n"
           )
 
-          print("Wallets published:", len(selected))
+          print("")
+          print("========== WALLET RESULTS ==========")
+          print("Top 500 targets:", len(targets))
+          print("Top 500 matched:", matched)
+          print("Top 500 missing:", len(missing))
+          print("Total wallets retained:", len(selected))
+          print("Feeds processed:", successful_feeds)
+          print("====================================")
           print("Wallet collection completed")
           PY
 
@@ -200,7 +275,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No wallet changes"
           else
-            git commit -m "Update developer wallet mappings"
+            git commit -m "Update Top 500 developer wallet mappings"
             git pull --rebase origin main
             git push
           fi
