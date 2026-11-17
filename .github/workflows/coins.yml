@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Build rolling coin history
+      - name: Build rolling coin history and mint mapping
         run: |
           python3 - <<'PY'
           import json
@@ -31,6 +31,7 @@ jobs:
           from datetime import datetime, timezone, timedelta
 
           folder = pathlib.Path("data")
+
           ranking = json.loads(
               (folder / "top100.json").read_text()
           )
@@ -39,10 +40,12 @@ jobs:
           )
 
           top = ranking.get("top_100", [])
+
           wallet_map = {
               item["wallet"]: item["developer_id"]
               for item in wallets.get("developers", [])
-              if item.get("wallet") and item.get("developer_id")
+              if item.get("wallet")
+              and item.get("developer_id")
           }
 
           targets = {
@@ -50,18 +53,24 @@ jobs:
               for item in top
           }
 
-          output_path = folder / "developer-coins.json"
+          coin_path = folder / "developer-coins.json"
+          mint_path = folder / "coin-mints.json"
+
           previous = {}
 
-          if output_path.exists():
-              old = json.loads(output_path.read_text())
+          if coin_path.exists():
+              old = json.loads(coin_path.read_text())
+
               for item in old.get("coins", []):
                   key = item.get("coin_id")
+
                   if key:
                       previous[key] = item
 
           today = datetime.now(timezone.utc).date()
-          cutoff = (today - timedelta(days=29)).isoformat()
+          cutoff = (
+              today - timedelta(days=29)
+          ).isoformat()
 
           coins = {
               key: item
@@ -70,12 +79,53 @@ jobs:
               and item.get("developer_id") in targets
           }
 
+          # Preserve previously recovered mint addresses.
+          mints = {}
+
+          if mint_path.exists():
+              old_mints = json.loads(
+                  mint_path.read_text()
+              )
+
+              for item in old_mints.get("coins", []):
+                  cid = item.get("coin_id")
+                  mint = item.get("mint")
+
+                  if not cid or not mint:
+                      continue
+
+                  # Verify the mint matches its stored hash.
+                  calculated = hashlib.sha256(
+                      mint.encode()
+                  ).hexdigest()
+
+                  if calculated != cid:
+                      print(
+                          "Skipping invalid mint mapping:",
+                          cid[:12]
+                      )
+                      continue
+
+                  if cid in coins:
+                      mints[cid] = {
+                          "coin_id": cid,
+                          "mint": mint,
+                          "developer_id": coins[cid][
+                              "developer_id"
+                          ],
+                          "launch_date": coins[cid][
+                              "launch_date"
+                          ]
+                      }
+
           successful = 0
           new_count = 0
+          recovered_count = 0
 
           for offset in range(3):
               day = today - timedelta(days=offset)
               date = day.isoformat()
+
               url = (
                   "https://pumpdata.fun/launches/"
                   + date + ".json"
@@ -88,22 +138,25 @@ jobs:
                       request = urllib.request.Request(
                           url,
                           headers={
-                              "User-Agent": "Pumpwatch/1.0"
+                              "User-Agent": "Pumpwatch/1.1"
                           }
                       )
 
                       with urllib.request.urlopen(
-                          request, timeout=180
+                          request,
+                          timeout=180
                       ) as response:
                           feed = json.load(response)
 
                       break
+
                   except Exception as error:
                       print(
                           "Feed unavailable:",
                           date,
                           str(error)[:120]
                       )
+
                       if attempt < 2:
                           time.sleep(10)
 
@@ -111,6 +164,11 @@ jobs:
                   continue
 
               columns = feed.get("columns", [])
+
+              if not isinstance(columns, list):
+                  print("Invalid feed columns:", date)
+                  continue
+
               required = {"creator", "mint"}
 
               if not required.issubset(set(columns)):
@@ -120,13 +178,21 @@ jobs:
               creator_idx = columns.index("creator")
               mint_idx = columns.index("mint")
 
+              migrated_idx = (
+                  columns.index("migrated_at")
+                  if "migrated_at" in columns
+                  else None
+              )
+
               successful += 1
 
               for row in feed.get("launches", []):
                   if not isinstance(row, (list, tuple)):
                       continue
 
-                  if len(row) <= max(creator_idx, mint_idx):
+                  if len(row) <= max(
+                      creator_idx, mint_idx
+                  ):
                       continue
 
                   creator = row[creator_idx]
@@ -134,6 +200,7 @@ jobs:
 
                   if not isinstance(creator, str):
                       continue
+
                   if not isinstance(mint, str):
                       continue
 
@@ -142,9 +209,6 @@ jobs:
                   if developer_id not in targets:
                       continue
 
-                  # Use a stable token identifier.
-                  # Keep raw mint addresses out of Git
-                  # until publication is separately tested.
                   coin_id = hashlib.sha256(
                       mint.encode()
                   ).hexdigest()
@@ -157,12 +221,37 @@ jobs:
                           "graduated": None,
                           "peak_market_cap_usd": None
                       }
+
                       new_count += 1
+
+                  # Recover mint address for both
+                  # new and existing coin records.
+                  if coin_id not in mints:
+                      mints[coin_id] = {
+                          "coin_id": coin_id,
+                          "mint": mint,
+                          "developer_id": developer_id,
+                          "launch_date": coins[coin_id][
+                              "launch_date"
+                          ]
+                      }
+
+                      recovered_count += 1
+
+                  # Preserve any graduation already known.
+                  if migrated_idx is not None:
+                      if len(row) > migrated_idx:
+                          if row[migrated_idx]:
+                              coins[coin_id][
+                                  "graduated"
+                              ] = True
 
               print(
                   date,
-                  "total tracked coins:",
-                  len(coins)
+                  "tracked coins:",
+                  len(coins),
+                  "mint addresses:",
+                  len(mints)
               )
 
           if successful == 0:
@@ -184,47 +273,91 @@ jobs:
 
           for coin in records:
               identifier = coin["developer_id"]
-              counts[identifier] = counts.get(identifier, 0) + 1
+              counts[identifier] = (
+                  counts.get(identifier, 0) + 1
+              )
+
+          now = datetime.now(
+              timezone.utc
+          ).isoformat()
 
           output = {
-              "updated_at": datetime.now(
-                  timezone.utc
-              ).isoformat(),
+              "updated_at": now,
               "period_start": cutoff,
               "period_end": today.isoformat(),
               "developers_tracked": len(targets),
               "developers_with_coins": len(counts),
               "coins_tracked": len(records),
               "new_coins_this_run": new_count,
+              "mints_available": len(mints),
+              "mints_recovered_this_run": recovered_count,
               "note": (
                   "Rolling observed coin history. "
-                  "Older days were not backfilled. "
-                  "Graduation and peak MC not yet collected."
+                  "Original mint addresses are stored "
+                  "separately in coin-mints.json. "
+                  "Older unavailable feed dates "
+                  "cannot automatically be recovered. "
+                  "Peak MC not yet collected."
               ),
               "coins": records
           }
 
-          output_path.write_text(
+          mint_output = {
+              "updated_at": now,
+              "period_start": cutoff,
+              "period_end": today.isoformat(),
+              "coins_with_mints": len(mints),
+              "coins_without_mints": (
+                  len(records) - len(mints)
+              ),
+              "note": (
+                  "Public Solana token mint addresses. "
+                  "Used for future individual coin "
+                  "graduation checks."
+              ),
+              "coins": sorted(
+                  mints.values(),
+                  key=lambda item: (
+                      item["launch_date"],
+                      item["coin_id"]
+                  ),
+                  reverse=True
+              )
+          }
+
+          coin_path.write_text(
               json.dumps(output, indent=2) + "\n"
           )
 
-          print("Developer coin history saved")
-          print("Coins:", len(records))
-          print("Developers with coins:", len(counts))
+          mint_path.write_text(
+              json.dumps(mint_output, indent=2) + "\n"
+          )
+
+          print("SUCCESS")
+          print("Tracked coins:", len(records))
+          print("New coins:", new_count)
+          print("Mint addresses available:", len(mints))
+          print("Mint addresses recovered:", recovered_count)
+          print(
+              "Older coins without mint addresses:",
+              len(records) - len(mints)
+          )
           PY
 
-      - name: Commit coin history
+      - name: Commit coin history and mint mapping
         run: |
           git config user.name "github-actions[bot]"
           git config user.email \
             "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add -- data/developer-coins.json
+          git add -- \
+            data/developer-coins.json \
+            data/coin-mints.json
 
           if git diff --cached --quiet; then
             echo "No changes"
           else
-            git commit -m "Update developer coin history"
+            git commit -m "Preserve coin mint addresses"
             git pull --rebase origin main
             git push
           fi
