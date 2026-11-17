@@ -1,5 +1,4 @@
-
-name: Collect Developer Coins
+name: Collect Top 500 Developer Coins
 
 on:
   workflow_dispatch:
@@ -23,325 +22,201 @@ jobs:
       - name: Build rolling coin history and mint mapping
         run: |
           python3 - <<'PY'
-          import json
           import hashlib
+          import json
           import pathlib
-          import urllib.request
           import time
-          from datetime import datetime, timezone, timedelta
+          import urllib.request
+          from datetime import datetime, timedelta, timezone
 
           folder = pathlib.Path("data")
+          folder.mkdir(exist_ok=True)
+          ranking = json.loads((folder / "top500.json").read_text())
+          wallets = json.loads((folder / "wallets.json").read_text())
+          top = ranking.get("top_500", [])
+          if not isinstance(top, list) or not top:
+              raise RuntimeError("Top 500 ranking missing or empty")
 
-          ranking = json.loads(
-              (folder / "top100.json").read_text()
-          )
-          wallets = json.loads(
-              (folder / "wallets.json").read_text()
-          )
+          targets = {str(d["developer_id"]) for d in top}
+          wallet_map = {}
+          for item in wallets.get("developers", []):
+              wallet = item.get("wallet")
+              dev_id = item.get("developer_id")
+              if not isinstance(wallet, str) or not isinstance(dev_id, str):
+                  continue
+              if hashlib.sha256(wallet.encode()).hexdigest()[:16] == dev_id:
+                  wallet_map[wallet] = dev_id
+          matched_targets = targets.intersection(wallet_map.values())
+          print("Top 500 targets:", len(targets))
+          print("Wallets matched:", len(matched_targets))
+          if not matched_targets:
+              raise RuntimeError("No valid target wallet mappings")
 
-          top = ranking.get("top_100", [])
-
-          wallet_map = {
-              item["wallet"]: item["developer_id"]
-              for item in wallets.get("developers", [])
-              if item.get("wallet")
-              and item.get("developer_id")
-          }
-
-          targets = {
-              str(item["developer_id"])
-              for item in top
-          }
-
+          today = datetime.now(timezone.utc).date()
+          cutoff = today - timedelta(days=29)
+          cutoff_text = cutoff.isoformat()
           coin_path = folder / "developer-coins.json"
           mint_path = folder / "coin-mints.json"
 
-          previous = {}
-
+          # Keep all existing in-window coins, including developers who
+          # have temporarily fallen outside the Top 500.
+          coins = {}
           if coin_path.exists():
               old = json.loads(coin_path.read_text())
-
               for item in old.get("coins", []):
-                  key = item.get("coin_id")
+                  cid = item.get("coin_id")
+                  date = item.get("launch_date", "")
+                  if cid and cutoff_text <= date <= today.isoformat():
+                      coins[cid] = item
+          initial_count = len(coins)
 
-                  if key:
-                      previous[key] = item
-
-          today = datetime.now(timezone.utc).date()
-          cutoff = (
-              today - timedelta(days=29)
-          ).isoformat()
-
-          coins = {
-              key: item
-              for key, item in previous.items()
-              if item.get("launch_date", "") >= cutoff
-              and item.get("developer_id") in targets
-          }
-
-          # Preserve previously recovered mint addresses.
+          # Retain and verify every in-window mint mapping. A mapping is
+          # useful even if the corresponding coin is no longer Top 500.
           mints = {}
-
           if mint_path.exists():
-              old_mints = json.loads(
-                  mint_path.read_text()
-              )
-
+              old_mints = json.loads(mint_path.read_text())
               for item in old_mints.get("coins", []):
                   cid = item.get("coin_id")
                   mint = item.get("mint")
-
-                  if not cid or not mint:
+                  if not isinstance(cid, str) or not isinstance(mint, str):
                       continue
-
-                  # Verify the mint matches its stored hash.
-                  calculated = hashlib.sha256(
-                      mint.encode()
-                  ).hexdigest()
-
-                  if calculated != cid:
-                      print(
-                          "Skipping invalid mint mapping:",
-                          cid[:12]
-                      )
+                  if hashlib.sha256(mint.encode()).hexdigest() != cid:
+                      print("Invalid mint mapping skipped:", cid[:12])
                       continue
-
                   if cid in coins:
                       mints[cid] = {
                           "coin_id": cid,
                           "mint": mint,
-                          "developer_id": coins[cid][
-                              "developer_id"
-                          ],
-                          "launch_date": coins[cid][
-                              "launch_date"
-                          ]
+                          "developer_id": coins[cid]["developer_id"],
+                          "launch_date": coins[cid]["launch_date"]
                       }
 
           successful = 0
+          failed_dates = []
           new_count = 0
           recovered_count = 0
 
-          for offset in range(3):
+          # Backfill the full 30-day window. This is necessary for the
+          # newly added developers, not just the latest three days.
+          for offset in range(30):
               day = today - timedelta(days=offset)
               date = day.isoformat()
-
-              url = (
-                  "https://pumpdata.fun/launches/"
-                  + date + ".json"
-              )
-
+              url = "https://pumpdata.fun/launches/" + date + ".json"
               feed = None
-
               for attempt in range(3):
                   try:
                       request = urllib.request.Request(
-                          url,
-                          headers={
-                              "User-Agent": "Pumpwatch/1.1"
-                          }
+                          url, headers={"User-Agent": "Pumpwatch/1.2"}
                       )
-
-                      with urllib.request.urlopen(
-                          request,
-                          timeout=180
-                      ) as response:
+                      with urllib.request.urlopen(request, timeout=180) as response:
                           feed = json.load(response)
-
                       break
-
                   except Exception as error:
-                      print(
-                          "Feed unavailable:",
-                          date,
-                          str(error)[:120]
-                      )
-
+                      print("Feed unavailable:", date, "attempt", attempt + 1,
+                            type(error).__name__, str(error)[:120])
                       if attempt < 2:
-                          time.sleep(10)
-
-              if feed is None:
+                          time.sleep(10 * (attempt + 1))
+              if not isinstance(feed, dict):
+                  failed_dates.append(date)
                   continue
-
               columns = feed.get("columns", [])
-
-              if not isinstance(columns, list):
-                  print("Invalid feed columns:", date)
+              if not isinstance(columns, list) or not {"creator", "mint"}.issubset(columns):
+                  print("Required columns missing:", date)
+                  failed_dates.append(date)
                   continue
-
-              required = {"creator", "mint"}
-
-              if not required.issubset(set(columns)):
-                  print("Missing required columns:", date)
-                  continue
-
               creator_idx = columns.index("creator")
               mint_idx = columns.index("mint")
-
-              migrated_idx = (
-                  columns.index("migrated_at")
-                  if "migrated_at" in columns
-                  else None
-              )
-
+              migrated_idx = columns.index("migrated_at") if "migrated_at" in columns else None
               successful += 1
-
+              day_new = 0
               for row in feed.get("launches", []):
-                  if not isinstance(row, (list, tuple)):
+                  if not isinstance(row, (list, tuple)) or len(row) <= max(creator_idx, mint_idx):
                       continue
-
-                  if len(row) <= max(
-                      creator_idx, mint_idx
-                  ):
-                      continue
-
                   creator = row[creator_idx]
                   mint = row[mint_idx]
-
-                  if not isinstance(creator, str):
+                  if not isinstance(creator, str) or not isinstance(mint, str) or not mint:
                       continue
-
-                  if not isinstance(mint, str):
-                      continue
-
                   developer_id = wallet_map.get(creator)
-
                   if developer_id not in targets:
                       continue
-
-                  coin_id = hashlib.sha256(
-                      mint.encode()
-                  ).hexdigest()
-
-                  if coin_id not in coins:
-                      coins[coin_id] = {
-                          "coin_id": coin_id,
+                  cid = hashlib.sha256(mint.encode()).hexdigest()
+                  if cid not in coins:
+                      coins[cid] = {
+                          "coin_id": cid,
                           "developer_id": developer_id,
                           "launch_date": date,
                           "graduated": None,
                           "peak_market_cap_usd": None
                       }
-
                       new_count += 1
-
-                  # Recover mint address for both
-                  # new and existing coin records.
-                  if coin_id not in mints:
-                      mints[coin_id] = {
-                          "coin_id": coin_id,
+                      day_new += 1
+                  if cid not in mints:
+                      mints[cid] = {
+                          "coin_id": cid,
                           "mint": mint,
-                          "developer_id": developer_id,
-                          "launch_date": coins[coin_id][
-                              "launch_date"
-                          ]
+                          "developer_id": coins[cid]["developer_id"],
+                          "launch_date": coins[cid]["launch_date"]
                       }
-
                       recovered_count += 1
-
-                  # Preserve any graduation already known.
-                  if migrated_idx is not None:
-                      if len(row) > migrated_idx:
-                          if row[migrated_idx]:
-                              coins[coin_id][
-                                  "graduated"
-                              ] = True
-
-              print(
-                  date,
-                  "tracked coins:",
-                  len(coins),
-                  "mint addresses:",
-                  len(mints)
-              )
+                  if migrated_idx is not None and len(row) > migrated_idx and row[migrated_idx]:
+                      coins[cid]["graduated"] = True
+              print(date, "new coins:", day_new, "total coins:", len(coins),
+                    "mint mappings:", len(mints))
 
           if successful == 0:
-              raise RuntimeError(
-                  "No launch feeds available; "
-                  "existing history was preserved"
-              )
+              raise RuntimeError("No launch feeds available; files left unchanged")
 
-          records = sorted(
-              coins.values(),
-              key=lambda item: (
-                  item["launch_date"],
-                  item["coin_id"]
-              ),
-              reverse=True
-          )
-
-          counts = {}
-
-          for coin in records:
-              identifier = coin["developer_id"]
-              counts[identifier] = (
-                  counts.get(identifier, 0) + 1
-              )
-
-          now = datetime.now(
-              timezone.utc
-          ).isoformat()
-
+          records = sorted(coins.values(),
+                           key=lambda item: (item["launch_date"], item["coin_id"]),
+                           reverse=True)
+          mint_records = sorted(mints.values(),
+                                key=lambda item: (item["launch_date"], item["coin_id"]),
+                                reverse=True)
+          developer_ids = {item["developer_id"] for item in records}
+          now = datetime.now(timezone.utc).isoformat()
           output = {
               "updated_at": now,
-              "period_start": cutoff,
+              "period_start": cutoff_text,
               "period_end": today.isoformat(),
               "developers_tracked": len(targets),
-              "developers_with_coins": len(counts),
+              "developers_with_wallets": len(matched_targets),
+              "developers_with_coins": len(developer_ids),
               "coins_tracked": len(records),
               "new_coins_this_run": new_count,
               "mints_available": len(mints),
               "mints_recovered_this_run": recovered_count,
+              "feeds_processed": successful,
+              "feeds_unavailable": len(failed_dates),
               "note": (
-                  "Rolling observed coin history. "
-                  "Original mint addresses are stored "
-                  "separately in coin-mints.json. "
-                  "Older unavailable feed dates "
-                  "cannot automatically be recovered. "
-                  "Peak MC not yet collected."
+                  "Rolling 30-day observed coin history for the current Top 500 "
+                  "plus retained in-window records from earlier rankings. "
+                  "Original mint addresses are in coin-mints.json. "
+                  "Unavailable feed dates may leave gaps. "
+                  "Peak market cap is not collected."
               ),
               "coins": records
           }
-
           mint_output = {
               "updated_at": now,
-              "period_start": cutoff,
+              "period_start": cutoff_text,
               "period_end": today.isoformat(),
               "coins_with_mints": len(mints),
-              "coins_without_mints": (
-                  len(records) - len(mints)
-              ),
-              "note": (
-                  "Public Solana token mint addresses. "
-                  "Used for future individual coin "
-                  "graduation checks."
-              ),
-              "coins": sorted(
-                  mints.values(),
-                  key=lambda item: (
-                      item["launch_date"],
-                      item["coin_id"]
-                  ),
-                  reverse=True
-              )
+              "coins_without_mints": len(records) - len(mints),
+              "note": "Verified public Solana mint addresses for individual coin checks.",
+              "coins": mint_records
           }
-
-          coin_path.write_text(
-              json.dumps(output, indent=2) + "\n"
-          )
-
-          mint_path.write_text(
-              json.dumps(mint_output, indent=2) + "\n"
-          )
-
+          coin_path.write_text(json.dumps(output, indent=2) + "\n")
+          mint_path.write_text(json.dumps(mint_output, indent=2) + "\n")
           print("SUCCESS")
-          print("Tracked coins:", len(records))
+          print("Previously tracked coins retained:", initial_count)
+          print("Top 500 target wallets matched:", len(matched_targets))
+          print("Feeds processed:", successful)
+          print("Feeds unavailable:", len(failed_dates))
+          print("Coins tracked:", len(records))
           print("New coins:", new_count)
           print("Mint addresses available:", len(mints))
           print("Mint addresses recovered:", recovered_count)
-          print(
-              "Older coins without mint addresses:",
-              len(records) - len(mints)
-          )
+          print("Coins without mint mappings:", len(records) - len(mints))
           PY
 
       - name: Commit coin history and mint mapping
@@ -357,7 +232,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes"
           else
-            git commit -m "Preserve coin mint addresses"
+            git commit -m "Track Top 500 developer coins and mint mappings"
             git pull --rebase origin main
             git push
           fi
