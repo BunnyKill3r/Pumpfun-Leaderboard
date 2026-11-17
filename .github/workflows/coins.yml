@@ -24,6 +24,7 @@ jobs:
           python3 - <<'PY'
           import hashlib
           import json
+          import urllib.error
           import pathlib
           import time
           import urllib.request
@@ -111,6 +112,13 @@ jobs:
                       with urllib.request.urlopen(request, timeout=180) as response:
                           feed = json.load(response)
                       break
+                  except urllib.error.HTTPError as error:
+                      print(".HTTP error:", date, error.code)
+                      if error.code == 404:
+                          break
+                      if attempt < 2:
+                          time.sleep(10 * (attempt + 1))
+
                   except Exception as error:
                       print("Feed unavailable:", date, "attempt", attempt + 1,
                             type(error).__name__, str(error)[:120])
