@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-16T23:03:44.696091+00:00",
+  "updated_at": "2026-11-17T07:52:39.960909+00:00",
   "matched": 100,
   "developers": [
     {
@@ -11,48 +11,24 @@
       "wallet": "9qNxULtvikpqUg9po6DVjCP7w7s6QFqe333eA4Coi5AA"
     },
     {
-      "developer_id": "5e306f792b167498",
-      "wallet": "K6Eh9fwKkrhVNq6SpRtJn7F4Myi3HUst5QP8x5BKHnR"
-    },
-    {
       "developer_id": "b2bf121b5a316442",
       "wallet": "7FVfSdnR9VPGjMtmBP1Hz9C2DFTpoNX8gVVRmnimnGt9"
+    },
+    {
+      "developer_id": "5e306f792b167498",
+      "wallet": "K6Eh9fwKkrhVNq6SpRtJn7F4Myi3HUst5QP8x5BKHnR"
     },
     {
       "developer_id": "85151771f9134c7e",
       "wallet": "9mYfXc9YUiMUSugSfJ9GPDNk6KzTcZfb1YUCywjkyVhz"
     },
     {
-      "developer_id": "b9c0974b1bfe89ec",
-      "wallet": "4A1npYL3rJQZXVmEjVdSFpx99TwY7bhm9VqFB5ACA2o3"
-    },
-    {
-      "developer_id": "817236b2514f79db",
-      "wallet": "B4hdEFZc7GypBdjaX3Q6VTzxCXGgWDPFXhPxu3LSWnQQ"
-    },
-    {
-      "developer_id": "7326e756129de207",
-      "wallet": "13XfHNQTeQ4yMkk7SX5rWTdfW8PDkYCB7hgkGCxJrZ8N"
-    },
-    {
-      "developer_id": "606e709a921111cb",
-      "wallet": "5TPLRm9LeizVQvw9FrqotcKajRtM8UjnSErjMQfgBTqj"
-    },
-    {
-      "developer_id": "2ac9f64456974590",
-      "wallet": "EjcwXG6ywzorxLcX7565C614LdhxiHF6uJhkYyRTDVgZ"
-    },
-    {
-      "developer_id": "77f19c54e36cc97f",
-      "wallet": "G2v4GQeAhTxzygMUxaXap8FMPrAnkrUXg8W9aBgAfR3X"
-    },
-    {
-      "developer_id": "a554391da1d47e2d",
-      "wallet": "HedPhc4MUQpqotZYmQJLbv6BrJLJ6jCrfCM1jTj6Cp2T"
-    },
-    {
       "developer_id": "2d7782c0d4945c38",
       "wallet": "39WgDrVwJ8irBQuvhJ296ZSUs6Wsw1H9rtxb88ZbuC59"
+    },
+    {
+      "developer_id": "b9c0974b1bfe89ec",
+      "wallet": "4A1npYL3rJQZXVmEjVdSFpx99TwY7bhm9VqFB5ACA2o3"
     },
     {
       "developer_id": "45e01107c105ad2b",
@@ -63,52 +39,100 @@
       "wallet": "GgNSsDXrPrmXdzzYujGuh7Fok8tK98gG1xGCYQDU8bzr"
     },
     {
-      "developer_id": "88f58939dd35f693",
-      "wallet": "2o6PxoVRbduSfYGDU96p3x6dB6NFTDbYmyhMtkuD6GPZ"
+      "developer_id": "7326e756129de207",
+      "wallet": "13XfHNQTeQ4yMkk7SX5rWTdfW8PDkYCB7hgkGCxJrZ8N"
     },
     {
-      "developer_id": "728de34c9ef9b51f",
-      "wallet": "ovEWyQbH4dGKEbc6mdQPyecPx99omK1Xuqf3E5jEeNy"
+      "developer_id": "2ac9f64456974590",
+      "wallet": "EjcwXG6ywzorxLcX7565C614LdhxiHF6uJhkYyRTDVgZ"
     },
     {
-      "developer_id": "92457f7bfbd9fbe4",
-      "wallet": "CAeRFr5gGWFTR5MEJD3EUd73emvMqEN8dxqPa6JnjJwy"
+      "developer_id": "e2452d0baefec4b6",
+      "wallet": "7AUb9nEU22XGL4F32bsFkN59hDq7gPCYSiwR7rXPVwmL"
     },
     {
-      "developer_id": "13932823b7cbd741",
-      "wallet": "DxKk91PUQsgNjTBQK4ZVBy6QL8WDEuPBDkoFGzQ7katx"
+      "developer_id": "817236b2514f79db",
+      "wallet": "B4hdEFZc7GypBdjaX3Q6VTzxCXGgWDPFXhPxu3LSWnQQ"
+    },
+    {
+      "developer_id": "606e709a921111cb",
+      "wallet": "5TPLRm9LeizVQvw9FrqotcKajRtM8UjnSErjMQfgBTqj"
+    },
+    {
+      "developer_id": "09208ea9247bc8d1",
+      "wallet": "87RD6rbSbE5DVBd1Zr9eWFmBP8XVCoukHp9kZr2YMKty"
+    },
+    {
+      "developer_id": "e7f15be1a89f6402",
+      "wallet": "dtrzJPj7yDdvm6eRqBAgxsK2sMJeD9HhBEBB3XMedXy"
+    },
+    {
+      "developer_id": "a554391da1d47e2d",
+      "wallet": "HedPhc4MUQpqotZYmQJLbv6BrJLJ6jCrfCM1jTj6Cp2T"
+    },
+    {
+      "developer_id": "77f19c54e36cc97f",
+      "wallet": "G2v4GQeAhTxzygMUxaXap8FMPrAnkrUXg8W9aBgAfR3X"
     },
     {
       "developer_id": "ff26cf985d0274ab",
       "wallet": "ArLugmai8XHkZY4cvz3hM3jPeEwz7FA7CgZUSXQtZq1X"
     },
     {
-      "developer_id": "8547d350b9b0f55e",
-      "wallet": "BgeVcVJcXJRmYA5DtbFWJwthds4Aw1ujenNvKwjAUaq3"
+      "developer_id": "728de34c9ef9b51f",
+      "wallet": "ovEWyQbH4dGKEbc6mdQPyecPx99omK1Xuqf3E5jEeNy"
+    },
+    {
+      "developer_id": "88f58939dd35f693",
+      "wallet": "2o6PxoVRbduSfYGDU96p3x6dB6NFTDbYmyhMtkuD6GPZ"
     },
     {
       "developer_id": "589c106c05d03edc",
       "wallet": "HWUnfRdrzFfyPpVcmZHr9FdenUP1hjP1C7jUSyzYP1FH"
     },
     {
+      "developer_id": "92457f7bfbd9fbe4",
+      "wallet": "CAeRFr5gGWFTR5MEJD3EUd73emvMqEN8dxqPa6JnjJwy"
+    },
+    {
       "developer_id": "6adc57e15b90b309",
       "wallet": "7qS94nqG8TXifQ7ptKrFWs9aU34uh6RssdJ5QBYAQDk5"
     },
     {
-      "developer_id": "93e52eed68550b8f",
-      "wallet": "65U6sScnsg27UwzxZSLHvd1E3F17ntsvn2WUQ1p7xh6z"
+      "developer_id": "13932823b7cbd741",
+      "wallet": "DxKk91PUQsgNjTBQK4ZVBy6QL8WDEuPBDkoFGzQ7katx"
+    },
+    {
+      "developer_id": "4b2c3c63443e6344",
+      "wallet": "Er15bSCBaPLq8sHvmudUsQ5N3XVc6VKNSpppJmVjYrZo"
     },
     {
       "developer_id": "4e99f51793587251",
       "wallet": "5pUgxQGgX36GyV5BdsBNRAw9JxJ6Br4UVddJmJ3sumhc"
     },
     {
+      "developer_id": "8547d350b9b0f55e",
+      "wallet": "BgeVcVJcXJRmYA5DtbFWJwthds4Aw1ujenNvKwjAUaq3"
+    },
+    {
+      "developer_id": "93e52eed68550b8f",
+      "wallet": "65U6sScnsg27UwzxZSLHvd1E3F17ntsvn2WUQ1p7xh6z"
+    },
+    {
+      "developer_id": "10aabe0e837e478d",
+      "wallet": "FsnFcAv3pu5cBUUnySB2M4SHCDwqduUqNws9kasMxdZi"
+    },
+    {
+      "developer_id": "2bbc462c1cf8faa8",
+      "wallet": "2aptgPfRxgTZ686daBhqN5q8dmy8f647gWbUyKkpSzAV"
+    },
+    {
       "developer_id": "28fc7574d5da5da8",
       "wallet": "Hdx3iudJJPyAciC13jbgtkrF3GesuLh73Bxf4JocXpqa"
     },
     {
-      "developer_id": "e2452d0baefec4b6",
-      "wallet": "7AUb9nEU22XGL4F32bsFkN59hDq7gPCYSiwR7rXPVwmL"
+      "developer_id": "cab2731206888c45",
+      "wallet": "76We7rQBukPr1wq8y92mYxMzbPt8Kgbm4gEBRnA4BmGd"
     },
     {
       "developer_id": "b5288b62b7eff2a1",
@@ -119,60 +143,84 @@
       "wallet": "Cgj4ExKkDAkDhAuR5HJNbu8GWetKXwL1WTG2sCgRQY4K"
     },
     {
-      "developer_id": "e7f15be1a89f6402",
-      "wallet": "dtrzJPj7yDdvm6eRqBAgxsK2sMJeD9HhBEBB3XMedXy"
-    },
-    {
-      "developer_id": "cab2731206888c45",
-      "wallet": "76We7rQBukPr1wq8y92mYxMzbPt8Kgbm4gEBRnA4BmGd"
-    },
-    {
-      "developer_id": "1c23c6fec68ad069",
-      "wallet": "GSQJBFFGaWLMAQWSAcSZigs6xfKcSpuh1hZw4SoPGW1E"
-    },
-    {
       "developer_id": "60d023c2073efe0f",
       "wallet": "5SFhHYXG5Rxwh9oFFARLseG61i3XfL1YC7ionxMktCrs"
     },
     {
-      "developer_id": "8515d20a81262dd6",
-      "wallet": "9avXpirpcPjYQPqM7ppyw9GRYJd72K4Ur2kZceZEwaFy"
-    },
-    {
-      "developer_id": "8aa94279389a0f25",
-      "wallet": "93JtxYeaLkgdWYPVGgfJ8oSsMMMFZuBryrYi6zqQxUfa"
+      "developer_id": "430347d2efa04213",
+      "wallet": "qJUqzW4yb3fRM8hPVWZ9uNykzZhKpTiBoLDxN6j1oFM"
     },
     {
       "developer_id": "42ee1e670200b8fc",
       "wallet": "4Ki54j4tyzRLkagnvPWnbHTgz113KQdfDus7wCmpweqo"
     },
     {
+      "developer_id": "1c23c6fec68ad069",
+      "wallet": "GSQJBFFGaWLMAQWSAcSZigs6xfKcSpuh1hZw4SoPGW1E"
+    },
+    {
+      "developer_id": "51ebbacc67ac6a85",
+      "wallet": "FcCP98BdCyoZ5UG6LXpcL1z4hHT4F9jAoM4iGZpYZGss"
+    },
+    {
+      "developer_id": "8515d20a81262dd6",
+      "wallet": "9avXpirpcPjYQPqM7ppyw9GRYJd72K4Ur2kZceZEwaFy"
+    },
+    {
+      "developer_id": "ca89971fc8c4cb04",
+      "wallet": "42nx7krcZY538v8jQ6sENasJBegSCJ8X5GKnR8bKw9m8"
+    },
+    {
+      "developer_id": "8aa94279389a0f25",
+      "wallet": "93JtxYeaLkgdWYPVGgfJ8oSsMMMFZuBryrYi6zqQxUfa"
+    },
+    {
+      "developer_id": "928597f56c3d9ba6",
+      "wallet": "C3fd5tE1a42TC24ZyCY3HADV4jpAFaULg82o2c8TwTmE"
+    },
+    {
+      "developer_id": "0a17a0b8966452b0",
+      "wallet": "PDY8vXgJ8RLWNgmcM31Y4EU1iL6XYSZ5cAyMdrTttF6"
+    },
+    {
       "developer_id": "a25e5db1874ec3eb",
       "wallet": "GtTg74ZpUbUgfNuQHLkVu4KWHxtfVzBWJp9k5S6c4W14"
+    },
+    {
+      "developer_id": "7712ebe5c8c878bd",
+      "wallet": "2mpYrCv8XifEaB1JsaRZwiGkKpQP6V6DpHdomnLLGud5"
     },
     {
       "developer_id": "66bde7973b8416ed",
       "wallet": "HV5cVQ6Ux8HoJtyzJvZjq5iJwgstrM9v1H73Rj11T9pP"
     },
     {
+      "developer_id": "0eddd9d8af90b281",
+      "wallet": "8YcbyX92UHTU23HZv3ccP9o13qibErQkKaUjoxqxd7SJ"
+    },
+    {
       "developer_id": "b6c9a8fa0e0286a5",
       "wallet": "9ke5yTqjeYK6SvDiuPf5P6Q9CqjxrCeJCvNPdpGWgvf1"
+    },
+    {
+      "developer_id": "6b7920951e3f1820",
+      "wallet": "EYouDrRPzEQdxHPuCKj6Yefif39ND9YxasuuBG7b6hCr"
     },
     {
       "developer_id": "205a7bef8b22ece0",
       "wallet": "NMgfqcn6BoS1k6yZoYfureFGPChTdUAgJAQpuhzdLBZ"
     },
     {
-      "developer_id": "10aabe0e837e478d",
-      "wallet": "FsnFcAv3pu5cBUUnySB2M4SHCDwqduUqNws9kasMxdZi"
+      "developer_id": "9bd4ce3d6185b5a0",
+      "wallet": "3z4vj1nAujLnciPgZaGz4VYecZa6gbYUg3Yr9MoyuiMG"
     },
     {
       "developer_id": "72bebc70e2128217",
       "wallet": "4483KLEb9XTGE36kqpC3YCnkgvfCRWPogNmqfhuRL1GE"
     },
     {
-      "developer_id": "7712ebe5c8c878bd",
-      "wallet": "2mpYrCv8XifEaB1JsaRZwiGkKpQP6V6DpHdomnLLGud5"
+      "developer_id": "befbdf66b81995ce",
+      "wallet": "BkAXfoNvnJ1RPDdUUkCJwrKXq79dAoocKN6T1ztU8TeH"
     },
     {
       "developer_id": "2d6bf39e5b757fe2",
@@ -195,12 +243,20 @@
       "wallet": "oztoR5Q9cgWQo57uaZ8Dx5yssQmjtUCXJAXS2MGVZSm"
     },
     {
+      "developer_id": "934730a9f9bbadff",
+      "wallet": "3yuuf6ZfmZQ85cmDUm1yBJ3vSJfVBbyMy6VJEfXCzYYS"
+    },
+    {
       "developer_id": "caa67e7d4fae8a5c",
       "wallet": "ANB3qUu9p3Sc9jFAvciKtDGVi7atR638wX1gi8NvpQ88"
     },
     {
-      "developer_id": "4b2c3c63443e6344",
-      "wallet": "Er15bSCBaPLq8sHvmudUsQ5N3XVc6VKNSpppJmVjYrZo"
+      "developer_id": "50f472a499b48315",
+      "wallet": "6dgf5LBxe7EVX7CoNsRWP7eaedC2NZmS2RJ8agnYEHry"
+    },
+    {
+      "developer_id": "1dfd82b7bfbe3f18",
+      "wallet": "A3bkp8Y6nwNH3LkM9UASXGQ2ZWruuVRAK7yrbigi98jD"
     },
     {
       "developer_id": "153cd06b07e04d1e",
@@ -211,52 +267,76 @@
       "wallet": "EGKs1HQQLBUCSXsCEkpmUHbuGGCuUVyM9dn3tobUsD9U"
     },
     {
-      "developer_id": "934730a9f9bbadff",
-      "wallet": "3yuuf6ZfmZQ85cmDUm1yBJ3vSJfVBbyMy6VJEfXCzYYS"
-    },
-    {
       "developer_id": "0e60cf8606bb61a5",
       "wallet": "3P5q8fvzse4p7h5kfqmfR5pcSDDLYKELMHH1AnEcVNJ2"
     },
     {
-      "developer_id": "51ebbacc67ac6a85",
-      "wallet": "FcCP98BdCyoZ5UG6LXpcL1z4hHT4F9jAoM4iGZpYZGss"
-    },
-    {
-      "developer_id": "0eddd9d8af90b281",
-      "wallet": "8YcbyX92UHTU23HZv3ccP9o13qibErQkKaUjoxqxd7SJ"
-    },
-    {
-      "developer_id": "928597f56c3d9ba6",
-      "wallet": "C3fd5tE1a42TC24ZyCY3HADV4jpAFaULg82o2c8TwTmE"
-    },
-    {
-      "developer_id": "befbdf66b81995ce",
-      "wallet": "BkAXfoNvnJ1RPDdUUkCJwrKXq79dAoocKN6T1ztU8TeH"
+      "developer_id": "45342299a556a402",
+      "wallet": "EJQnyLEdMmAv4673xiJYnG61154nmBCc2vDPaNayXEiE"
     },
     {
       "developer_id": "8c71fc74a3b9fab7",
       "wallet": "2yuhb9kSquJBEm1seDqzk6Aab8x7YKRnAMcThBNienbn"
     },
     {
+      "developer_id": "897e9780ad335625",
+      "wallet": "ByJho1pajCNULzGjdit3jgPtUjRAqeXFajWts7456gFf"
+    },
+    {
       "developer_id": "eb1e6456b7521609",
       "wallet": "AV7PjXHL5JXZ1YoYRoN9Dsstg1x2UciBupMCXcJP8gUz"
     },
     {
-      "developer_id": "0a17a0b8966452b0",
-      "wallet": "PDY8vXgJ8RLWNgmcM31Y4EU1iL6XYSZ5cAyMdrTttF6"
+      "developer_id": "07e93c446f9216e1",
+      "wallet": "29yFzeBZgxf5zqrAkKXwgZtQehRf4pL8WbV2nRJikbw8"
     },
     {
-      "developer_id": "2bbc462c1cf8faa8",
-      "wallet": "2aptgPfRxgTZ686daBhqN5q8dmy8f647gWbUyKkpSzAV"
+      "developer_id": "e923edf77889148c",
+      "wallet": "8JX4JTiVkPLuGZK3N9oWguLj7cZgRERD7fUu2qvd8dt4"
+    },
+    {
+      "developer_id": "c6a62fe9c73459f9",
+      "wallet": "FCYMJzEw2GPh4FEpegUZX8m91YXUfqDJDXmNhkAS4kKU"
+    },
+    {
+      "developer_id": "baf5e3f95341cebc",
+      "wallet": "Hj4rrSWVwwUew4tEgD4w27GqxEx4BenSsSs2RKdZ5Tyj"
     },
     {
       "developer_id": "95d3b748d51c5c22",
       "wallet": "8uXGww1WSUKCubSXx1du1cixECwfD5aXof9XUDMLuJLv"
     },
     {
-      "developer_id": "430347d2efa04213",
-      "wallet": "qJUqzW4yb3fRM8hPVWZ9uNykzZhKpTiBoLDxN6j1oFM"
+      "developer_id": "8ae419b3c371e551",
+      "wallet": "5KhMUK6yK6FtDkXVmS5Tdy3Jnkd8yuRuUKWQKmGua1WV"
+    },
+    {
+      "developer_id": "cd6dace6614c3495",
+      "wallet": "G3eWaBWuboTjBARo2otA6o3GEg9LFkd1Pf7N3yw8sSz1"
+    },
+    {
+      "developer_id": "baae270dc88cc71e",
+      "wallet": "8gNgpWUNMq61zb9ryoU5fAzyGZmB44iJJr5x8yjAr7og"
+    },
+    {
+      "developer_id": "d9eca880f454d903",
+      "wallet": "2bRoascfGCKkRnyZLmzJh7cKpiD45zyEzUmg9XPZzueC"
+    },
+    {
+      "developer_id": "bfd3c7c6d2f09d0e",
+      "wallet": "ABqtjAjUfeueGbeF5oTthojrFrEpPAEujutyANtm21pH"
+    },
+    {
+      "developer_id": "73d7fe1e34eb1633",
+      "wallet": "4j5cRmZpLAz6Yg2uXdNtAvzWHcD3oTyEk2oJYvmkRFBf"
+    },
+    {
+      "developer_id": "208609e2acae78f3",
+      "wallet": "KmyNVFDQwZTAd8vYaqXYNwNXfz8oND43s4teKG8aMAU"
+    },
+    {
+      "developer_id": "dda61790eb808e35",
+      "wallet": "7J7pG2EuXhrYBSweh4PRPcGUmW1jPgRjgv1MTd337Fja"
     },
     {
       "developer_id": "bd5d4603bb3e3c48",
@@ -271,136 +351,56 @@
       "wallet": "Aa87b9Jrm4zuA8FBYumXXetJi6G41nC4LJQijzE76vvc"
     },
     {
-      "developer_id": "1dfd82b7bfbe3f18",
-      "wallet": "A3bkp8Y6nwNH3LkM9UASXGQ2ZWruuVRAK7yrbigi98jD"
-    },
-    {
-      "developer_id": "9bd4ce3d6185b5a0",
-      "wallet": "3z4vj1nAujLnciPgZaGz4VYecZa6gbYUg3Yr9MoyuiMG"
-    },
-    {
-      "developer_id": "baf5e3f95341cebc",
-      "wallet": "Hj4rrSWVwwUew4tEgD4w27GqxEx4BenSsSs2RKdZ5Tyj"
-    },
-    {
-      "developer_id": "5130fbf8ecea8e9b",
-      "wallet": "6CikmJQb2MJ5RcxzNWaM7g64tF1X3TmrdyMvmuepgo69"
-    },
-    {
       "developer_id": "1788ca2019d4a1dd",
       "wallet": "FLGHUh16u8Uii2AoipoAHLHmLuoZEdpZEQYNGHo8nQdm"
     },
     {
-      "developer_id": "97b4214e86cdef36",
-      "wallet": "9xigVvg9v81VyGYEW1uvcSSmGdJGghyHEa3XCC8T46ui"
-    },
-    {
-      "developer_id": "9bc4f31f7e13d9b4",
-      "wallet": "GrSXP4jGomEdgUZto4tydbtjN1ucTfqQegF3fPMS3x8v"
-    },
-    {
-      "developer_id": "c6a62fe9c73459f9",
-      "wallet": "FCYMJzEw2GPh4FEpegUZX8m91YXUfqDJDXmNhkAS4kKU"
+      "developer_id": "c20ad27df46d3cc3",
+      "wallet": "CLTuMLquknHxRdDUd1Mrt4jHyQSR2FXqmZYhaBN5oGbH"
     },
     {
       "developer_id": "d8e08bb904008ce6",
       "wallet": "5FqUo9aBjsp7QeeyN6Vi2ZmF2fjS4H5EU7wnAQwPy17z"
     },
     {
-      "developer_id": "e923edf77889148c",
-      "wallet": "8JX4JTiVkPLuGZK3N9oWguLj7cZgRERD7fUu2qvd8dt4"
+      "developer_id": "5130fbf8ecea8e9b",
+      "wallet": "6CikmJQb2MJ5RcxzNWaM7g64tF1X3TmrdyMvmuepgo69"
     },
     {
-      "developer_id": "07e93c446f9216e1",
-      "wallet": "29yFzeBZgxf5zqrAkKXwgZtQehRf4pL8WbV2nRJikbw8"
-    },
-    {
-      "developer_id": "6b7920951e3f1820",
-      "wallet": "EYouDrRPzEQdxHPuCKj6Yefif39ND9YxasuuBG7b6hCr"
-    },
-    {
-      "developer_id": "a4eb436bfb11ad16",
-      "wallet": "BuSVfzErsPNWrZ9uZ7CnnVKmHxPQTcnQFex27SuYfshg"
-    },
-    {
-      "developer_id": "6506dbf376d301e7",
-      "wallet": "Fwh9GYLTBjdLEDJ2o2CXBGCiniAGNRbZjTQrom3EsiLk"
-    },
-    {
-      "developer_id": "7f4daa7fcdd9937d",
-      "wallet": "Nu7cCz98H3VCiURizGPPwwmAExJ3RAQ1G9GwQDPZ147"
-    },
-    {
-      "developer_id": "fcd13ec5181af495",
-      "wallet": "5nqpAoaFL6rTHH7TVFnjzWernz5VvFh2Z9WhQXzrb4S8"
-    },
-    {
-      "developer_id": "cd6dace6614c3495",
-      "wallet": "G3eWaBWuboTjBARo2otA6o3GEg9LFkd1Pf7N3yw8sSz1"
-    },
-    {
-      "developer_id": "074e04ee89a4fb3f",
-      "wallet": "2VHc4naEUqNEncHhqxksbKqYSPGYuTJ3WunUZfe7YFAi"
-    },
-    {
-      "developer_id": "d9eca880f454d903",
-      "wallet": "2bRoascfGCKkRnyZLmzJh7cKpiD45zyEzUmg9XPZzueC"
-    },
-    {
-      "developer_id": "cb35c6b4c71bd6ee",
-      "wallet": "FDxaiUrehsJqqmB3mBUb1E81QJQWKvvX82XZRV3nGtrW"
-    },
-    {
-      "developer_id": "259ffc5584933e1a",
-      "wallet": "2og6TTUaGvN9QwHwM8wYtNspx9Jug9CcdnQ4tt4A3hQG"
-    },
-    {
-      "developer_id": "cc0d94ec2d6f9c0f",
-      "wallet": "BBhtj5uoW9QQrbDFFtq1c2FAASVH3kV4MdvPugX5xm43"
-    },
-    {
-      "developer_id": "c3c0cf199e525b62",
-      "wallet": "Rzm86KTuWpy79t5RDTUMpAFxDBimi49QpdTLgGsCPAe"
-    },
-    {
-      "developer_id": "3f11829e18f7461e",
-      "wallet": "APemHzMGZqTEzFE4e5Q6cNpYkHLscT8kRU6YxkZtrqoP"
-    },
-    {
-      "developer_id": "e54f7c1435055681",
-      "wallet": "DHvDE4oWxWFbEWyCSZ9BkYbjCmoL5dF71BuVyJqkBeL5"
-    },
-    {
-      "developer_id": "4e3ec14759082471",
-      "wallet": "ChVxfDJqxViqparRGqXsZiwYXWV7ygPZyEChMLR2G9eE"
+      "developer_id": "97b4214e86cdef36",
+      "wallet": "9xigVvg9v81VyGYEW1uvcSSmGdJGghyHEa3XCC8T46ui"
     },
     {
       "developer_id": "090c07b72ce415d8",
       "wallet": "EGkKcpAPcvvsofKPJnrgboPrqS8BpBuUR5Ht8CzAXLQS"
     },
     {
-      "developer_id": "897e9780ad335625",
-      "wallet": "ByJho1pajCNULzGjdit3jgPtUjRAqeXFajWts7456gFf"
+      "developer_id": "c3c0cf199e525b62",
+      "wallet": "Rzm86KTuWpy79t5RDTUMpAFxDBimi49QpdTLgGsCPAe"
     },
     {
-      "developer_id": "8ae419b3c371e551",
-      "wallet": "5KhMUK6yK6FtDkXVmS5Tdy3Jnkd8yuRuUKWQKmGua1WV"
+      "developer_id": "9bc4f31f7e13d9b4",
+      "wallet": "GrSXP4jGomEdgUZto4tydbtjN1ucTfqQegF3fPMS3x8v"
     },
     {
-      "developer_id": "b57726ae565f05a9",
-      "wallet": "4MssGD514B2BS6GKhZsuyFoiUj2qkhvTpHn3hG3F4twh"
+      "developer_id": "8cfe54f0ac1a091f",
+      "wallet": "2MTRrmpSdonKkqUdKDYXimS9SQRszGEtciiG8akafa7X"
     },
     {
-      "developer_id": "352a35a1698fcd21",
-      "wallet": "5xAXL3J4QPaBQg8sZEgWFiR7nU6CLJXrQ3Ezi1pFW182"
+      "developer_id": "e54f7c1435055681",
+      "wallet": "DHvDE4oWxWFbEWyCSZ9BkYbjCmoL5dF71BuVyJqkBeL5"
     },
     {
-      "developer_id": "dfd9f759529bd6d1",
-      "wallet": "3LCZiUJAPwTNXv7AFbxiXyfmsstFgGkw8hRgmoAG7KQv"
+      "developer_id": "4521b8ae0c4922b2",
+      "wallet": "whamNNP9tHoxLg92yHvJPdYhghEoCg1qYTsh5a2oLbx"
     },
     {
-      "developer_id": "bfd3c7c6d2f09d0e",
-      "wallet": "ABqtjAjUfeueGbeF5oTthojrFrEpPAEujutyANtm21pH"
+      "developer_id": "a4eb436bfb11ad16",
+      "wallet": "BuSVfzErsPNWrZ9uZ7CnnVKmHxPQTcnQFex27SuYfshg"
+    },
+    {
+      "developer_id": "4d03174d58e5b3de",
+      "wallet": "GrCYacjXRSSCjedwuZDuS9nAYQQBfuUzCtPnteQeZjjJ"
     }
   ]
 }
