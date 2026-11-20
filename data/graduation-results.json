@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-19T21:00:18.763560+00:00",
-  "period_start": "2026-10-21",
-  "period_end": "2026-11-19",
-  "coins_tracked": 113927,
-  "confirmed_graduations": 1228,
+  "updated_at": "2026-11-20T07:48:11.916873+00:00",
+  "period_start": "2026-10-22",
+  "period_end": "2026-11-20",
+  "coins_tracked": 122977,
+  "confirmed_graduations": 1326,
   "launch_feeds_loaded": 3,
   "graduation_feeds_loaded": 3,
   "method": "Confirmed observed migrations only. Graduations outside retained feed coverage may be missing. Rates are lower bounds, not verified final graduation rates.",
@@ -11,218 +11,226 @@
     {
       "developer_id": "e54f7c1435055681",
       "rank_by_launches": 34,
-      "coins_tracked": 542,
+      "coins_tracked": 556,
       "confirmed_graduations": 59,
-      "minimum_graduation_rate": 0.108856,
+      "minimum_graduation_rate": 0.106115,
       "graduation_rank": 1
-    },
-    {
-      "developer_id": "b2bf121b5a316442",
-      "rank_by_launches": 3,
-      "coins_tracked": 1585,
-      "confirmed_graduations": 43,
-      "minimum_graduation_rate": 0.027129,
-      "graduation_rank": 2
     },
     {
       "developer_id": "cc51559097e517ae",
       "rank_by_launches": 1,
-      "coins_tracked": 2712,
+      "coins_tracked": 2906,
+      "confirmed_graduations": 45,
+      "minimum_graduation_rate": 0.015485,
+      "graduation_rank": 2
+    },
+    {
+      "developer_id": "b2bf121b5a316442",
+      "rank_by_launches": 3,
+      "coins_tracked": 1633,
       "confirmed_graduations": 43,
-      "minimum_graduation_rate": 0.015855,
+      "minimum_graduation_rate": 0.026332,
       "graduation_rank": 3
+    },
+    {
+      "developer_id": "0eddd9d8af90b281",
+      "rank_by_launches": 38,
+      "coins_tracked": 532,
+      "confirmed_graduations": 31,
+      "minimum_graduation_rate": 0.058271,
+      "graduation_rank": 4
     },
     {
       "developer_id": "a554391da1d47e2d",
       "rank_by_launches": 31,
-      "coins_tracked": 596,
+      "coins_tracked": 599,
       "confirmed_graduations": 31,
-      "minimum_graduation_rate": 0.052013,
-      "graduation_rank": 4
-    },
-    {
-      "developer_id": "0eddd9d8af90b281",
-      "rank_by_launches": 47,
-      "coins_tracked": 465,
-      "confirmed_graduations": 27,
-      "minimum_graduation_rate": 0.058065,
+      "minimum_graduation_rate": 0.051753,
       "graduation_rank": 5
     },
     {
       "developer_id": "09208ea9247bc8d1",
       "rank_by_launches": 9,
-      "coins_tracked": 981,
-      "confirmed_graduations": 26,
-      "minimum_graduation_rate": 0.026504,
+      "coins_tracked": 1055,
+      "confirmed_graduations": 29,
+      "minimum_graduation_rate": 0.027488,
       "graduation_rank": 6
     },
     {
-      "developer_id": "c1d2e16a8873eb9b",
-      "rank_by_launches": 64,
-      "coins_tracked": 398,
-      "confirmed_graduations": 20,
-      "minimum_graduation_rate": 0.050251,
+      "developer_id": "8c71fc74a3b9fab7",
+      "rank_by_launches": 47,
+      "coins_tracked": 535,
+      "confirmed_graduations": 21,
+      "minimum_graduation_rate": 0.039252,
       "graduation_rank": 7
     },
     {
-      "developer_id": "8c71fc74a3b9fab7",
-      "rank_by_launches": 46,
-      "coins_tracked": 466,
-      "confirmed_graduations": 19,
-      "minimum_graduation_rate": 0.040773,
+      "developer_id": "c1d2e16a8873eb9b",
+      "rank_by_launches": 68,
+      "coins_tracked": 398,
+      "confirmed_graduations": 20,
+      "minimum_graduation_rate": 0.050251,
       "graduation_rank": 8
-    },
-    {
-      "developer_id": "68e450448dd0df6f",
-      "rank_by_launches": 27,
-      "coins_tracked": 604,
-      "confirmed_graduations": 15,
-      "minimum_graduation_rate": 0.024834,
-      "graduation_rank": 9
-    },
-    {
-      "developer_id": "85151771f9134c7e",
-      "rank_by_launches": 6,
-      "coins_tracked": 1177,
-      "confirmed_graduations": 15,
-      "minimum_graduation_rate": 0.012744,
-      "graduation_rank": 10
-    },
-    {
-      "developer_id": "589c106c05d03edc",
-      "rank_by_launches": 22,
-      "coins_tracked": 693,
-      "confirmed_graduations": 14,
-      "minimum_graduation_rate": 0.020202,
-      "graduation_rank": 11
-    },
-    {
-      "developer_id": "e2452d0baefec4b6",
-      "rank_by_launches": 10,
-      "coins_tracked": 956,
-      "confirmed_graduations": 14,
-      "minimum_graduation_rate": 0.014644,
-      "graduation_rank": 12
     },
     {
       "developer_id": "7326e756129de207",
       "rank_by_launches": 4,
-      "coins_tracked": 1427,
+      "coins_tracked": 1586,
+      "confirmed_graduations": 16,
+      "minimum_graduation_rate": 0.010088,
+      "graduation_rank": 9
+    },
+    {
+      "developer_id": "68e450448dd0df6f",
+      "rank_by_launches": 25,
+      "coins_tracked": 635,
+      "confirmed_graduations": 15,
+      "minimum_graduation_rate": 0.023622,
+      "graduation_rank": 10
+    },
+    {
+      "developer_id": "85151771f9134c7e",
+      "rank_by_launches": 7,
+      "coins_tracked": 1177,
+      "confirmed_graduations": 15,
+      "minimum_graduation_rate": 0.012744,
+      "graduation_rank": 11
+    },
+    {
+      "developer_id": "589c106c05d03edc",
+      "rank_by_launches": 21,
+      "coins_tracked": 742,
       "confirmed_graduations": 14,
-      "minimum_graduation_rate": 0.009811,
+      "minimum_graduation_rate": 0.018868,
+      "graduation_rank": 12
+    },
+    {
+      "developer_id": "e2452d0baefec4b6",
+      "rank_by_launches": 11,
+      "coins_tracked": 999,
+      "confirmed_graduations": 14,
+      "minimum_graduation_rate": 0.014014,
       "graduation_rank": 13
     },
     {
       "developer_id": "eb1e6456b7521609",
-      "rank_by_launches": 33,
-      "coins_tracked": 546,
+      "rank_by_launches": 35,
+      "coins_tracked": 550,
       "confirmed_graduations": 13,
-      "minimum_graduation_rate": 0.02381,
+      "minimum_graduation_rate": 0.023636,
       "graduation_rank": 14
     },
     {
       "developer_id": "b9945a454f7bc975",
-      "rank_by_launches": 20,
-      "coins_tracked": 731,
+      "rank_by_launches": 19,
+      "coins_tracked": 843,
       "confirmed_graduations": 13,
-      "minimum_graduation_rate": 0.017784,
+      "minimum_graduation_rate": 0.015421,
       "graduation_rank": 15
     },
     {
-      "developer_id": "ff26cf985d0274ab",
-      "rank_by_launches": 19,
-      "coins_tracked": 741,
-      "confirmed_graduations": 12,
-      "minimum_graduation_rate": 0.016194,
-      "graduation_rank": 16
-    },
-    {
-      "developer_id": "2ac9f64456974590",
-      "rank_by_launches": 11,
-      "coins_tracked": 947,
-      "confirmed_graduations": 12,
-      "minimum_graduation_rate": 0.012672,
-      "graduation_rank": 17
-    },
-    {
       "developer_id": "8ae419b3c371e551",
-      "rank_by_launches": 50,
-      "coins_tracked": 461,
-      "confirmed_graduations": 11,
-      "minimum_graduation_rate": 0.023861,
-      "graduation_rank": 18
-    },
-    {
-      "developer_id": "064dbecc1b01de87",
-      "rank_by_launches": 40,
-      "coins_tracked": 500,
-      "confirmed_graduations": 11,
-      "minimum_graduation_rate": 0.022,
-      "graduation_rank": 19
-    },
-    {
-      "developer_id": "3eb5494e7e45c590",
-      "rank_by_launches": 62,
-      "coins_tracked": 409,
-      "confirmed_graduations": 10,
-      "minimum_graduation_rate": 0.02445,
-      "graduation_rank": 20
-    },
-    {
-      "developer_id": "8ec99bbef8962bec",
-      "rank_by_launches": 37,
-      "coins_tracked": 512,
-      "confirmed_graduations": 10,
-      "minimum_graduation_rate": 0.019531,
-      "graduation_rank": 21
-    },
-    {
-      "developer_id": "befbdf66b81995ce",
-      "rank_by_launches": 52,
-      "coins_tracked": 440,
-      "confirmed_graduations": 9,
-      "minimum_graduation_rate": 0.020455,
-      "graduation_rank": 22
-    },
-    {
-      "developer_id": "e7f15be1a89f6402",
-      "rank_by_launches": 23,
-      "coins_tracked": 693,
-      "confirmed_graduations": 9,
-      "minimum_graduation_rate": 0.012987,
-      "graduation_rank": 23
-    },
-    {
-      "developer_id": "ca89971fc8c4cb04",
-      "rank_by_launches": 21,
-      "coins_tracked": 701,
-      "confirmed_graduations": 9,
-      "minimum_graduation_rate": 0.012839,
-      "graduation_rank": 24
-    },
-    {
-      "developer_id": "b9c0974b1bfe89ec",
-      "rank_by_launches": 17,
-      "coins_tracked": 822,
-      "confirmed_graduations": 9,
-      "minimum_graduation_rate": 0.010949,
-      "graduation_rank": 25
-    },
-    {
-      "developer_id": "efa8b0b8e558fcce",
-      "rank_by_launches": 13,
-      "coins_tracked": 914,
-      "confirmed_graduations": 9,
-      "minimum_graduation_rate": 0.009847,
-      "graduation_rank": 26
+      "rank_by_launches": 46,
+      "coins_tracked": 493,
+      "confirmed_graduations": 12,
+      "minimum_graduation_rate": 0.024341,
+      "graduation_rank": 16
     },
     {
       "developer_id": "07e93c446f9216e1",
       "rank_by_launches": 48,
-      "coins_tracked": 462,
-      "confirmed_graduations": 8,
-      "minimum_graduation_rate": 0.017316,
+      "coins_tracked": 509,
+      "confirmed_graduations": 12,
+      "minimum_graduation_rate": 0.023576,
+      "graduation_rank": 17
+    },
+    {
+      "developer_id": "ff26cf985d0274ab",
+      "rank_by_launches": 20,
+      "coins_tracked": 757,
+      "confirmed_graduations": 12,
+      "minimum_graduation_rate": 0.015852,
+      "graduation_rank": 18
+    },
+    {
+      "developer_id": "2ac9f64456974590",
+      "rank_by_launches": 12,
+      "coins_tracked": 952,
+      "confirmed_graduations": 12,
+      "minimum_graduation_rate": 0.012605,
+      "graduation_rank": 19
+    },
+    {
+      "developer_id": "064dbecc1b01de87",
+      "rank_by_launches": 44,
+      "coins_tracked": 500,
+      "confirmed_graduations": 11,
+      "minimum_graduation_rate": 0.022,
+      "graduation_rank": 20
+    },
+    {
+      "developer_id": "befbdf66b81995ce",
+      "rank_by_launches": 49,
+      "coins_tracked": 579,
+      "confirmed_graduations": 11,
+      "minimum_graduation_rate": 0.018998,
+      "graduation_rank": 21
+    },
+    {
+      "developer_id": "3eb5494e7e45c590",
+      "rank_by_launches": 66,
+      "coins_tracked": 409,
+      "confirmed_graduations": 10,
+      "minimum_graduation_rate": 0.02445,
+      "graduation_rank": 22
+    },
+    {
+      "developer_id": "8ec99bbef8962bec",
+      "rank_by_launches": 39,
+      "coins_tracked": 540,
+      "confirmed_graduations": 10,
+      "minimum_graduation_rate": 0.018519,
+      "graduation_rank": 23
+    },
+    {
+      "developer_id": "e7f15be1a89f6402",
+      "rank_by_launches": 23,
+      "coins_tracked": 715,
+      "confirmed_graduations": 9,
+      "minimum_graduation_rate": 0.012587,
+      "graduation_rank": 24
+    },
+    {
+      "developer_id": "64991da96bb91ad9",
+      "rank_by_launches": 41,
+      "coins_tracked": 725,
+      "confirmed_graduations": 9,
+      "minimum_graduation_rate": 0.012414,
+      "graduation_rank": 25
+    },
+    {
+      "developer_id": "ca89971fc8c4cb04",
+      "rank_by_launches": 22,
+      "coins_tracked": 741,
+      "confirmed_graduations": 9,
+      "minimum_graduation_rate": 0.012146,
+      "graduation_rank": 26
+    },
+    {
+      "developer_id": "b9c0974b1bfe89ec",
+      "rank_by_launches": 18,
+      "coins_tracked": 823,
+      "confirmed_graduations": 9,
+      "minimum_graduation_rate": 0.010936,
       "graduation_rank": 27
+    },
+    {
+      "developer_id": "efa8b0b8e558fcce",
+      "rank_by_launches": 14,
+      "coins_tracked": 914,
+      "confirmed_graduations": 9,
+      "minimum_graduation_rate": 0.009847,
+      "graduation_rank": 28
     },
     {
       "developer_id": "430347d2efa04213",
@@ -230,423 +238,423 @@
       "coins_tracked": 560,
       "confirmed_graduations": 8,
       "minimum_graduation_rate": 0.014286,
-      "graduation_rank": 28
-    },
-    {
-      "developer_id": "d8df9ebdbf9a8aa8",
-      "rank_by_launches": 76,
-      "coins_tracked": 355,
-      "confirmed_graduations": 7,
-      "minimum_graduation_rate": 0.019718,
       "graduation_rank": 29
     },
     {
-      "developer_id": "01b37130bf342e6e",
-      "rank_by_launches": 42,
-      "coins_tracked": 493,
+      "developer_id": "436147a4db0d2c1a",
+      "rank_by_launches": 93,
+      "coins_tracked": 345,
       "confirmed_graduations": 7,
-      "minimum_graduation_rate": 0.014199,
+      "minimum_graduation_rate": 0.02029,
       "graduation_rank": 30
     },
     {
-      "developer_id": "fbcaaf8afa213923",
-      "rank_by_launches": 41,
-      "coins_tracked": 499,
+      "developer_id": "d8df9ebdbf9a8aa8",
+      "rank_by_launches": 82,
+      "coins_tracked": 355,
       "confirmed_graduations": 7,
-      "minimum_graduation_rate": 0.014028,
+      "minimum_graduation_rate": 0.019718,
       "graduation_rank": 31
     },
     {
-      "developer_id": "7ecd5a1a41071d82",
-      "rank_by_launches": 18,
-      "coins_tracked": 815,
+      "developer_id": "fbcaaf8afa213923",
+      "rank_by_launches": 45,
+      "coins_tracked": 499,
       "confirmed_graduations": 7,
-      "minimum_graduation_rate": 0.008589,
+      "minimum_graduation_rate": 0.014028,
       "graduation_rank": 32
     },
     {
-      "developer_id": "436147a4db0d2c1a",
-      "rank_by_launches": 95,
-      "coins_tracked": 323,
-      "confirmed_graduations": 6,
-      "minimum_graduation_rate": 0.018576,
+      "developer_id": "01b37130bf342e6e",
+      "rank_by_launches": 40,
+      "coins_tracked": 508,
+      "confirmed_graduations": 7,
+      "minimum_graduation_rate": 0.01378,
       "graduation_rank": 33
     },
     {
-      "developer_id": "b5288b62b7eff2a1",
-      "rank_by_launches": 82,
-      "coins_tracked": 346,
-      "confirmed_graduations": 6,
-      "minimum_graduation_rate": 0.017341,
+      "developer_id": "7ecd5a1a41071d82",
+      "rank_by_launches": 17,
+      "coins_tracked": 825,
+      "confirmed_graduations": 7,
+      "minimum_graduation_rate": 0.008485,
       "graduation_rank": 34
     },
     {
-      "developer_id": "66bde7973b8416ed",
-      "rank_by_launches": 55,
-      "coins_tracked": 431,
+      "developer_id": "4a3aebcb482b7a09",
+      "rank_by_launches": 96,
+      "coins_tracked": 327,
       "confirmed_graduations": 6,
-      "minimum_graduation_rate": 0.013921,
+      "minimum_graduation_rate": 0.018349,
       "graduation_rank": 35
     },
     {
-      "developer_id": "4521b8ae0c4922b2",
-      "rank_by_launches": 90,
-      "coins_tracked": 300,
-      "confirmed_graduations": 5,
-      "minimum_graduation_rate": 0.016667,
+      "developer_id": "d8e08bb904008ce6",
+      "rank_by_launches": 69,
+      "coins_tracked": 328,
+      "confirmed_graduations": 6,
+      "minimum_graduation_rate": 0.018293,
       "graduation_rank": 36
     },
     {
-      "developer_id": "090c07b72ce415d8",
-      "rank_by_launches": 98,
-      "coins_tracked": 318,
-      "confirmed_graduations": 5,
-      "minimum_graduation_rate": 0.015723,
+      "developer_id": "b5288b62b7eff2a1",
+      "rank_by_launches": 87,
+      "coins_tracked": 346,
+      "confirmed_graduations": 6,
+      "minimum_graduation_rate": 0.017341,
       "graduation_rank": 37
     },
     {
-      "developer_id": "d8e08bb904008ce6",
-      "rank_by_launches": 67,
-      "coins_tracked": 319,
-      "confirmed_graduations": 5,
-      "minimum_graduation_rate": 0.015674,
+      "developer_id": "a4eb436bfb11ad16",
+      "rank_by_launches": 53,
+      "coins_tracked": 351,
+      "confirmed_graduations": 6,
+      "minimum_graduation_rate": 0.017094,
       "graduation_rank": 38
     },
     {
-      "developer_id": "cd6dace6614c3495",
-      "rank_by_launches": 77,
-      "coins_tracked": 355,
-      "confirmed_graduations": 5,
-      "minimum_graduation_rate": 0.014085,
+      "developer_id": "66bde7973b8416ed",
+      "rank_by_launches": 60,
+      "coins_tracked": 431,
+      "confirmed_graduations": 6,
+      "minimum_graduation_rate": 0.013921,
       "graduation_rank": 39
     },
     {
-      "developer_id": "77f19c54e36cc97f",
-      "rank_by_launches": 58,
-      "coins_tracked": 424,
+      "developer_id": "4521b8ae0c4922b2",
+      "rank_by_launches": 89,
+      "coins_tracked": 315,
       "confirmed_graduations": 5,
-      "minimum_graduation_rate": 0.011792,
+      "minimum_graduation_rate": 0.015873,
       "graduation_rank": 40
     },
     {
-      "developer_id": "a25e5db1874ec3eb",
-      "rank_by_launches": 14,
-      "coins_tracked": 864,
+      "developer_id": "090c07b72ce415d8",
+      "rank_by_launches": 99,
+      "coins_tracked": 321,
       "confirmed_graduations": 5,
-      "minimum_graduation_rate": 0.005787,
+      "minimum_graduation_rate": 0.015576,
       "graduation_rank": 41
     },
     {
-      "developer_id": "60d023c2073efe0f",
-      "rank_by_launches": 96,
-      "coins_tracked": 320,
-      "confirmed_graduations": 4,
-      "minimum_graduation_rate": 0.0125,
+      "developer_id": "cd6dace6614c3495",
+      "rank_by_launches": 80,
+      "coins_tracked": 358,
+      "confirmed_graduations": 5,
+      "minimum_graduation_rate": 0.013966,
       "graduation_rank": 42
     },
     {
-      "developer_id": "c6a62fe9c73459f9",
-      "rank_by_launches": 65,
-      "coins_tracked": 395,
-      "confirmed_graduations": 4,
-      "minimum_graduation_rate": 0.010127,
+      "developer_id": "77f19c54e36cc97f",
+      "rank_by_launches": 64,
+      "coins_tracked": 424,
+      "confirmed_graduations": 5,
+      "minimum_graduation_rate": 0.011792,
       "graduation_rank": 43
     },
     {
-      "developer_id": "9bd4ce3d6185b5a0",
-      "rank_by_launches": 51,
-      "coins_tracked": 448,
-      "confirmed_graduations": 4,
-      "minimum_graduation_rate": 0.008929,
+      "developer_id": "a25e5db1874ec3eb",
+      "rank_by_launches": 15,
+      "coins_tracked": 864,
+      "confirmed_graduations": 5,
+      "minimum_graduation_rate": 0.005787,
       "graduation_rank": 44
     },
     {
-      "developer_id": "0a17a0b8966452b0",
-      "rank_by_launches": 35,
-      "coins_tracked": 540,
+      "developer_id": "60d023c2073efe0f",
+      "rank_by_launches": 100,
+      "coins_tracked": 321,
       "confirmed_graduations": 4,
-      "minimum_graduation_rate": 0.007407,
+      "minimum_graduation_rate": 0.012461,
       "graduation_rank": 45
+    },
+    {
+      "developer_id": "c6a62fe9c73459f9",
+      "rank_by_launches": 70,
+      "coins_tracked": 395,
+      "confirmed_graduations": 4,
+      "minimum_graduation_rate": 0.010127,
+      "graduation_rank": 46
+    },
+    {
+      "developer_id": "d9eca880f454d903",
+      "rank_by_launches": 61,
+      "coins_tracked": 467,
+      "confirmed_graduations": 4,
+      "minimum_graduation_rate": 0.008565,
+      "graduation_rank": 47
+    },
+    {
+      "developer_id": "9bd4ce3d6185b5a0",
+      "rank_by_launches": 42,
+      "coins_tracked": 518,
+      "confirmed_graduations": 4,
+      "minimum_graduation_rate": 0.007722,
+      "graduation_rank": 48
+    },
+    {
+      "developer_id": "1c0496c5b9080d4e",
+      "rank_by_launches": 51,
+      "coins_tracked": 538,
+      "confirmed_graduations": 4,
+      "minimum_graduation_rate": 0.007435,
+      "graduation_rank": 49
+    },
+    {
+      "developer_id": "0a17a0b8966452b0",
+      "rank_by_launches": 33,
+      "coins_tracked": 551,
+      "confirmed_graduations": 4,
+      "minimum_graduation_rate": 0.00726,
+      "graduation_rank": 50
     },
     {
       "developer_id": "42ee1e670200b8fc",
       "rank_by_launches": 26,
-      "coins_tracked": 657,
+      "coins_tracked": 703,
       "confirmed_graduations": 4,
-      "minimum_graduation_rate": 0.006088,
-      "graduation_rank": 46
-    },
-    {
-      "developer_id": "2d2e52184c7bd2a5",
-      "rank_by_launches": 93,
-      "coins_tracked": 286,
-      "confirmed_graduations": 3,
-      "minimum_graduation_rate": 0.01049,
-      "graduation_rank": 47
-    },
-    {
-      "developer_id": "a4eb436bfb11ad16",
-      "rank_by_launches": 57,
-      "coins_tracked": 308,
-      "confirmed_graduations": 3,
-      "minimum_graduation_rate": 0.00974,
-      "graduation_rank": 48
-    },
-    {
-      "developer_id": "239aa2549dd0befa",
-      "rank_by_launches": 99,
-      "coins_tracked": 318,
-      "confirmed_graduations": 3,
-      "minimum_graduation_rate": 0.009434,
-      "graduation_rank": 49
-    },
-    {
-      "developer_id": "6ceb5dbc1106d3da",
-      "rank_by_launches": 91,
-      "coins_tracked": 330,
-      "confirmed_graduations": 3,
-      "minimum_graduation_rate": 0.009091,
-      "graduation_rank": 50
-    },
-    {
-      "developer_id": "10aabe0e837e478d",
-      "rank_by_launches": 85,
-      "coins_tracked": 344,
-      "confirmed_graduations": 3,
-      "minimum_graduation_rate": 0.008721,
+      "minimum_graduation_rate": 0.00569,
       "graduation_rank": 51
     },
     {
-      "developer_id": "1c0496c5b9080d4e",
-      "rank_by_launches": 80,
-      "coins_tracked": 350,
+      "developer_id": "2d2e52184c7bd2a5",
+      "rank_by_launches": 97,
+      "coins_tracked": 296,
       "confirmed_graduations": 3,
-      "minimum_graduation_rate": 0.008571,
+      "minimum_graduation_rate": 0.010135,
       "graduation_rank": 52
     },
     {
-      "developer_id": "6be3643376883584",
-      "rank_by_launches": 60,
-      "coins_tracked": 354,
+      "developer_id": "6ceb5dbc1106d3da",
+      "rank_by_launches": 94,
+      "coins_tracked": 330,
       "confirmed_graduations": 3,
-      "minimum_graduation_rate": 0.008475,
+      "minimum_graduation_rate": 0.009091,
       "graduation_rank": 53
     },
     {
-      "developer_id": "92457f7bfbd9fbe4",
-      "rank_by_launches": 72,
-      "coins_tracked": 374,
+      "developer_id": "10aabe0e837e478d",
+      "rank_by_launches": 88,
+      "coins_tracked": 344,
       "confirmed_graduations": 3,
-      "minimum_graduation_rate": 0.008021,
+      "minimum_graduation_rate": 0.008721,
       "graduation_rank": 54
     },
     {
-      "developer_id": "d9eca880f454d903",
-      "rank_by_launches": 66,
-      "coins_tracked": 390,
+      "developer_id": "6be3643376883584",
+      "rank_by_launches": 57,
+      "coins_tracked": 366,
       "confirmed_graduations": 3,
-      "minimum_graduation_rate": 0.007692,
+      "minimum_graduation_rate": 0.008197,
       "graduation_rank": 55
     },
     {
-      "developer_id": "eaa031ec67a338e6",
-      "rank_by_launches": 53,
-      "coins_tracked": 409,
+      "developer_id": "92457f7bfbd9fbe4",
+      "rank_by_launches": 79,
+      "coins_tracked": 374,
       "confirmed_graduations": 3,
-      "minimum_graduation_rate": 0.007335,
+      "minimum_graduation_rate": 0.008021,
       "graduation_rank": 56
     },
     {
-      "developer_id": "728de34c9ef9b51f",
-      "rank_by_launches": 56,
-      "coins_tracked": 427,
+      "developer_id": "5e45cdf62406a9b9",
+      "rank_by_launches": 74,
+      "coins_tracked": 384,
       "confirmed_graduations": 3,
-      "minimum_graduation_rate": 0.007026,
+      "minimum_graduation_rate": 0.007812,
       "graduation_rank": 57
     },
     {
-      "developer_id": "3e43f6028e510377",
-      "rank_by_launches": 38,
-      "coins_tracked": 512,
+      "developer_id": "934730a9f9bbadff",
+      "rank_by_launches": 72,
+      "coins_tracked": 404,
       "confirmed_graduations": 3,
-      "minimum_graduation_rate": 0.005859,
+      "minimum_graduation_rate": 0.007426,
       "graduation_rank": 58
     },
     {
-      "developer_id": "dda61790eb808e35",
-      "rank_by_launches": 28,
-      "coins_tracked": 514,
+      "developer_id": "eaa031ec67a338e6",
+      "rank_by_launches": 58,
+      "coins_tracked": 409,
       "confirmed_graduations": 3,
-      "minimum_graduation_rate": 0.005837,
+      "minimum_graduation_rate": 0.007335,
       "graduation_rank": 59
     },
     {
-      "developer_id": "0501ed8467a66a17",
-      "rank_by_launches": 16,
-      "coins_tracked": 838,
+      "developer_id": "728de34c9ef9b51f",
+      "rank_by_launches": 62,
+      "coins_tracked": 429,
       "confirmed_graduations": 3,
-      "minimum_graduation_rate": 0.00358,
+      "minimum_graduation_rate": 0.006993,
       "graduation_rank": 60
     },
     {
-      "developer_id": "259ffc5584933e1a",
-      "rank_by_launches": 68,
-      "coins_tracked": 222,
-      "confirmed_graduations": 2,
-      "minimum_graduation_rate": 0.009009,
+      "developer_id": "dda61790eb808e35",
+      "rank_by_launches": 29,
+      "coins_tracked": 514,
+      "confirmed_graduations": 3,
+      "minimum_graduation_rate": 0.005837,
       "graduation_rank": 61
     },
     {
-      "developer_id": "cc3c4ddb59456f11",
-      "rank_by_launches": 100,
-      "coins_tracked": 315,
-      "confirmed_graduations": 2,
-      "minimum_graduation_rate": 0.006349,
+      "developer_id": "3e43f6028e510377",
+      "rank_by_launches": 36,
+      "coins_tracked": 529,
+      "confirmed_graduations": 3,
+      "minimum_graduation_rate": 0.005671,
       "graduation_rank": 62
     },
     {
-      "developer_id": "dab3c801cf732bc0",
-      "rank_by_launches": 86,
-      "coins_tracked": 323,
-      "confirmed_graduations": 2,
-      "minimum_graduation_rate": 0.006192,
+      "developer_id": "45342299a556a402",
+      "rank_by_launches": 28,
+      "coins_tracked": 602,
+      "confirmed_graduations": 3,
+      "minimum_graduation_rate": 0.004983,
       "graduation_rank": 63
     },
     {
-      "developer_id": "bf55556c394c66cc",
-      "rank_by_launches": 78,
-      "coins_tracked": 353,
-      "confirmed_graduations": 2,
-      "minimum_graduation_rate": 0.005666,
+      "developer_id": "0501ed8467a66a17",
+      "rank_by_launches": 6,
+      "coins_tracked": 1309,
+      "confirmed_graduations": 3,
+      "minimum_graduation_rate": 0.002292,
       "graduation_rank": 64
     },
     {
-      "developer_id": "928597f56c3d9ba6",
+      "developer_id": "259ffc5584933e1a",
       "rank_by_launches": 73,
-      "coins_tracked": 371,
+      "coins_tracked": 222,
       "confirmed_graduations": 2,
-      "minimum_graduation_rate": 0.005391,
+      "minimum_graduation_rate": 0.009009,
       "graduation_rank": 65
     },
     {
-      "developer_id": "934730a9f9bbadff",
-      "rank_by_launches": 70,
-      "coins_tracked": 377,
+      "developer_id": "bf55556c394c66cc",
+      "rank_by_launches": 83,
+      "coins_tracked": 353,
       "confirmed_graduations": 2,
-      "minimum_graduation_rate": 0.005305,
+      "minimum_graduation_rate": 0.005666,
       "graduation_rank": 66
     },
     {
-      "developer_id": "05f9b8e0b22e6842",
-      "rank_by_launches": 49,
-      "coins_tracked": 462,
+      "developer_id": "928597f56c3d9ba6",
+      "rank_by_launches": 75,
+      "coins_tracked": 389,
       "confirmed_graduations": 2,
-      "minimum_graduation_rate": 0.004329,
+      "minimum_graduation_rate": 0.005141,
       "graduation_rank": 67
     },
     {
-      "developer_id": "606e709a921111cb",
-      "rank_by_launches": 45,
-      "coins_tracked": 467,
+      "developer_id": "dab3c801cf732bc0",
+      "rank_by_launches": 67,
+      "coins_tracked": 405,
       "confirmed_graduations": 2,
-      "minimum_graduation_rate": 0.004283,
+      "minimum_graduation_rate": 0.004938,
       "graduation_rank": 68
     },
     {
-      "developer_id": "7712ebe5c8c878bd",
-      "rank_by_launches": 36,
-      "coins_tracked": 527,
+      "developer_id": "05f9b8e0b22e6842",
+      "rank_by_launches": 55,
+      "coins_tracked": 462,
       "confirmed_graduations": 2,
-      "minimum_graduation_rate": 0.003795,
+      "minimum_graduation_rate": 0.004329,
       "graduation_rank": 69
     },
     {
-      "developer_id": "45342299a556a402",
-      "rank_by_launches": 29,
-      "coins_tracked": 562,
+      "developer_id": "606e709a921111cb",
+      "rank_by_launches": 54,
+      "coins_tracked": 467,
       "confirmed_graduations": 2,
-      "minimum_graduation_rate": 0.003559,
+      "minimum_graduation_rate": 0.004283,
       "graduation_rank": 70
     },
     {
-      "developer_id": "a13f3f28dcb7a977",
-      "rank_by_launches": 15,
-      "coins_tracked": 848,
+      "developer_id": "7712ebe5c8c878bd",
+      "rank_by_launches": 37,
+      "coins_tracked": 527,
       "confirmed_graduations": 2,
-      "minimum_graduation_rate": 0.002358,
+      "minimum_graduation_rate": 0.003795,
       "graduation_rank": 71
     },
     {
-      "developer_id": "5e306f792b167498",
-      "rank_by_launches": 12,
-      "coins_tracked": 927,
+      "developer_id": "a13f3f28dcb7a977",
+      "rank_by_launches": 16,
+      "coins_tracked": 848,
       "confirmed_graduations": 2,
-      "minimum_graduation_rate": 0.002157,
+      "minimum_graduation_rate": 0.002358,
       "graduation_rank": 72
     },
     {
-      "developer_id": "caa67e7d4fae8a5c",
-      "rank_by_launches": 92,
-      "coins_tracked": 328,
-      "confirmed_graduations": 1,
-      "minimum_graduation_rate": 0.003049,
+      "developer_id": "5e306f792b167498",
+      "rank_by_launches": 13,
+      "coins_tracked": 927,
+      "confirmed_graduations": 2,
+      "minimum_graduation_rate": 0.002157,
       "graduation_rank": 73
     },
     {
-      "developer_id": "b6c9a8fa0e0286a5",
-      "rank_by_launches": 88,
-      "coins_tracked": 341,
+      "developer_id": "caa67e7d4fae8a5c",
+      "rank_by_launches": 95,
+      "coins_tracked": 328,
       "confirmed_graduations": 1,
-      "minimum_graduation_rate": 0.002933,
+      "minimum_graduation_rate": 0.003049,
       "graduation_rank": 74
     },
     {
-      "developer_id": "4b2c3c63443e6344",
-      "rank_by_launches": 81,
-      "coins_tracked": 347,
+      "developer_id": "b6c9a8fa0e0286a5",
+      "rank_by_launches": 91,
+      "coins_tracked": 341,
       "confirmed_graduations": 1,
-      "minimum_graduation_rate": 0.002882,
+      "minimum_graduation_rate": 0.002933,
       "graduation_rank": 75
     },
     {
-      "developer_id": "bfd3c7c6d2f09d0e",
-      "rank_by_launches": 74,
-      "coins_tracked": 369,
+      "developer_id": "4b2c3c63443e6344",
+      "rank_by_launches": 85,
+      "coins_tracked": 347,
       "confirmed_graduations": 1,
-      "minimum_graduation_rate": 0.00271,
+      "minimum_graduation_rate": 0.002882,
       "graduation_rank": 76
     },
     {
-      "developer_id": "28fc7574d5da5da8",
-      "rank_by_launches": 69,
-      "coins_tracked": 381,
+      "developer_id": "bfd3c7c6d2f09d0e",
+      "rank_by_launches": 77,
+      "coins_tracked": 379,
       "confirmed_graduations": 1,
-      "minimum_graduation_rate": 0.002625,
+      "minimum_graduation_rate": 0.002639,
       "graduation_rank": 77
     },
     {
-      "developer_id": "1beda2b21799e60a",
-      "rank_by_launches": 61,
-      "coins_tracked": 383,
+      "developer_id": "28fc7574d5da5da8",
+      "rank_by_launches": 76,
+      "coins_tracked": 381,
       "confirmed_graduations": 1,
-      "minimum_graduation_rate": 0.002611,
+      "minimum_graduation_rate": 0.002625,
       "graduation_rank": 78
     },
     {
-      "developer_id": "13932823b7cbd741",
-      "rank_by_launches": 44,
-      "coins_tracked": 468,
+      "developer_id": "1beda2b21799e60a",
+      "rank_by_launches": 63,
+      "coins_tracked": 402,
       "confirmed_graduations": 1,
-      "minimum_graduation_rate": 0.002137,
+      "minimum_graduation_rate": 0.002488,
       "graduation_rank": 79
     },
     {
+      "developer_id": "13932823b7cbd741",
+      "rank_by_launches": 52,
+      "coins_tracked": 468,
+      "confirmed_graduations": 1,
+      "minimum_graduation_rate": 0.002137,
+      "graduation_rank": 80
+    },
+    {
       "developer_id": "817236b2514f79db",
-      "rank_by_launches": 39,
+      "rank_by_launches": 43,
       "coins_tracked": 501,
       "confirmed_graduations": 1,
       "minimum_graduation_rate": 0.001996,
-      "graduation_rank": 80
+      "graduation_rank": 81
     },
     {
       "developer_id": "45e01107c105ad2b",
@@ -654,7 +662,7 @@
       "coins_tracked": 685,
       "confirmed_graduations": 1,
       "minimum_graduation_rate": 0.00146,
-      "graduation_rank": 81
+      "graduation_rank": 82
     },
     {
       "developer_id": "2d7782c0d4945c38",
@@ -662,154 +670,530 @@
       "coins_tracked": 1379,
       "confirmed_graduations": 1,
       "minimum_graduation_rate": 0.000725,
-      "graduation_rank": 82
+      "graduation_rank": 83
     },
     {
       "developer_id": "2e1fdfb16c6a29b1",
       "rank_by_launches": 2,
-      "coins_tracked": 1773,
-      "confirmed_graduations": 0,
-      "minimum_graduation_rate": 0.0,
-      "graduation_rank": 83
-    },
-    {
-      "developer_id": "976ef3b9958ba5e2",
-      "rank_by_launches": 7,
-      "coins_tracked": 1109,
+      "coins_tracked": 2055,
       "confirmed_graduations": 0,
       "minimum_graduation_rate": 0.0,
       "graduation_rank": 84
     },
     {
-      "developer_id": "6adc57e15b90b309",
+      "developer_id": "976ef3b9958ba5e2",
       "rank_by_launches": 8,
-      "coins_tracked": 1021,
+      "coins_tracked": 1109,
       "confirmed_graduations": 0,
       "minimum_graduation_rate": 0.0,
       "graduation_rank": 85
     },
     {
-      "developer_id": "4e99f51793587251",
-      "rank_by_launches": 25,
-      "coins_tracked": 671,
+      "developer_id": "6adc57e15b90b309",
+      "rank_by_launches": 10,
+      "coins_tracked": 1023,
       "confirmed_graduations": 0,
       "minimum_graduation_rate": 0.0,
       "graduation_rank": 86
     },
     {
-      "developer_id": "2bbc462c1cf8faa8",
-      "rank_by_launches": 30,
-      "coins_tracked": 604,
+      "developer_id": "4e99f51793587251",
+      "rank_by_launches": 27,
+      "coins_tracked": 760,
       "confirmed_graduations": 0,
       "minimum_graduation_rate": 0.0,
       "graduation_rank": 87
     },
     {
-      "developer_id": "6b7920951e3f1820",
-      "rank_by_launches": 43,
-      "coins_tracked": 481,
+      "developer_id": "2bbc462c1cf8faa8",
+      "rank_by_launches": 30,
+      "coins_tracked": 608,
       "confirmed_graduations": 0,
       "minimum_graduation_rate": 0.0,
       "graduation_rank": 88
     },
     {
-      "developer_id": "88f58939dd35f693",
-      "rank_by_launches": 54,
-      "coins_tracked": 434,
+      "developer_id": "6b7920951e3f1820",
+      "rank_by_launches": 50,
+      "coins_tracked": 481,
       "confirmed_graduations": 0,
       "minimum_graduation_rate": 0.0,
       "graduation_rank": 89
     },
     {
-      "developer_id": "cab2731206888c45",
-      "rank_by_launches": 71,
-      "coins_tracked": 377,
+      "developer_id": "88f58939dd35f693",
+      "rank_by_launches": 59,
+      "coins_tracked": 434,
       "confirmed_graduations": 0,
       "minimum_graduation_rate": 0.0,
       "graduation_rank": 90
     },
     {
       "developer_id": "baae270dc88cc71e",
-      "rank_by_launches": 63,
-      "coins_tracked": 362,
+      "rank_by_launches": 56,
+      "coins_tracked": 399,
       "confirmed_graduations": 0,
       "minimum_graduation_rate": 0.0,
       "graduation_rank": 91
     },
     {
-      "developer_id": "f3dbaeefd15d3c53",
-      "rank_by_launches": 79,
-      "coins_tracked": 351,
+      "developer_id": "e923edf77889148c",
+      "rank_by_launches": 71,
+      "coins_tracked": 394,
       "confirmed_graduations": 0,
       "minimum_graduation_rate": 0.0,
       "graduation_rank": 92
     },
     {
-      "developer_id": "1788ca2019d4a1dd",
-      "rank_by_launches": 75,
-      "coins_tracked": 349,
+      "developer_id": "cab2731206888c45",
+      "rank_by_launches": 78,
+      "coins_tracked": 377,
       "confirmed_graduations": 0,
       "minimum_graduation_rate": 0.0,
       "graduation_rank": 93
     },
     {
-      "developer_id": "1dfd82b7bfbe3f18",
-      "rank_by_launches": 83,
-      "coins_tracked": 346,
+      "developer_id": "f3dbaeefd15d3c53",
+      "rank_by_launches": 84,
+      "coins_tracked": 351,
       "confirmed_graduations": 0,
       "minimum_graduation_rate": 0.0,
       "graduation_rank": 94
     },
     {
-      "developer_id": "e923edf77889148c",
-      "rank_by_launches": 84,
-      "coins_tracked": 345,
+      "developer_id": "1788ca2019d4a1dd",
+      "rank_by_launches": 81,
+      "coins_tracked": 349,
       "confirmed_graduations": 0,
       "minimum_graduation_rate": 0.0,
       "graduation_rank": 95
     },
     {
-      "developer_id": "8547d350b9b0f55e",
-      "rank_by_launches": 87,
-      "coins_tracked": 342,
+      "developer_id": "1dfd82b7bfbe3f18",
+      "rank_by_launches": 86,
+      "coins_tracked": 349,
       "confirmed_graduations": 0,
       "minimum_graduation_rate": 0.0,
       "graduation_rank": 96
     },
     {
-      "developer_id": "93e52eed68550b8f",
-      "rank_by_launches": 89,
-      "coins_tracked": 337,
+      "developer_id": "8547d350b9b0f55e",
+      "rank_by_launches": 90,
+      "coins_tracked": 342,
       "confirmed_graduations": 0,
       "minimum_graduation_rate": 0.0,
       "graduation_rank": 97
     },
     {
-      "developer_id": "9521705a27303df7",
-      "rank_by_launches": 59,
-      "coins_tracked": 335,
+      "developer_id": "93e52eed68550b8f",
+      "rank_by_launches": 92,
+      "coins_tracked": 337,
       "confirmed_graduations": 0,
       "minimum_graduation_rate": 0.0,
       "graduation_rank": 98
     },
     {
-      "developer_id": "ae51bf7c2ea2a7f6",
-      "rank_by_launches": 94,
-      "coins_tracked": 324,
+      "developer_id": "9521705a27303df7",
+      "rank_by_launches": 65,
+      "coins_tracked": 335,
       "confirmed_graduations": 0,
       "minimum_graduation_rate": 0.0,
       "graduation_rank": 99
     },
     {
-      "developer_id": "153cd06b07e04d1e",
-      "rank_by_launches": 97,
-      "coins_tracked": 320,
+      "developer_id": "ae51bf7c2ea2a7f6",
+      "rank_by_launches": 98,
+      "coins_tracked": 324,
       "confirmed_graduations": 0,
       "minimum_graduation_rate": 0.0,
       "graduation_rank": 100
     }
   ],
   "confirmed_coins": [
+    {
+      "coin_id": "ec89b6fb2665785ff546f9594d022a22466ac854a8a407985b61874fa705353e",
+      "developer_id": "0eddd9d8af90b281",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795136620,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "e7cfe2e90a37ea326030f6f582ad890552fb570e814115b836685066b2c602f4",
+      "developer_id": "07e93c446f9216e1",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795155442,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "dcf6caf776c99e1e9ea71672a8942c21f9a8fcc246797d8a0352cf6e16f8ff4e",
+      "developer_id": "2c519e14fd3a0394",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795133463,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "d7afe0cfa75b32a7eeb9943a783866e73c646ab43842ff7497aab7167a8ee45a",
+      "developer_id": "3c87fccad61c985d",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795136471,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "d44e06d501102dc6afecd63399f716beab96349407ea2ec150d37efbf114c163",
+      "developer_id": "fd93af9917e358b7",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795146958,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "d2e202d557c4cd8ca629cd612b24d6e317dd699930336164ccd6c03eebf4ef08",
+      "developer_id": "45342299a556a402",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795157467,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "d0698804ba3fe196c62252c62740f552e09ed8dca207fd8e39c5c21d61774a66",
+      "developer_id": "fd93af9917e358b7",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795154850,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "cb7950f0053443c246a39dcf7ab403c4027d68dd5e7c6153d7ba5f46a2116999",
+      "developer_id": "b6ce4d50072f386d",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795143692,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "c4fb1de51b1a8fefdafcc76aeac1017442cd892f7b444347c0e31c7ce81a4375",
+      "developer_id": "c1ae792a4ce9a5c2",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795147365,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "c0c501a082f7a1af6f9e731c4d08c44de6576a6a0b05954c00ba4a2142451432",
+      "developer_id": "611f80c1a773391e",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795145330,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "c037671e3cd30b842941ae9eac5e60f7478fc50b31f18d190efb641972c45362",
+      "developer_id": "64991da96bb91ad9",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795143586,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "be08a49cd3f541215716d5a0d747a3cfcf10cc0d8efb059e8ca839a993a5a17b",
+      "developer_id": "64991da96bb91ad9",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795144357,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "bb26158c102cef2757b061dd7d4cc5e248290dcc387e01885e2d840e9d650941",
+      "developer_id": "8b95ee4f55eb63d7",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795144508,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "b9e926d10b1eff3c7a125fa0c90f8aa1652f81103646e1fce40430c215bcd0bf",
+      "developer_id": "fd93af9917e358b7",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795148872,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "b7174cf3451561804e082e7c915a71842ab95a33b43c3bf8e501d2d8aa7a16ce",
+      "developer_id": "b6ce4d50072f386d",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795133003,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "ac88e93373b9ebe3edde70bf8acf488cb7f5e333844230ceba0f2560fba7d57a",
+      "developer_id": "ae46088461fd444b",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795135575,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "ab315c6eb3f10ac9f722212176e3e17a7f6a955fdd2eab75c43201e5cfc6e9ac",
+      "developer_id": "befbdf66b81995ce",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795151510,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "a4025823c5c9366989f190c528d8bffcdef0d563a3e9021e2a2a3d10737822be",
+      "developer_id": "07e93c446f9216e1",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795149731,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "a3723e9c12cdf8b0fcb5a15ce2d4afb55f8fe6b8994e48ef31e88b159fb1e0de",
+      "developer_id": "4b95701458a271cd",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795152056,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "8e56579feefbea4454fd365bf013abc2acb9eac21f940e4f1814548e432ec4e3",
+      "developer_id": "4b95701458a271cd",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795149506,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "86188b7c731062416c2d2423d42bbc4b32c9c6f7cd68e825fbf04a6c24dd5f1f",
+      "developer_id": "0eddd9d8af90b281",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795139561,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "845d5ca14ddeb0ba3212f1d0eea9e1f245242926da760d2c01c2ce4dd4b3fd67",
+      "developer_id": "4b95701458a271cd",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795150671,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "8385128040bd6db2bbf9c286fe2003afeaa7438f17d69cad90ad79b65a75f864",
+      "developer_id": "9fc0454919a46163",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795136003,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "7ae096ac03d1f16e28ddb24839f5949f0446edc23ccaad0ade5265f383731601",
+      "developer_id": "befbdf66b81995ce",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795149005,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "730204c51eaab5d440aeb0437adf1853bbace7962619cc9c8abe4ad849db1ad7",
+      "developer_id": "8c71fc74a3b9fab7",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795150848,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "6c051569422776cd94ca7e416552cb19f2f9a5b81f7a8f859bd80f5b8c106753",
+      "developer_id": "1e8faefe40cf86ac",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795152457,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "53595dc5957d9ebcab6d3b07dc97ccf3cc82a8d3ccc4b6460747a72547bc6e92",
+      "developer_id": "837e4b54e01b1522",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795152433,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "518748b017f013a08be3ddb47c20923f2eb0f8a0db02df9fcd716f2ff5de6a44",
+      "developer_id": "7326e756129de207",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795148274,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "516d26b5625f38f4ef34388ebef707ac84f50447a6531ed57ca5de66cff1a9cb",
+      "developer_id": "fd93af9917e358b7",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795149827,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "4df2c46723846cb2c024096c041b693f312226d43c2866fc5ff60fdfa8cf0a3e",
+      "developer_id": "2826b7f6276c81d1",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795137095,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "4ce987d304a69116cc83190d1e8101fef1c33897b825b5210e4690bfa66f3180",
+      "developer_id": "c1ae792a4ce9a5c2",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795142777,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "4c303c32d2a2dbeb8eec391f65d3d6055a810e8978720f336984067a29abea95",
+      "developer_id": "9fc0454919a46163",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795150976,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "4ae26d80c6d7b810f927dec75bd5c98b63e1ff5c892a37bf4fc68e4699652522",
+      "developer_id": "934730a9f9bbadff",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795154522,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "471a7c7aa9a3cb02fe9c28e47f5428701e0fc1e4a26b262442b6646cc4cb599b",
+      "developer_id": "2826b7f6276c81d1",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795142100,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "368cd2149dc8f70119395d37f61fadf764f91b92d84c68a34d70dfa57be90266",
+      "developer_id": "2826b7f6276c81d1",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795137621,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "35113f8d93efd576525c2d3c99a4babc73a39a4d653a2b3a2796c8551f0b4c73",
+      "developer_id": "07e93c446f9216e1",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795144695,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "31495bd79d79d119d344b2db41830ce9a3fbda059eedee2d5e3be2f3097dfb62",
+      "developer_id": "cc51559097e517ae",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795137057,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "25ab280bf7a79577b00c0e278850dad63785cb1017dafdab529c6bf07bd745fd",
+      "developer_id": "fd93af9917e358b7",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795151997,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "253becb5c1519e422a49b1f168e952380e1af7cfdf8dabde264db192e624c970",
+      "developer_id": "0eddd9d8af90b281",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795153090,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "1e7723a3d5411104752855fea093a1b09debc674b9a4d209ad6e70a3b6446fbd",
+      "developer_id": "a6f8d3019ba0edaf",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795150645,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "1aa6e85eed4626cb844772f670c29292c0d223cb3b023157a4dbdbc0f8c8546a",
+      "developer_id": "fd93af9917e358b7",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795147683,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "17d30703c7947c1b37aa0633fa8acc4fa8a84f79612cfb5d73c14a50827523b3",
+      "developer_id": "6340de60b2a77672",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795137200,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "11fd07229172203cfcb6e19f203551734365ea35d00d7d02b433730fe28b5965",
+      "developer_id": "07e93c446f9216e1",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795139080,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "1006aed7b34b9ef468f94abb5254cdeeff1ebad3a92be2194d0a3bba4e516d70",
+      "developer_id": "0eddd9d8af90b281",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795140567,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "0daa5fdbcbd68d2b6eacf6665d14ce1b214cac7c67e3e0ee4d5cc80c9525d037",
+      "developer_id": "8e1e0dc070e31c36",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795154783,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "07a7ef2863f064877f014059139de23f53b7e17bdd7d8840b3db4be4ccad178c",
+      "developer_id": "db55c2d208c546fa",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795134549,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "05c5856bdbb07441ae0d52d213fe6385d09de683e107352035c7e5c192878dd1",
+      "developer_id": "d9eca880f454d903",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795143773,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "04b025eca2a13806da163e2194c725b147cec1158d1b8e86f09b95f3cd0bffeb",
+      "developer_id": "837e4b54e01b1522",
+      "launch_date": "2026-11-20",
+      "graduated": true,
+      "graduated_at": 1795152209,
+      "source": "graduation_feed"
+    },
     {
       "coin_id": "ff8b5668600aa89f23ff6abb4164b1d67958c882a128e59592aaaf0605756e79",
       "developer_id": "09208ea9247bc8d1",
@@ -851,6 +1235,22 @@
       "source": "graduation_feed"
     },
     {
+      "coin_id": "f5e9389e6cfdb795efbd1cd5f6f979ccb897d174521791ecb635b778b88e16b9",
+      "developer_id": "a4eb436bfb11ad16",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795132871,
+      "source": "launch_feed"
+    },
+    {
+      "coin_id": "f54183d31b23a1d8811204ebca2209d8e714df9dce2c53d4bc569f7e9ff75543",
+      "developer_id": "d7c8b97fb9726e01",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795064515,
+      "source": "graduation_feed"
+    },
+    {
       "coin_id": "f4a69992fdd8d38a131284fb1bdf03515047f37025d841c2b712dd7ea47e29d2",
       "developer_id": "a4eb436bfb11ad16",
       "launch_date": "2026-11-19",
@@ -888,6 +1288,22 @@
       "launch_date": "2026-11-19",
       "graduated": true,
       "graduated_at": 1795065663,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "f27591f0aba96878fa0fc51951cf365b3b46fcd1a5062bf32763a39f2c4a5c06",
+      "developer_id": "8ae419b3c371e551",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795120959,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "f1a57e1a50b74df61a2d8f95f5860d7fd7eb31590455a502a4252b86c59107c1",
+      "developer_id": "1c0496c5b9080d4e",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795132171,
       "source": "graduation_feed"
     },
     {
@@ -963,6 +1379,14 @@
       "source": "graduation_feed"
     },
     {
+      "coin_id": "e2640d6a76cfd6a57a62a317387f2fe3fff5c19c642b148a90cb48902cac0527",
+      "developer_id": "09208ea9247bc8d1",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795122309,
+      "source": "graduation_feed"
+    },
+    {
       "coin_id": "e190ec01c0f6adb0835a9d2fb47a1bd020b69e4b800061328eb6e55caf81d647",
       "developer_id": "4242a8b1cc3767a4",
       "launch_date": "2026-11-19",
@@ -987,11 +1411,27 @@
       "source": "graduation_feed"
     },
     {
+      "coin_id": "db00a27cb0aa5b1a4da937c71246e9b2bd5372f26b1e5f799e0332e8c2b728f7",
+      "developer_id": "a6f8d3019ba0edaf",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795132515,
+      "source": "graduation_feed"
+    },
+    {
       "coin_id": "da8a0d33f9b66da44afa92c5e65e277511d29418cfb57eff270545bf59ff2d91",
       "developer_id": "0f91fe457c8379ae",
       "launch_date": "2026-11-19",
       "graduated": true,
       "graduated_at": 1795074508,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "d6fab342c1d975f6571d5174b5f1cf5be821a908566683fee63f92facfb74eec",
+      "developer_id": "d2f92314c815b116",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795067481,
       "source": "graduation_feed"
     },
     {
@@ -1027,6 +1467,14 @@
       "source": "graduation_feed"
     },
     {
+      "coin_id": "d331688bfc18272a887b7c6bb668c5a98fd9f1b4a97d9b9993572ba1f26af9b0",
+      "developer_id": "d2f92314c815b116",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795068803,
+      "source": "graduation_feed"
+    },
+    {
       "coin_id": "d11d964a4eb1da561d38a41bacce8f0cc90b3fb51cccc7a9ef8e57abbf84a7a4",
       "developer_id": "1a482cb5e0f021b5",
       "launch_date": "2026-11-19",
@@ -1040,6 +1488,14 @@
       "launch_date": "2026-11-19",
       "graduated": true,
       "graduated_at": 1795095136,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "cf02178826e99ba24641b5a7e74021fa00638924cdcc7b295676e12fcfbe65e6",
+      "developer_id": "276e28eeb44be2c2",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795125898,
       "source": "graduation_feed"
     },
     {
@@ -1083,6 +1539,14 @@
       "source": "graduation_feed"
     },
     {
+      "coin_id": "c8940f8ba39c7a37b6cc83a9d0ee45bace8c51a7466bfdbc480ff3fc434121f7",
+      "developer_id": "f49626a35467dfb2",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795121737,
+      "source": "graduation_feed"
+    },
+    {
       "coin_id": "c7f431dedbec64b67c8d7e4da259fa64e33b5692aaa017890f3d26b8fa555c6d",
       "developer_id": "c4bce8e7e100d258",
       "launch_date": "2026-11-19",
@@ -1097,6 +1561,14 @@
       "graduated": true,
       "graduated_at": 1795067143,
       "source": "graduation_feed"
+    },
+    {
+      "coin_id": "c71237776f6c900298dd053ffdffe1352b89be075198c0904ee75ad2549b5fe6",
+      "developer_id": "a2f521dbce29676c",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795135850,
+      "source": "launch_feed"
     },
     {
       "coin_id": "c2c7d7d0b6b214cc234e7a7333d51dbfc5a56431ee7870c75e3331b47a86b8be",
@@ -1115,11 +1587,35 @@
       "source": "graduation_feed"
     },
     {
+      "coin_id": "bb988f3f8cbece1a28e6ddc27e1ce61fe5695c8073b8deccea89ce772fb8ab99",
+      "developer_id": "f5769f2d623ab79b",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795130350,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "ba6a7d373b233999da9a442fba4a4e10ec8abe8b9f3b58d534094bb09bf6f4d3",
+      "developer_id": "c78b4e0f3f91e5fc",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795119740,
+      "source": "graduation_feed"
+    },
+    {
       "coin_id": "b9c3542bf336aeeac01f766af2cdbd1d2ff98a14ef08163844a8b22a3a62fe32",
       "developer_id": "589c106c05d03edc",
       "launch_date": "2026-11-19",
       "graduated": true,
       "graduated_at": 1795054981,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "b85b1f4b8d492103e4efd51d868f674a3c1efb05d4f7bcdb030fbf19bac7d1d1",
+      "developer_id": "7f6b252c8db1b911",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795114484,
       "source": "graduation_feed"
     },
     {
@@ -1211,6 +1707,14 @@
       "source": "graduation_feed"
     },
     {
+      "coin_id": "a658ec5cbb9e9360306c022a69a86aecbe2a42ed0f74709ce294a0f157b19363",
+      "developer_id": "f49626a35467dfb2",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795130232,
+      "source": "graduation_feed"
+    },
+    {
       "coin_id": "a2bf61fd7b5e865cc706df9519fd27f7910d92a1c90beedb4dba6baed63bb23b",
       "developer_id": "398a34c7ea5cbd7e",
       "launch_date": "2026-11-19",
@@ -1224,6 +1728,14 @@
       "launch_date": "2026-11-19",
       "graduated": true,
       "graduated_at": 1795114043,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "a03ef1830947b0f970d2bf685936dae8509de481aaabe5d152016685ab593f40",
+      "developer_id": "389f3f021bd508b6",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795123324,
       "source": "graduation_feed"
     },
     {
@@ -1355,6 +1867,22 @@
       "source": "graduation_feed"
     },
     {
+      "coin_id": "8f1be07dd0bf667804652c5bd97b0ea8a1c58bae1411a32dd6727a32559d8eac",
+      "developer_id": "579604bd677fcd38",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795110967,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "8e2f47ca7a9f6e66615abd240788e86611a4c0789619e00a5e2446d2feef1154",
+      "developer_id": "889575fd6ac2b3c3",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795126083,
+      "source": "graduation_feed"
+    },
+    {
       "coin_id": "8d24691f1432f80f4d0e0b522c4a8729be5af7c69dbe384645567bca5ea18d07",
       "developer_id": "e2452d0baefec4b6",
       "launch_date": "2026-11-19",
@@ -1368,6 +1896,14 @@
       "launch_date": "2026-11-19",
       "graduated": true,
       "graduated_at": 1795051788,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "8af0b886667cbe4dcd1525af3061683e8f46b10e66c99b9d55859117875c088b",
+      "developer_id": "e7a681229a1ab41c",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795123923,
       "source": "graduation_feed"
     },
     {
@@ -1395,6 +1931,22 @@
       "source": "graduation_feed"
     },
     {
+      "coin_id": "81d152a0c954b9360c007fd73d5ba86e91012b90452cde01292ecaa2c171c7c0",
+      "developer_id": "4dfb9a3040fa51ed",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795118692,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "81703d276ae776d5e107523c73d272fb5373b2994d5af0e10b949226866937cd",
+      "developer_id": "d5f3b6efc345ed1d",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795130674,
+      "source": "graduation_feed"
+    },
+    {
       "coin_id": "7f4cdc4bd9122016c82ebdc7d2049fb8f93f220ad87b50002efccedd4d3128e6",
       "developer_id": "09208ea9247bc8d1",
       "launch_date": "2026-11-19",
@@ -1419,6 +1971,30 @@
       "source": "graduation_feed"
     },
     {
+      "coin_id": "7d316505e99c97ad524cd55bd57b4d0e62ff1c3c1d908a1c72f2305c4cb4e603",
+      "developer_id": "e6c6c2a86dc91d32",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795105925,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "7ce54e5b509fc33aae5e073cc9aa2cffa718b0c21b9ae5bdae9ea276e53bc898",
+      "developer_id": "d9052d94d86dbd61",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795129785,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "7c9e2a753e1a62dcfd9843def3e2eafa18f2cdb080fdf2b7553cf0ce07859027",
+      "developer_id": "9763eebd7318459a",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795122298,
+      "source": "graduation_feed"
+    },
+    {
       "coin_id": "7c26c24123826d27994785f459fb3042f0538cd2e9baded73c38caac2f033e73",
       "developer_id": "eb1e6456b7521609",
       "launch_date": "2026-11-19",
@@ -1435,11 +2011,43 @@
       "source": "graduation_feed"
     },
     {
+      "coin_id": "78cef0fa4d7c36ef808c63042a0a348dae29e8842a0ed58d02eb82f4b71f4ab2",
+      "developer_id": "03bfbbd45730a224",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795103864,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "76649d08982b8cb786760f0fa0348246976753a30fd1356f999a3ad38cb73271",
+      "developer_id": "7f6b252c8db1b911",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795121469,
+      "source": "graduation_feed"
+    },
+    {
       "coin_id": "6a126c6e97736ffc974418fd92fc1fafabf1b78af1c71067e77c80cf09a30726",
       "developer_id": "e0503f994855a4d6",
       "launch_date": "2026-11-19",
       "graduated": true,
       "graduated_at": 1795115833,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "68bd807d89fa03745fe2b586495c2228556e22f619e711a5c87b6a68f638cf11",
+      "developer_id": "8c71fc74a3b9fab7",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795124214,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "67e0b73db373fdad0bbd3978b128af1ecdff517c789da7e84ef52d7b4751ba8f",
+      "developer_id": "d8e08bb904008ce6",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795124236,
       "source": "graduation_feed"
     },
     {
@@ -1483,6 +2091,22 @@
       "source": "graduation_feed"
     },
     {
+      "coin_id": "58ba7c1714d9d05b5181c462e315573bfab1c20564ca6af0ed9793659ffb5ead",
+      "developer_id": "fe331948679f094d",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795120603,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "589f5c59ad3cf26ba75e9ab2f82e5fea6cf90ade045ac882d901aa123396cdd0",
+      "developer_id": "d2f92314c815b116",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795069063,
+      "source": "graduation_feed"
+    },
+    {
       "coin_id": "55e57543cac98c199d127e71ec9f93596edbd08bfbbb11d04497beda82f3def8",
       "developer_id": "b6ce4d50072f386d",
       "launch_date": "2026-11-19",
@@ -1515,6 +2139,14 @@
       "source": "graduation_feed"
     },
     {
+      "coin_id": "4a3ca4f6f7be579c682e458681e51dbec4ac7b35870b3808aa5dd242b24c6136",
+      "developer_id": "a4eb436bfb11ad16",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795127012,
+      "source": "graduation_feed"
+    },
+    {
       "coin_id": "49ff02bb6c4f09370f7f4ec382e76b1017e267dfd5a9e50702751f95edbe4873",
       "developer_id": "c3c24e762e524cc0",
       "launch_date": "2026-11-19",
@@ -1531,6 +2163,22 @@
       "source": "graduation_feed"
     },
     {
+      "coin_id": "483064285315958c10a6d9418dfdcde8d575ccf8f0f060c6102e4e683e0769fb",
+      "developer_id": "a4eb436bfb11ad16",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795130082,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "45b081124ad5b45041a72a8f235ec2e1103f1be050fde9beee38b1b0503b35ad",
+      "developer_id": "09208ea9247bc8d1",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795148156,
+      "source": "graduation_feed"
+    },
+    {
       "coin_id": "448ded0e1f473911fd21b877856ac1f67432612026cb8df47aa6576e46a7ae08",
       "developer_id": "eb1e6456b7521609",
       "launch_date": "2026-11-19",
@@ -1544,6 +2192,22 @@
       "launch_date": "2026-11-19",
       "graduated": true,
       "graduated_at": 1795098527,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "41e101d82a9544c9505722ce4a49573a6626356e17b76b80c6280cea09fb5cd1",
+      "developer_id": "cc51559097e517ae",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795125046,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "418f2d2ee1b72113bd30eb3dd6b8c67453818a98ba3c7eb6cfa1fafd33a9663d",
+      "developer_id": "09208ea9247bc8d1",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795125076,
       "source": "graduation_feed"
     },
     {
@@ -1627,6 +2291,14 @@
       "source": "graduation_feed"
     },
     {
+      "coin_id": "34b873317b6ed6ebbb69ebed0fbf92d2621253048440315b715d07dc614d9457",
+      "developer_id": "7f6b252c8db1b911",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795118450,
+      "source": "graduation_feed"
+    },
+    {
       "coin_id": "344b96e11c8b1eef6fe2033993410f390979a6e3d85ad41857defbc1632b73d5",
       "developer_id": "09208ea9247bc8d1",
       "launch_date": "2026-11-19",
@@ -1643,6 +2315,22 @@
       "source": "graduation_feed"
     },
     {
+      "coin_id": "316abb32c6a89cf13f16ca9d27cb78881292bb1f3a1e1ab58b0e1ea4be73737f",
+      "developer_id": "2601d8772f3d0775",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795153785,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "310e960177e6d2e2d81c2f51ee02b4034d8ccb25b18fb1e1b7c4be78d335feb1",
+      "developer_id": "7326e756129de207",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795156364,
+      "source": "graduation_feed"
+    },
+    {
       "coin_id": "2f77aeb96162c127c796c82d4c7d2afcfc6e5ecea1b3727ea46fa1e6b954f10c",
       "developer_id": "60d023c2073efe0f",
       "launch_date": "2026-11-19",
@@ -1651,11 +2339,27 @@
       "source": "graduation_feed"
     },
     {
+      "coin_id": "2f7595896e73d040deee7daa03114a9bd2a06bacc60744254c60bccdf761250b",
+      "developer_id": "7f6b252c8db1b911",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795124557,
+      "source": "graduation_feed"
+    },
+    {
       "coin_id": "2f61caeb778e878b4df208db794317b8dfebcb3afb3b6c7a811608994fdb3fd6",
       "developer_id": "c20ad27df46d3cc3",
       "launch_date": "2026-11-19",
       "graduated": true,
       "graduated_at": 1795103923,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "2c42a21b88c3a81bb92dcd4d43ec46369dfd99889faffbd3a70490ea272cd88e",
+      "developer_id": "579604bd677fcd38",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795111567,
       "source": "graduation_feed"
     },
     {
@@ -1731,6 +2435,14 @@
       "source": "graduation_feed"
     },
     {
+      "coin_id": "1d89334e46ee4f1afc86858f3f3e68fe93494ef90692d09574de3f1e645a5586",
+      "developer_id": "706f970377e5293c",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795118835,
+      "source": "graduation_feed"
+    },
+    {
       "coin_id": "1d1e71c9e0a5b4bde237561cdb8aa2b315e82e35a57cabc376a93792ef10cdb6",
       "developer_id": "e54f7c1435055681",
       "launch_date": "2026-11-19",
@@ -1771,6 +2483,14 @@
       "source": "graduation_feed"
     },
     {
+      "coin_id": "19a497849fce787ce08e46f23fc24c6c7353c8481d8701b4ebe39924aa8ec902",
+      "developer_id": "e61e0f39cd1569e8",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795145009,
+      "source": "graduation_feed"
+    },
+    {
       "coin_id": "174b423187c5c3f6ba70fa6604e5d9cfdc9ea144080218396b5254a2a578cdec",
       "developer_id": "9fc0454919a46163",
       "launch_date": "2026-11-19",
@@ -1803,11 +2523,27 @@
       "source": "graduation_feed"
     },
     {
+      "coin_id": "1431e1d20c0cd352e28fa8b2d62ee899dc3d4a981099434534f6a02c4c48442a",
+      "developer_id": "d7c8b97fb9726e01",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795096045,
+      "source": "graduation_feed"
+    },
+    {
       "coin_id": "10e5f56d33234a05618449dd02cf885dc93a516ee47ee5a93f62e107e006ea8d",
       "developer_id": "e2452d0baefec4b6",
       "launch_date": "2026-11-19",
       "graduated": true,
       "graduated_at": 1795106637,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "107b1e55160f004c4b7b6920d59365f7f7fc569a5df332e1b8082d5c1700040e",
+      "developer_id": "1e8faefe40cf86ac",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795120452,
       "source": "graduation_feed"
     },
     {
@@ -1824,6 +2560,14 @@
       "launch_date": "2026-11-19",
       "graduated": true,
       "graduated_at": 1795062478,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "06d447e726346c1c4c3664013a2118370e45cd22288cbd9703ff9212f3a8c098",
+      "developer_id": "723d27505fd2f00e",
+      "launch_date": "2026-11-19",
+      "graduated": true,
+      "graduated_at": 1795128098,
       "source": "graduation_feed"
     },
     {
@@ -1896,7 +2640,7 @@
       "launch_date": "2026-11-18",
       "graduated": true,
       "graduated_at": 1795061106,
-      "source": "graduation_feed"
+      "source": "launch_feed"
     },
     {
       "coin_id": "f6462193bd56773659537ea65e371be68930768448621fe7fe79bf046f73f702",
@@ -2232,7 +2976,7 @@
       "launch_date": "2026-11-18",
       "graduated": true,
       "graduated_at": 1795083197,
-      "source": "graduation_feed"
+      "source": "launch_feed"
     },
     {
       "coin_id": "cfe93a8f941bc94c826f59e95a51ecdfd896ccc0bb4db83b7a627942c2f9117e",
@@ -2384,7 +3128,7 @@
       "launch_date": "2026-11-18",
       "graduated": true,
       "graduated_at": 1795058496,
-      "source": "graduation_feed"
+      "source": "launch_feed"
     },
     {
       "coin_id": "c51407efefa4293675499acbecb4103db2a2355dcfa8b7d6ab527ba3ba72cdd4",
@@ -2608,7 +3352,7 @@
       "launch_date": "2026-11-18",
       "graduated": true,
       "graduated_at": 1795046583,
-      "source": "graduation_feed"
+      "source": "launch_feed"
     },
     {
       "coin_id": "b4440d2dd22f8ae90f9c642486e447a0df198a15f16bb0241254a7ffbe72800a",
@@ -2664,7 +3408,7 @@
       "launch_date": "2026-11-18",
       "graduated": true,
       "graduated_at": 1795059565,
-      "source": "graduation_feed"
+      "source": "launch_feed"
     },
     {
       "coin_id": "adf2976463cccaa0cfa79dddd632c29ac23063d37122927f793b360cb96912dd",
@@ -2672,7 +3416,7 @@
       "launch_date": "2026-11-18",
       "graduated": true,
       "graduated_at": 1795069134,
-      "source": "graduation_feed"
+      "source": "launch_feed"
     },
     {
       "coin_id": "ac6b314436702414d8d50f807b0902a001cade11e1371b0eea030ded675a3107",
@@ -2736,7 +3480,7 @@
       "launch_date": "2026-11-18",
       "graduated": true,
       "graduated_at": 1795059801,
-      "source": "graduation_feed"
+      "source": "launch_feed"
     },
     {
       "coin_id": "a6e85818486f8a3a0542309b14fd2983f37dba417050d974465b9c59c9170cd2",
@@ -3216,7 +3960,7 @@
       "launch_date": "2026-11-18",
       "graduated": true,
       "graduated_at": 1795055501,
-      "source": "graduation_feed"
+      "source": "launch_feed"
     },
     {
       "coin_id": "71f1bb51ffcd486edcad3cf0be1853e41cfadc4fa71dec8b34d26e1b0028aef2",
@@ -3328,7 +4072,7 @@
       "launch_date": "2026-11-18",
       "graduated": true,
       "graduated_at": 1795048140,
-      "source": "graduation_feed"
+      "source": "launch_feed"
     },
     {
       "coin_id": "63bb518d4dd062f88cafd141a9f0fbf9203d42d06ffebef0e8eeb3a27c5723c8",
@@ -3384,7 +4128,7 @@
       "launch_date": "2026-11-18",
       "graduated": true,
       "graduated_at": 1795062176,
-      "source": "graduation_feed"
+      "source": "launch_feed"
     },
     {
       "coin_id": "5e1cac520cacaf1a10a129cae88d301743ba94d3e95c832442e2acf0bbcbe2a1",
@@ -3408,6 +4152,14 @@
       "launch_date": "2026-11-18",
       "graduated": true,
       "graduated_at": 1794971208,
+      "source": "graduation_feed"
+    },
+    {
+      "coin_id": "5c95f7916839ddf601ce832cdb5d68df5ca8481b3400ecbc375d23f646bc71f9",
+      "developer_id": "7f6b252c8db1b911",
+      "launch_date": "2026-11-18",
+      "graduated": true,
+      "graduated_at": 1795017037,
       "source": "graduation_feed"
     },
     {
@@ -3531,6 +4283,14 @@
       "source": "graduation_feed"
     },
     {
+      "coin_id": "4499baed376e3bc814311595a61389faf84b87a4f869c4047895c7f8792a0dee",
+      "developer_id": "436147a4db0d2c1a",
+      "launch_date": "2026-11-18",
+      "graduated": true,
+      "graduated_at": 1795119946,
+      "source": "graduation_feed"
+    },
+    {
       "coin_id": "4435753611cf77858281e89a2b061e4df0d06c1ac66231f65a622ae9882b5dd2",
       "developer_id": "01b37130bf342e6e",
       "launch_date": "2026-11-18",
@@ -3544,7 +4304,7 @@
       "launch_date": "2026-11-18",
       "graduated": true,
       "graduated_at": 1795066951,
-      "source": "graduation_feed"
+      "source": "launch_feed"
     },
     {
       "coin_id": "42602a47d4a376eb88754d9aaeae7b20d648b3d675b02c191e4308df116d6f45",
@@ -3792,7 +4552,7 @@
       "launch_date": "2026-11-18",
       "graduated": true,
       "graduated_at": 1795070617,
-      "source": "graduation_feed"
+      "source": "launch_feed"
     },
     {
       "coin_id": "2b8058386de77ea857cf231d9c93d2e8d28f101a00729d80198b19233a888fc3",
@@ -4016,7 +4776,7 @@
       "launch_date": "2026-11-18",
       "graduated": true,
       "graduated_at": 1795078608,
-      "source": "graduation_feed"
+      "source": "launch_feed"
     },
     {
       "coin_id": "108f9694dfc1129a0bdc2dc66d4adf0848d023f44755722b44a0c7c3cf0570f1",
@@ -4088,7 +4848,7 @@
       "launch_date": "2026-11-18",
       "graduated": true,
       "graduated_at": 1795047754,
-      "source": "graduation_feed"
+      "source": "launch_feed"
     },
     {
       "coin_id": "0a73d4d717a8492f6f0038cc91bf50f3e1b20bed20834d08ff1af0baf4ee2bdd",
@@ -4155,6 +4915,14 @@
       "source": "graduation_feed"
     },
     {
+      "coin_id": "05e772222f33865e5f21c09f26061b1641c82fec9fb16d1f771edef8f9bab23d",
+      "developer_id": "579604bd677fcd38",
+      "launch_date": "2026-11-18",
+      "graduated": true,
+      "graduated_at": 1794984846,
+      "source": "graduation_feed"
+    },
+    {
       "coin_id": "04029c38a6deee791f4b2d89d110e72e5f552738a4df8a12628c448ee457ad9e",
       "developer_id": "c3c24e762e524cc0",
       "launch_date": "2026-11-18",
@@ -4176,7 +4944,7 @@
       "launch_date": "2026-11-18",
       "graduated": true,
       "graduated_at": 1795075188,
-      "source": "graduation_feed"
+      "source": "launch_feed"
     },
     {
       "coin_id": "03c756c90b8f5d783083d3f9a412c184f2f60b50da3353bd1bd03f706b5f6ebc",
@@ -4651,6 +5419,14 @@
       "source": "graduation_feed"
     },
     {
+      "coin_id": "d7c0495e59a94b4ee8f3d19212152b55ddd86e86bb17765134a253b56c0ab759",
+      "developer_id": "498b30e52cde7194",
+      "launch_date": "2026-11-17",
+      "graduated": true,
+      "graduated_at": 1795123393,
+      "source": "graduation_feed"
+    },
+    {
       "coin_id": "d474ab04128c6c4b451c5655a6f64f69bb3f1c77f0629f6ba0fad35e400b9191",
       "developer_id": "ca89971fc8c4cb04",
       "launch_date": "2026-11-17",
@@ -4680,7 +5456,7 @@
       "launch_date": "2026-11-17",
       "graduated": true,
       "graduated_at": 1794962968,
-      "source": "launch_feed"
+      "source": "graduation_feed"
     },
     {
       "coin_id": "cfde47b8212449617cef0443bfc4906e63c0c104001c961bacd69b65c72b3521",
@@ -4800,7 +5576,7 @@
       "launch_date": "2026-11-17",
       "graduated": true,
       "graduated_at": 1794961603,
-      "source": "launch_feed"
+      "source": "graduation_feed"
     },
     {
       "coin_id": "c42cdad5e7f84cc4f0ab54f5eb32d5f346a8314ac41fc607c0be35d3f67cb426",
@@ -5035,6 +5811,14 @@
       "source": "graduation_feed"
     },
     {
+      "coin_id": "ac6d8db2ab9fc7aac56908b581e4b2eef8d0075745342f696fb135332071a4b3",
+      "developer_id": "1e8faefe40cf86ac",
+      "launch_date": "2026-11-17",
+      "graduated": true,
+      "graduated_at": 1795121608,
+      "source": "graduation_feed"
+    },
+    {
       "coin_id": "ac0c15a5efdce5a528c58ba75eec03c283b8db1508d21cd50483df53fa742ade",
       "developer_id": "e54f7c1435055681",
       "launch_date": "2026-11-17",
@@ -5176,7 +5960,7 @@
       "launch_date": "2026-11-17",
       "graduated": true,
       "graduated_at": 1794975170,
-      "source": "launch_feed"
+      "source": "graduation_feed"
     },
     {
       "coin_id": "9bf33290881d737e342990040cc221c834d8c7f4d7d172fd1d11198d03102f79",
@@ -5328,7 +6112,7 @@
       "launch_date": "2026-11-17",
       "graduated": true,
       "graduated_at": 1794977361,
-      "source": "launch_feed"
+      "source": "graduation_feed"
     },
     {
       "coin_id": "88b91d6f9558395b4a833cf74a8889526bee93bd35d020fa62ac593cf2582405",
@@ -5992,7 +6776,7 @@
       "launch_date": "2026-11-17",
       "graduated": true,
       "graduated_at": 1794967473,
-      "source": "launch_feed"
+      "source": "graduation_feed"
     },
     {
       "coin_id": "431dba6d7d45788b12e0addd596d9d78caefb9403df34c8e6a9b47bebbabeea6",
@@ -6024,7 +6808,7 @@
       "launch_date": "2026-11-17",
       "graduated": true,
       "graduated_at": 1794965151,
-      "source": "launch_feed"
+      "source": "graduation_feed"
     },
     {
       "coin_id": "41571da02ac082fab7b3f3ef31ecbc409ddcc419f40dba6e2a8c3498ceafeb8b",
@@ -6320,7 +7104,7 @@
       "launch_date": "2026-11-17",
       "graduated": true,
       "graduated_at": 1794976915,
-      "source": "launch_feed"
+      "source": "graduation_feed"
     },
     {
       "coin_id": "2127885ced8a4681271ee5820ef394ff0fde3a210d156e9c1e24d6eaf2fc8afa",
