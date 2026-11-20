@@ -1,0 +1,79 @@
+name: Test Pumpdata API V3
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Install WebSocket client
+        run: python3 -m pip install websockets==15.0.1
+      - name: Test authenticated OpenDEX
+        env:
+          OPENDEX_API_KEY: ${{ secrets.OPENDEX_API_KEY }}
+        run: |
+          python3 - <<'PYCODE'
+          import os,json,time,urllib.request,urllib.error,urllib.parse
+          key=os.environ['OPENDEX_API_KEY']
+          assert key, 'Missing OPENDEX_API_KEY secret'
+          base='https://api.opendex.ws'
+          coins={'3GN46GsmAUQSpHXtY3oasJFYAbp9RBzVoR7X8ar1pump':145045.55,'BLVpn8ofkjnAzpWGaVpspZ5bHTeXDbXFgX4vn3fkpump':240630.00407,'2Hh3KGXYYecXD8DvmUjuUHjBy1kusMckrQDRRrbSpump':2419.82,'GA6zybFFiQysiZaF6dKWMsWruBAxuo7psW6zShGZpump':1895.269486,'DWSnQwsav8KXr3oEQ5ooET8MogLa6wfGVKy7XT5kpump':2754081,'FrdjNgBK2UtCFYK2aqrjiDZphW7AaERJa4mawCwbDTL7':None}
+          class NoRedirect(urllib.request.HTTPRedirectHandler):
+              def redirect_request(self,*args,**kwargs): return None
+          opener=urllib.request.build_opener(NoRedirect())
+          stopped=False; calls=0
+          def request(path,body=None):
+              global stopped,calls
+              if stopped or calls>=16: return None
+              calls+=1; time.sleep(1)
+              print('\nREQUEST',path,flush=True); start=time.monotonic()
+              req=urllib.request.Request(base+path,data=None if body is None else json.dumps(body).encode(),headers={'X-API-Key':key,'Accept':'application/json','Content-Type':'application/json'})
+              try:
+                  with opener.open(req,timeout=20) as r:
+                      print('HTTP',r.status,'seconds',round(time.monotonic()-start,2))
+                      print('Quota headers:',{k:v for k,v in r.headers.items() if any(s in k.lower() for s in ('ratelimit','rate-limit','credit','quota','retry-after')) and key not in v})
+                      return json.loads(r.read())
+              except urllib.error.HTTPError as e:
+                  print('HTTP',e.code,'Retry-After',e.headers.get('Retry-After'))
+                  print(e.read(1500).decode(errors='replace').replace(key,'[REDACTED]'))
+                  if e.code in (401,402,403,429) or 300<=e.code<400: stopped=True
+              except Exception as e: print(type(e).__name__,str(e).replace(key,'[REDACTED]'))
+              return None
+          def show(x): print(json.dumps(x,ensure_ascii=True).replace(key,'[REDACTED]'))
+          for mint,ref in coins.items():
+              d=request('/v2/token/SOL/'+mint+'/ath')
+              if isinstance(d,dict):
+                  show(d); ath=d.get('athMarketCapUsd'); print('Day1 reference',ref)
+                  if isinstance(ath,(int,float)) and ref is not None: print('ATH below day1 reference:',ath<ref*0.999)
+                  print('Possible baseline fallback:',d.get('athMultiplier')==1 and d.get('athTimestamp')==d.get('sinceTimestamp'))
+          for mint in (list(coins)[0],list(coins)[2]):
+              cursor=None; seen=set(); cursors=set()
+              for page in range(3):
+                  d=request('/v2/token/SOL/'+mint+'/dev-tokens'+('?' + urllib.parse.urlencode({'cursor':cursor}) if cursor else ''))
+                  if not isinstance(d,dict): break
+                  rows=d.get('tokens',[]); show({'page':page+1,'devAddress':d.get('devAddress'),'stats':d.get('stats'),'count':len(rows),'samples':rows[:2],'migrated_rows':sum(r.get('migrated') is True for r in rows)})
+                  seen.update(r['tokenAddress'] for r in rows if r.get('tokenAddress'))
+                  cursor=d.get('nextCursor')
+                  if not cursor or cursor in cursors: break
+                  cursors.add(cursor)
+              print('Unique developer tokens sampled:',len(seen),'More pages:',bool(cursor))
+          d=request('/v2/pages/search',{'sources':{'results':{'lookup':['SOL:'+m for m in coins]}}})
+          if d is not None: show(d)
+          d=request('/v2/token/SOL/'+next(iter(coins)))
+          if d is not None: show(d)
+          print('Total REST attempts:',calls)
+          if not stopped:
+              import asyncio,websockets
+              async def test_ws():
+                  try:
+                      async with websockets.connect('wss://api.opendex.ws/v2/ws',additional_headers={'X-API-Key':key},open_timeout=15,close_timeout=3) as ws:
+                          await ws.send(json.dumps({'type':'subscribe','topic':'token:SOL:'+next(iter(coins))+':dev_tokens'}))
+                          for _ in range(3):
+                              frame=json.loads(await asyncio.wait_for(ws.recv(),timeout=10))
+                              show({'type':frame.get('type'),'event':frame.get('event'),'topic':frame.get('topic'),'keys':list(frame)})
+                              if frame.get('event')=='TOKEN_DEV_TOKENS': break
+                  except Exception as e: print('WebSocket error:',type(e).__name__,str(e).replace(key,'[REDACTED]'))
+              asyncio.run(test_ws())
+          PYCODE
