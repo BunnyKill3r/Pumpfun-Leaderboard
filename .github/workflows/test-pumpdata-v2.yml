@@ -1,0 +1,109 @@
+name: Test Pumpdata API v2
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Test historical APIs
+        env:
+          PUMP_API_KEY: ${{ secrets.PUMP_API_KEY }}
+        run: |
+          python3 - <<'PY'
+          import os,json,time,urllib.request,urllib.error,collections
+          key=os.getenv('PUMP_API_KEY','').strip()
+          class NoRedirect(urllib.request.HTTPRedirectHandler):
+              def redirect_request(self,*a,**kw): return None
+          opener=urllib.request.build_opener(NoRedirect())
+          blocked=set(); calls=0
+          P='https://pumpdata.fun'; F='https://frontend-api-v3.pump.fun'; O='https://api.opendex.ws'
+          def show(x):
+              s=json.dumps(x,ensure_ascii=True,default=str)
+              print(s.replace(key,'[REDACTED]')[:6000] if key else s[:6000],flush=True)
+          def get(base,path,auth=False):
+              global calls
+              if base in blocked or calls>=70: return None
+              if auth and not key: print('Missing PUMP_API_KEY'); return None
+              calls+=1; time.sleep(1); start=time.monotonic()
+              print('\nGET',base+path,flush=True)
+              headers={'Accept':'application/json','User-Agent':'PrivateTrackerDiagnostic/2.0'}
+              if auth and base==P: headers['x-api-key']=key
+              try:
+                  with opener.open(urllib.request.Request(base+path,headers=headers),timeout=12) as r:
+                      print('HTTP',r.status,'seconds',round(time.monotonic()-start,2))
+                      show({k:v for k,v in r.headers.items() if any(t in k.lower() for t in ('ratelimit','retry-after','data-as-of'))})
+                      return json.loads(r.read(12_000_000))
+              except urllib.error.HTTPError as e:
+                  print('HTTP',e.code,'Retry-After',e.headers.get('Retry-After'))
+                  if e.code in (401,402,403,429): blocked.add(base); print('Provider stopped')
+              except (OSError,ValueError) as e: print(type(e).__name__)
+              return None
+          wallets=['g2kai8M6mJQroTG1EGGtP4RQHaqStDgsXGkukLutzo9','7ufmve7ZSFCzuNcKRunYrGtyb2Ka1MXzkWwf7jZhVsmL']
+          mints={'3GN46GsmAUQSpHXtY3oasJFYAbp9RBzVoR7X8ar1pump':145045.55,'BLVpn8ofkjnAzpWGaVpspZ5bHTeXDbXFgX4vn3fkpump':30859.1*7.7977,'2Hh3KGXYYecXD8DvmUjuUHjBy1kusMckrQDRRrbSpump':2419.82,'GA6zybFFiQysiZaF6dKWMsWruBAxuo7psW6zShGZpump':1885.09*1.0054,'DWSnQwsav8KXr3oEQ5ooET8MogLa6wfGVKy7XT5kpump':2754081,'FrdjNgBK2UtCFYK2aqrjiDZphW7AaERJa4mawCwbDTL7':None}
+          def fields(d):
+              return {k:v for k,v in d.items() if any(t in k.lower() for t in ('mint','name','symbol','creator','complete','migrat','graduat','ath','peak','market_cap','timestamp','pool')) and isinstance(v,(str,int,float,bool,type(None)))}
+          for w in wallets:
+              print('\n=== DEVELOPER',w,'===')
+              d=get(P,'/deployer/'+w,True)
+              expected=None
+              if isinstance(d,dict):
+                  expected=d.get('record',{}).get('launches'); print('Pumpdata total',expected,'recent',len(d.get('recent_launches',[])))
+              p=get(F,'/users/'+w)
+              if isinstance(p,dict): show({'profile_keys':list(p),'public_names':{k:v for k,v in p.items() if k.lower() in ('username','name','displayname','display_name')}})
+              seen={}; offset=0; counts=[]; reason='page cap'
+              for page in range(26):
+                  d=get(F,f'/coins-v2/user-created-coins/{w}?limit=100&offset={offset}&includeNsfw=true')
+                  if isinstance(d,dict): rows=d.get('coins'); counts.append(d.get('count')); print('Response keys',list(d),'count',d.get('count'))
+                  else: rows=d
+                  if not isinstance(rows,list): reason='unavailable or unknown schema'; break
+                  if not rows: reason='empty page'; break
+                  before=len(seen)
+                  for row in rows:
+                      if isinstance(row,dict) and isinstance(row.get('mint'),str): seen[row['mint']]=row
+                  print('Page rows',len(rows),'unique total',len(seen),'offset',offset)
+                  if page==0: show({'first_fields':list(rows[0]) if isinstance(rows[0],dict) else [],'samples':[fields(r) for r in rows[:2] if isinstance(r,dict)]})
+                  if len(seen)==before: reason='no new mints'; break
+                  offset+=len(rows)
+              show({'wallet':w,'unique_mints':len(seen),'pumpdata_total':expected,'reported_counts':counts,'end_reason':reason,'complete_true':sum(r.get('complete') is True for r in seen.values()),'pool_present':sum(bool(r.get('pump_swap_pool')) for r in seen.values()),'ath_field_counts':dict(collections.Counter(k for r in seen.values() for k,v in r.items() if 'ath' in k.lower() and v is not None))})
+          for mint,peak in mints.items():
+              print('\n=== TOKEN',mint,'day1 reference',peak,'===')
+              d=get(F,'/coins-v2/'+mint)
+              if isinstance(d,dict): show({'keys':list(d),'selected':fields(d)})
+              a=get(O,'/v2/token/SOL/'+mint+'/ath')
+              if isinstance(a,dict):
+                  show(a); v=a.get('athMarketCapUsd'); print('ATH below day1 reference:',v<peak*0.999 if isinstance(v,(int,float)) and peak else 'unknown'); print('Possible baseline fallback:',a.get('athTimestamp')==a.get('sinceTimestamp') and a.get('athMultiplier')==1)
+          d=get(P,'/similar/'+next(iter(mints))+'?limit=25',True)
+          if isinstance(d,dict): show({'keys':list(d),'lists':{k:{'count':len(v),'samples':v[:3]} for k,v in d.items() if isinstance(v,list)}})
+          elif isinstance(d,list): show({'count':len(d),'samples':d[:3]})
+          d=get(P,'/events/since.json')
+          if isinstance(d,dict): show({'keys':list(d),'lists':{k:{'count':len(v),'samples':v[:2]} for k,v in d.items() if isinstance(v,list)}})
+          elif isinstance(d,list): show({'count':len(d),'samples':d[:2]})
+          print('REST calls:',calls)
+          PY
+      - name: Test live PumpPortal events
+        if: always()
+        run: |
+          python3 -m pip install --disable-pip-version-check websockets==15.0.1
+          python3 - <<'PY'
+          import asyncio,json,collections,time,websockets
+          async def main():
+              counts=collections.Counter()
+              try:
+                  async with websockets.connect('wss://pumpportal.fun/api/data',open_timeout=15) as ws:
+                      for method in ('subscribeNewToken','subscribeMigration'):
+                          await ws.send(json.dumps({'method':method}))
+                      end=time.monotonic()+90
+                      while time.monotonic()<end:
+                          try: raw=await asyncio.wait_for(ws.recv(),timeout=max(0.1,end-time.monotonic()))
+                          except asyncio.TimeoutError: break
+                          d=json.loads(raw)
+                          kind=d.get('txType','ack_or_other') if isinstance(d,dict) else 'other'
+                          counts[kind]+=1
+                          if counts[kind]<=2: print(kind,json.dumps(d)[:2500],flush=True)
+              except Exception as e: print('WebSocket error:',type(e).__name__,str(e)[:300])
+              print('90-second event counts:',dict(counts))
+          asyncio.run(main())
+          PY
