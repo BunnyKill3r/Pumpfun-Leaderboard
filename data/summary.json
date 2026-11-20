@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-19T18:11:00.012577+00:00",
-  "period_start": "2026-10-21",
-  "period_end": "2026-11-19",
-  "days_collected": 6,
+  "updated_at": "2026-11-20T01:12:35.659025+00:00",
+  "period_start": "2026-10-22",
+  "period_end": "2026-11-20",
+  "days_collected": 7,
   "note": "Daily counts only. Developer counts cannot be summed across days to get unique 30-day developers.",
-  "total_launches_collected": 245970,
+  "total_launches_collected": 259495,
   "daily": {
     "2026-11-14": {
       "tokens": 40767,
@@ -27,14 +27,19 @@
       "developers_with_previous_graduations": 1526
     },
     "2026-11-18": {
-      "tokens": 48386,
+      "tokens": 48387,
       "unique_developers": 11220,
-      "developers_with_previous_graduations": 1635
+      "developers_with_previous_graduations": 1634
     },
     "2026-11-19": {
-      "tokens": 26213,
-      "unique_developers": 6344,
-      "developers_with_previous_graduations": 1112
+      "tokens": 39737,
+      "unique_developers": 9397,
+      "developers_with_previous_graduations": 1409
+    },
+    "2026-11-20": {
+      "tokens": 0,
+      "unique_developers": 0,
+      "developers_with_previous_graduations": 0
     }
   }
 }
