@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-11-22T20:13:05.146052+00:00",
-  "ranking_period_start": "2026-10-24",
-  "ranking_period_end": "2026-11-22",
+  "updated_at": "2026-11-23T08:28:27.486888+00:00",
+  "ranking_period_start": "2026-10-25",
+  "ranking_period_end": "2026-11-23",
   "description": "Top developers selected by launches during the collected rolling window. Market-cap peaks and graduation rates are all-time developer statistics.",
-  "matched_developers": 83,
+  "matched_developers": 79,
   "performance_records": 0,
   "developers": [
     {
       "rank_by_launches": 1,
       "developer_id": "cc51559097e517ae",
-      "launches_30d": 3702,
-      "active_days": 9,
+      "launches_30d": 4058,
+      "active_days": 10,
       "observed_graduations": 57,
       "all_time_launches": null,
       "all_time_graduations": null,
@@ -21,9 +21,9 @@
     {
       "rank_by_launches": 2,
       "developer_id": "b2bf121b5a316442",
-      "launches_30d": 2496,
-      "active_days": 9,
-      "observed_graduations": 66,
+      "launches_30d": 2621,
+      "active_days": 10,
+      "observed_graduations": 67,
       "all_time_launches": null,
       "all_time_graduations": null,
       "all_time_graduation_rate": null,
@@ -33,9 +33,9 @@
     {
       "rank_by_launches": 3,
       "developer_id": "7326e756129de207",
-      "launches_30d": 2179,
+      "launches_30d": 2233,
       "active_days": 9,
-      "observed_graduations": 20,
+      "observed_graduations": 22,
       "all_time_launches": null,
       "all_time_graduations": null,
       "all_time_graduation_rate": null,
@@ -44,6 +44,18 @@
     },
     {
       "rank_by_launches": 4,
+      "developer_id": "64991da96bb91ad9",
+      "launches_30d": 2168,
+      "active_days": 7,
+      "observed_graduations": 14,
+      "all_time_launches": null,
+      "all_time_graduations": null,
+      "all_time_graduation_rate": null,
+      "all_time_best_peak_usd": null,
+      "performance_available": false
+    },
+    {
+      "rank_by_launches": 5,
       "developer_id": "2e1fdfb16c6a29b1",
       "launches_30d": 2102,
       "active_days": 4,
@@ -55,11 +67,11 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 5,
-      "developer_id": "64991da96bb91ad9",
-      "launches_30d": 1965,
-      "active_days": 6,
-      "observed_graduations": 14,
+      "rank_by_launches": 6,
+      "developer_id": "2d7782c0d4945c38",
+      "launches_30d": 1653,
+      "active_days": 7,
+      "observed_graduations": 1,
       "all_time_launches": null,
       "all_time_graduations": null,
       "all_time_graduation_rate": null,
@@ -67,9 +79,9 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 6,
+      "rank_by_launches": 7,
       "developer_id": "0501ed8467a66a17",
-      "launches_30d": 1555,
+      "launches_30d": 1559,
       "active_days": 7,
       "observed_graduations": 3,
       "all_time_launches": null,
@@ -79,23 +91,11 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 7,
-      "developer_id": "e2452d0baefec4b6",
-      "launches_30d": 1481,
-      "active_days": 9,
-      "observed_graduations": 20,
-      "all_time_launches": null,
-      "all_time_graduations": null,
-      "all_time_graduation_rate": null,
-      "all_time_best_peak_usd": null,
-      "performance_available": false
-    },
-    {
       "rank_by_launches": 8,
-      "developer_id": "2d7782c0d4945c38",
-      "launches_30d": 1479,
-      "active_days": 6,
-      "observed_graduations": 1,
+      "developer_id": "e2452d0baefec4b6",
+      "launches_30d": 1522,
+      "active_days": 10,
+      "observed_graduations": 20,
       "all_time_launches": null,
       "all_time_graduations": null,
       "all_time_graduation_rate": null,
@@ -152,6 +152,18 @@
     },
     {
       "rank_by_launches": 13,
+      "developer_id": "2ac9f64456974590",
+      "launches_30d": 1151,
+      "active_days": 9,
+      "observed_graduations": 15,
+      "all_time_launches": null,
+      "all_time_graduations": null,
+      "all_time_graduation_rate": null,
+      "all_time_best_peak_usd": null,
+      "performance_available": false
+    },
+    {
+      "rank_by_launches": 14,
       "developer_id": "976ef3b9958ba5e2",
       "launches_30d": 1109,
       "active_days": 3,
@@ -163,7 +175,7 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 14,
+      "rank_by_launches": 15,
       "developer_id": "6adc57e15b90b309",
       "launches_30d": 1080,
       "active_days": 6,
@@ -175,11 +187,11 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 15,
-      "developer_id": "2ac9f64456974590",
-      "launches_30d": 1058,
-      "active_days": 8,
-      "observed_graduations": 15,
+      "rank_by_launches": 16,
+      "developer_id": "e7f15be1a89f6402",
+      "launches_30d": 1066,
+      "active_days": 10,
+      "observed_graduations": 12,
       "all_time_launches": null,
       "all_time_graduations": null,
       "all_time_graduation_rate": null,
@@ -187,7 +199,7 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 16,
+      "rank_by_launches": 17,
       "developer_id": "09208ea9247bc8d1",
       "launches_30d": 1057,
       "active_days": 5,
@@ -199,7 +211,19 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 17,
+      "rank_by_launches": 18,
+      "developer_id": "9521705a27303df7",
+      "launches_30d": 1004,
+      "active_days": 6,
+      "observed_graduations": 1,
+      "all_time_launches": null,
+      "all_time_graduations": null,
+      "all_time_graduation_rate": null,
+      "all_time_best_peak_usd": null,
+      "performance_available": false
+    },
+    {
+      "rank_by_launches": 19,
       "developer_id": "4e99f51793587251",
       "launches_30d": 995,
       "active_days": 9,
@@ -211,7 +235,7 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 18,
+      "rank_by_launches": 20,
       "developer_id": "b9945a454f7bc975",
       "launches_30d": 944,
       "active_days": 5,
@@ -223,7 +247,7 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 19,
+      "rank_by_launches": 21,
       "developer_id": "1c0496c5b9080d4e",
       "launches_30d": 929,
       "active_days": 5,
@@ -235,19 +259,7 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 20,
-      "developer_id": "e7f15be1a89f6402",
-      "launches_30d": 927,
-      "active_days": 9,
-      "observed_graduations": 11,
-      "all_time_launches": null,
-      "all_time_graduations": null,
-      "all_time_graduation_rate": null,
-      "all_time_best_peak_usd": null,
-      "performance_available": false
-    },
-    {
-      "rank_by_launches": 21,
+      "rank_by_launches": 22,
       "developer_id": "5e306f792b167498",
       "launches_30d": 927,
       "active_days": 4,
@@ -259,9 +271,9 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 22,
+      "rank_by_launches": 23,
       "developer_id": "b9c0974b1bfe89ec",
-      "launches_30d": 903,
+      "launches_30d": 904,
       "active_days": 7,
       "observed_graduations": 8,
       "all_time_launches": null,
@@ -271,10 +283,34 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 23,
-      "developer_id": "8ec99bbef8962bec",
-      "launches_30d": 862,
+      "rank_by_launches": 24,
+      "developer_id": "e54f7c1435055681",
+      "launches_30d": 891,
       "active_days": 9,
+      "observed_graduations": 97,
+      "all_time_launches": null,
+      "all_time_graduations": null,
+      "all_time_graduation_rate": null,
+      "all_time_best_peak_usd": null,
+      "performance_available": false
+    },
+    {
+      "rank_by_launches": 25,
+      "developer_id": "ca89971fc8c4cb04",
+      "launches_30d": 889,
+      "active_days": 9,
+      "observed_graduations": 9,
+      "all_time_launches": null,
+      "all_time_graduations": null,
+      "all_time_graduation_rate": null,
+      "all_time_best_peak_usd": null,
+      "performance_available": false
+    },
+    {
+      "rank_by_launches": 26,
+      "developer_id": "8ec99bbef8962bec",
+      "launches_30d": 865,
+      "active_days": 10,
       "observed_graduations": 15,
       "all_time_launches": null,
       "all_time_graduations": null,
@@ -283,7 +319,19 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 24,
+      "rank_by_launches": 27,
+      "developer_id": "7f908fd66ee75c20",
+      "launches_30d": 858,
+      "active_days": 6,
+      "observed_graduations": 5,
+      "all_time_launches": null,
+      "all_time_graduations": null,
+      "all_time_graduation_rate": null,
+      "all_time_best_peak_usd": null,
+      "performance_available": false
+    },
+    {
+      "rank_by_launches": 28,
       "developer_id": "a13f3f28dcb7a977",
       "launches_30d": 848,
       "active_days": 2,
@@ -295,19 +343,7 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 25,
-      "developer_id": "7f908fd66ee75c20",
-      "launches_30d": 847,
-      "active_days": 6,
-      "observed_graduations": 5,
-      "all_time_launches": null,
-      "all_time_graduations": null,
-      "all_time_graduation_rate": null,
-      "all_time_best_peak_usd": null,
-      "performance_available": false
-    },
-    {
-      "rank_by_launches": 26,
+      "rank_by_launches": 29,
       "developer_id": "589c106c05d03edc",
       "launches_30d": 844,
       "active_days": 9,
@@ -319,19 +355,7 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 27,
-      "developer_id": "ca89971fc8c4cb04",
-      "launches_30d": 841,
-      "active_days": 7,
-      "observed_graduations": 9,
-      "all_time_launches": null,
-      "all_time_graduations": null,
-      "all_time_graduation_rate": null,
-      "all_time_best_peak_usd": null,
-      "performance_available": false
-    },
-    {
-      "rank_by_launches": 28,
+      "rank_by_launches": 30,
       "developer_id": "7ecd5a1a41071d82",
       "launches_30d": 825,
       "active_days": 5,
@@ -343,34 +367,10 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 29,
-      "developer_id": "e54f7c1435055681",
-      "launches_30d": 816,
-      "active_days": 9,
-      "observed_graduations": 87,
-      "all_time_launches": null,
-      "all_time_graduations": null,
-      "all_time_graduation_rate": null,
-      "all_time_best_peak_usd": null,
-      "performance_available": false
-    },
-    {
-      "rank_by_launches": 30,
-      "developer_id": "9521705a27303df7",
-      "launches_30d": 813,
-      "active_days": 6,
-      "observed_graduations": 1,
-      "all_time_launches": null,
-      "all_time_graduations": null,
-      "all_time_graduation_rate": null,
-      "all_time_best_peak_usd": null,
-      "performance_available": false
-    },
-    {
       "rank_by_launches": 31,
       "developer_id": "ff26cf985d0274ab",
-      "launches_30d": 804,
-      "active_days": 9,
+      "launches_30d": 818,
+      "active_days": 10,
       "observed_graduations": 13,
       "all_time_launches": null,
       "all_time_graduations": null,
@@ -380,6 +380,30 @@
     },
     {
       "rank_by_launches": 32,
+      "developer_id": "0eddd9d8af90b281",
+      "launches_30d": 813,
+      "active_days": 10,
+      "observed_graduations": 36,
+      "all_time_launches": null,
+      "all_time_graduations": null,
+      "all_time_graduation_rate": null,
+      "all_time_best_peak_usd": null,
+      "performance_available": false
+    },
+    {
+      "rank_by_launches": 33,
+      "developer_id": "45342299a556a402",
+      "launches_30d": 808,
+      "active_days": 8,
+      "observed_graduations": 5,
+      "all_time_launches": null,
+      "all_time_graduations": null,
+      "all_time_graduation_rate": null,
+      "all_time_best_peak_usd": null,
+      "performance_available": false
+    },
+    {
+      "rank_by_launches": 34,
       "developer_id": "cad63def52c2b3a5",
       "launches_30d": 793,
       "active_days": 4,
@@ -391,9 +415,9 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 33,
+      "rank_by_launches": 35,
       "developer_id": "42ee1e670200b8fc",
-      "launches_30d": 776,
+      "launches_30d": 786,
       "active_days": 9,
       "observed_graduations": 4,
       "all_time_launches": null,
@@ -403,31 +427,55 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 34,
-      "developer_id": "45342299a556a402",
-      "launches_30d": 762,
-      "active_days": 8,
-      "observed_graduations": 5,
-      "all_time_launches": null,
-      "all_time_graduations": null,
-      "all_time_graduation_rate": null,
-      "all_time_best_peak_usd": null,
-      "performance_available": false
-    },
-    {
-      "rank_by_launches": 35,
-      "developer_id": "0eddd9d8af90b281",
-      "launches_30d": 752,
-      "active_days": 9,
-      "observed_graduations": 36,
-      "all_time_launches": null,
-      "all_time_graduations": null,
-      "all_time_graduation_rate": null,
-      "all_time_best_peak_usd": null,
-      "performance_available": false
-    },
-    {
       "rank_by_launches": 36,
+      "developer_id": "66bde7973b8416ed",
+      "launches_30d": 776,
+      "active_days": 8,
+      "observed_graduations": 8,
+      "all_time_launches": null,
+      "all_time_graduations": null,
+      "all_time_graduation_rate": null,
+      "all_time_best_peak_usd": null,
+      "performance_available": false
+    },
+    {
+      "rank_by_launches": 37,
+      "developer_id": "d9eca880f454d903",
+      "launches_30d": 758,
+      "active_days": 10,
+      "observed_graduations": 4,
+      "all_time_launches": null,
+      "all_time_graduations": null,
+      "all_time_graduation_rate": null,
+      "all_time_best_peak_usd": null,
+      "performance_available": false
+    },
+    {
+      "rank_by_launches": 38,
+      "developer_id": "9bd4ce3d6185b5a0",
+      "launches_30d": 756,
+      "active_days": 9,
+      "observed_graduations": 8,
+      "all_time_launches": null,
+      "all_time_graduations": null,
+      "all_time_graduation_rate": null,
+      "all_time_best_peak_usd": null,
+      "performance_available": false
+    },
+    {
+      "rank_by_launches": 39,
+      "developer_id": "07e93c446f9216e1",
+      "launches_30d": 749,
+      "active_days": 10,
+      "observed_graduations": 15,
+      "all_time_launches": null,
+      "all_time_graduations": null,
+      "all_time_graduation_rate": null,
+      "all_time_best_peak_usd": null,
+      "performance_available": false
+    },
+    {
+      "rank_by_launches": 40,
       "developer_id": "caa67e7d4fae8a5c",
       "launches_30d": 741,
       "active_days": 9,
@@ -439,7 +487,7 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 37,
+      "rank_by_launches": 41,
       "developer_id": "13932823b7cbd741",
       "launches_30d": 739,
       "active_days": 6,
@@ -451,23 +499,11 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 38,
-      "developer_id": "9bd4ce3d6185b5a0",
-      "launches_30d": 725,
-      "active_days": 9,
-      "observed_graduations": 6,
-      "all_time_launches": null,
-      "all_time_graduations": null,
-      "all_time_graduation_rate": null,
-      "all_time_best_peak_usd": null,
-      "performance_available": false
-    },
-    {
-      "rank_by_launches": 39,
+      "rank_by_launches": 42,
       "developer_id": "eb1e6456b7521609",
-      "launches_30d": 711,
+      "launches_30d": 734,
       "active_days": 9,
-      "observed_graduations": 15,
+      "observed_graduations": 16,
       "all_time_launches": null,
       "all_time_graduations": null,
       "all_time_graduation_rate": null,
@@ -475,7 +511,43 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 40,
+      "rank_by_launches": 43,
+      "developer_id": "a4eb436bfb11ad16",
+      "launches_30d": 718,
+      "active_days": 10,
+      "observed_graduations": 16,
+      "all_time_launches": null,
+      "all_time_graduations": null,
+      "all_time_graduation_rate": null,
+      "all_time_best_peak_usd": null,
+      "performance_available": false
+    },
+    {
+      "rank_by_launches": 44,
+      "developer_id": "8ae419b3c371e551",
+      "launches_30d": 708,
+      "active_days": 10,
+      "observed_graduations": 13,
+      "all_time_launches": null,
+      "all_time_graduations": null,
+      "all_time_graduation_rate": null,
+      "all_time_best_peak_usd": null,
+      "performance_available": false
+    },
+    {
+      "rank_by_launches": 45,
+      "developer_id": "9bc4f31f7e13d9b4",
+      "launches_30d": 701,
+      "active_days": 5,
+      "observed_graduations": 9,
+      "all_time_launches": null,
+      "all_time_graduations": null,
+      "all_time_graduation_rate": null,
+      "all_time_best_peak_usd": null,
+      "performance_available": false
+    },
+    {
+      "rank_by_launches": 46,
       "developer_id": "68e450448dd0df6f",
       "launches_30d": 698,
       "active_days": 5,
@@ -487,11 +559,11 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 41,
-      "developer_id": "d9eca880f454d903",
-      "launches_30d": 689,
-      "active_days": 9,
-      "observed_graduations": 4,
+      "rank_by_launches": 47,
+      "developer_id": "9624508406fc7eae",
+      "launches_30d": 698,
+      "active_days": 6,
+      "observed_graduations": 0,
       "all_time_launches": null,
       "all_time_graduations": null,
       "all_time_graduation_rate": null,
@@ -499,34 +571,10 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 42,
-      "developer_id": "07e93c446f9216e1",
-      "launches_30d": 679,
-      "active_days": 9,
-      "observed_graduations": 14,
-      "all_time_launches": null,
-      "all_time_graduations": null,
-      "all_time_graduation_rate": null,
-      "all_time_best_peak_usd": null,
-      "performance_available": false
-    },
-    {
-      "rank_by_launches": 43,
-      "developer_id": "66bde7973b8416ed",
-      "launches_30d": 679,
-      "active_days": 7,
-      "observed_graduations": 7,
-      "all_time_launches": null,
-      "all_time_graduations": null,
-      "all_time_graduation_rate": null,
-      "all_time_best_peak_usd": null,
-      "performance_available": false
-    },
-    {
-      "rank_by_launches": 44,
+      "rank_by_launches": 48,
       "developer_id": "941ccc0f71efcb74",
-      "launches_30d": 677,
-      "active_days": 3,
+      "launches_30d": 696,
+      "active_days": 4,
       "observed_graduations": 6,
       "all_time_launches": null,
       "all_time_graduations": null,
@@ -535,7 +583,7 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 45,
+      "rank_by_launches": 49,
       "developer_id": "9e8eeb22b5605313",
       "launches_30d": 665,
       "active_days": 8,
@@ -547,19 +595,7 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 46,
-      "developer_id": "a4eb436bfb11ad16",
-      "launches_30d": 644,
-      "active_days": 9,
-      "observed_graduations": 15,
-      "all_time_launches": null,
-      "all_time_graduations": null,
-      "all_time_graduation_rate": null,
-      "all_time_best_peak_usd": null,
-      "performance_available": false
-    },
-    {
-      "rank_by_launches": 47,
+      "rank_by_launches": 50,
       "developer_id": "dda61790eb808e35",
       "launches_30d": 643,
       "active_days": 4,
@@ -571,7 +607,7 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 48,
+      "rank_by_launches": 51,
       "developer_id": "a554391da1d47e2d",
       "launches_30d": 638,
       "active_days": 6,
@@ -583,31 +619,7 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 49,
-      "developer_id": "8ae419b3c371e551",
-      "launches_30d": 634,
-      "active_days": 9,
-      "observed_graduations": 13,
-      "all_time_launches": null,
-      "all_time_graduations": null,
-      "all_time_graduation_rate": null,
-      "all_time_best_peak_usd": null,
-      "performance_available": false
-    },
-    {
-      "rank_by_launches": 50,
-      "developer_id": "9bc4f31f7e13d9b4",
-      "launches_30d": 631,
-      "active_days": 4,
-      "observed_graduations": 8,
-      "all_time_launches": null,
-      "all_time_graduations": null,
-      "all_time_graduation_rate": null,
-      "all_time_best_peak_usd": null,
-      "performance_available": false
-    },
-    {
-      "rank_by_launches": 51,
+      "rank_by_launches": 52,
       "developer_id": "2bbc462c1cf8faa8",
       "launches_30d": 629,
       "active_days": 9,
@@ -619,7 +631,7 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 52,
+      "rank_by_launches": 53,
       "developer_id": "befbdf66b81995ce",
       "launches_30d": 618,
       "active_days": 7,
@@ -631,7 +643,19 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 53,
+      "rank_by_launches": 54,
+      "developer_id": "6be3643376883584",
+      "launches_30d": 598,
+      "active_days": 9,
+      "observed_graduations": 2,
+      "all_time_launches": null,
+      "all_time_graduations": null,
+      "all_time_graduation_rate": null,
+      "all_time_best_peak_usd": null,
+      "performance_available": false
+    },
+    {
+      "rank_by_launches": 55,
       "developer_id": "430347d2efa04213",
       "launches_30d": 584,
       "active_days": 6,
@@ -643,11 +667,11 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 54,
-      "developer_id": "6be3643376883584",
-      "launches_30d": 574,
-      "active_days": 8,
-      "observed_graduations": 2,
+      "rank_by_launches": 56,
+      "developer_id": "934730a9f9bbadff",
+      "launches_30d": 567,
+      "active_days": 9,
+      "observed_graduations": 6,
       "all_time_launches": null,
       "all_time_graduations": null,
       "all_time_graduation_rate": null,
@@ -655,7 +679,31 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 55,
+      "rank_by_launches": 57,
+      "developer_id": "3eb5494e7e45c590",
+      "launches_30d": 562,
+      "active_days": 4,
+      "observed_graduations": 11,
+      "all_time_launches": null,
+      "all_time_graduations": null,
+      "all_time_graduation_rate": null,
+      "all_time_best_peak_usd": null,
+      "performance_available": false
+    },
+    {
+      "rank_by_launches": 58,
+      "developer_id": "e03ed6199e9f8130",
+      "launches_30d": 560,
+      "active_days": 4,
+      "observed_graduations": 10,
+      "all_time_launches": null,
+      "all_time_graduations": null,
+      "all_time_graduation_rate": null,
+      "all_time_best_peak_usd": null,
+      "performance_available": false
+    },
+    {
+      "rank_by_launches": 59,
       "developer_id": "8c71fc74a3b9fab7",
       "launches_30d": 558,
       "active_days": 8,
@@ -667,7 +715,7 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 56,
+      "rank_by_launches": 60,
       "developer_id": "01b37130bf342e6e",
       "launches_30d": 556,
       "active_days": 5,
@@ -679,7 +727,7 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 57,
+      "rank_by_launches": 61,
       "developer_id": "0a17a0b8966452b0",
       "launches_30d": 555,
       "active_days": 7,
@@ -691,11 +739,11 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 58,
-      "developer_id": "934730a9f9bbadff",
-      "launches_30d": 554,
-      "active_days": 8,
-      "observed_graduations": 6,
+      "rank_by_launches": 62,
+      "developer_id": "1beda2b21799e60a",
+      "launches_30d": 545,
+      "active_days": 10,
+      "observed_graduations": 2,
       "all_time_launches": null,
       "all_time_graduations": null,
       "all_time_graduation_rate": null,
@@ -703,19 +751,7 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 59,
-      "developer_id": "e03ed6199e9f8130",
-      "launches_30d": 544,
-      "active_days": 4,
-      "observed_graduations": 10,
-      "all_time_launches": null,
-      "all_time_graduations": null,
-      "all_time_graduation_rate": null,
-      "all_time_best_peak_usd": null,
-      "performance_available": false
-    },
-    {
-      "rank_by_launches": 60,
+      "rank_by_launches": 63,
       "developer_id": "202c5c761c05328d",
       "launches_30d": 542,
       "active_days": 8,
@@ -727,7 +763,7 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 61,
+      "rank_by_launches": 64,
       "developer_id": "d8e08bb904008ce6",
       "launches_30d": 533,
       "active_days": 9,
@@ -739,7 +775,43 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 62,
+      "rank_by_launches": 65,
+      "developer_id": "5e45cdf62406a9b9",
+      "launches_30d": 533,
+      "active_days": 3,
+      "observed_graduations": 3,
+      "all_time_launches": null,
+      "all_time_graduations": null,
+      "all_time_graduation_rate": null,
+      "all_time_best_peak_usd": null,
+      "performance_available": false
+    },
+    {
+      "rank_by_launches": 66,
+      "developer_id": "830e3f430f2df75b",
+      "launches_30d": 533,
+      "active_days": 7,
+      "observed_graduations": 0,
+      "all_time_launches": null,
+      "all_time_graduations": null,
+      "all_time_graduation_rate": null,
+      "all_time_best_peak_usd": null,
+      "performance_available": false
+    },
+    {
+      "rank_by_launches": 67,
+      "developer_id": "baae270dc88cc71e",
+      "launches_30d": 533,
+      "active_days": 9,
+      "observed_graduations": 0,
+      "all_time_launches": null,
+      "all_time_graduations": null,
+      "all_time_graduation_rate": null,
+      "all_time_best_peak_usd": null,
+      "performance_available": false
+    },
+    {
+      "rank_by_launches": 68,
       "developer_id": "3e43f6028e510377",
       "launches_30d": 532,
       "active_days": 4,
@@ -751,7 +823,7 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 63,
+      "rank_by_launches": 69,
       "developer_id": "7712ebe5c8c878bd",
       "launches_30d": 527,
       "active_days": 6,
@@ -763,11 +835,11 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 64,
-      "developer_id": "baae270dc88cc71e",
+      "rank_by_launches": 70,
+      "developer_id": "06d37e14fdf5d20b",
       "launches_30d": 526,
       "active_days": 8,
-      "observed_graduations": 0,
+      "observed_graduations": 4,
       "all_time_launches": null,
       "all_time_graduations": null,
       "all_time_graduation_rate": null,
@@ -775,7 +847,7 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 65,
+      "rank_by_launches": 71,
       "developer_id": "4a3aebcb482b7a09",
       "launches_30d": 523,
       "active_days": 4,
@@ -787,19 +859,7 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 66,
-      "developer_id": "1beda2b21799e60a",
-      "launches_30d": 522,
-      "active_days": 9,
-      "observed_graduations": 2,
-      "all_time_launches": null,
-      "all_time_graduations": null,
-      "all_time_graduation_rate": null,
-      "all_time_best_peak_usd": null,
-      "performance_available": false
-    },
-    {
-      "rank_by_launches": 67,
+      "rank_by_launches": 72,
       "developer_id": "b5288b62b7eff2a1",
       "launches_30d": 521,
       "active_days": 6,
@@ -811,11 +871,11 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 68,
-      "developer_id": "830e3f430f2df75b",
-      "launches_30d": 518,
-      "active_days": 7,
-      "observed_graduations": 0,
+      "rank_by_launches": 73,
+      "developer_id": "88352f2f33454c38",
+      "launches_30d": 516,
+      "active_days": 3,
+      "observed_graduations": 2,
       "all_time_launches": null,
       "all_time_graduations": null,
       "all_time_graduation_rate": null,
@@ -823,7 +883,43 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 69,
+      "rank_by_launches": 74,
+      "developer_id": "276e28eeb44be2c2",
+      "launches_30d": 506,
+      "active_days": 10,
+      "observed_graduations": 3,
+      "all_time_launches": null,
+      "all_time_graduations": null,
+      "all_time_graduation_rate": null,
+      "all_time_best_peak_usd": null,
+      "performance_available": false
+    },
+    {
+      "rank_by_launches": 75,
+      "developer_id": "4dfb9a3040fa51ed",
+      "launches_30d": 504,
+      "active_days": 10,
+      "observed_graduations": 5,
+      "all_time_launches": null,
+      "all_time_graduations": null,
+      "all_time_graduation_rate": null,
+      "all_time_best_peak_usd": null,
+      "performance_available": false
+    },
+    {
+      "rank_by_launches": 76,
+      "developer_id": "e6c6c2a86dc91d32",
+      "launches_30d": 502,
+      "active_days": 5,
+      "observed_graduations": 2,
+      "all_time_launches": null,
+      "all_time_graduations": null,
+      "all_time_graduation_rate": null,
+      "all_time_best_peak_usd": null,
+      "performance_available": false
+    },
+    {
+      "rank_by_launches": 77,
       "developer_id": "817236b2514f79db",
       "launches_30d": 501,
       "active_days": 4,
@@ -835,7 +931,7 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 70,
+      "rank_by_launches": 78,
       "developer_id": "064dbecc1b01de87",
       "launches_30d": 500,
       "active_days": 2,
@@ -847,19 +943,7 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 71,
-      "developer_id": "06d37e14fdf5d20b",
-      "launches_30d": 500,
-      "active_days": 8,
-      "observed_graduations": 2,
-      "all_time_launches": null,
-      "all_time_graduations": null,
-      "all_time_graduation_rate": null,
-      "all_time_best_peak_usd": null,
-      "performance_available": false
-    },
-    {
-      "rank_by_launches": 72,
+      "rank_by_launches": 79,
       "developer_id": "fbcaaf8afa213923",
       "launches_30d": 499,
       "active_days": 4,
@@ -871,31 +955,7 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 73,
-      "developer_id": "4dfb9a3040fa51ed",
-      "launches_30d": 491,
-      "active_days": 9,
-      "observed_graduations": 5,
-      "all_time_launches": null,
-      "all_time_graduations": null,
-      "all_time_graduation_rate": null,
-      "all_time_best_peak_usd": null,
-      "performance_available": false
-    },
-    {
-      "rank_by_launches": 74,
-      "developer_id": "3eb5494e7e45c590",
-      "launches_30d": 487,
-      "active_days": 4,
-      "observed_graduations": 11,
-      "all_time_launches": null,
-      "all_time_graduations": null,
-      "all_time_graduation_rate": null,
-      "all_time_best_peak_usd": null,
-      "performance_available": false
-    },
-    {
-      "rank_by_launches": 75,
+      "rank_by_launches": 80,
       "developer_id": "6b7920951e3f1820",
       "launches_30d": 481,
       "active_days": 6,
@@ -907,10 +967,22 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 76,
+      "rank_by_launches": 81,
+      "developer_id": "3d9cd0c2fe22ef70",
+      "launches_30d": 478,
+      "active_days": 5,
+      "observed_graduations": 0,
+      "all_time_launches": null,
+      "all_time_graduations": null,
+      "all_time_graduation_rate": null,
+      "all_time_best_peak_usd": null,
+      "performance_available": false
+    },
+    {
+      "rank_by_launches": 82,
       "developer_id": "c6a62fe9c73459f9",
-      "launches_30d": 470,
-      "active_days": 8,
+      "launches_30d": 473,
+      "active_days": 10,
       "observed_graduations": 4,
       "all_time_launches": null,
       "all_time_graduations": null,
@@ -919,7 +991,55 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 77,
+      "rank_by_launches": 83,
+      "developer_id": "928597f56c3d9ba6",
+      "launches_30d": 471,
+      "active_days": 9,
+      "observed_graduations": 2,
+      "all_time_launches": null,
+      "all_time_graduations": null,
+      "all_time_graduation_rate": null,
+      "all_time_best_peak_usd": null,
+      "performance_available": false
+    },
+    {
+      "rank_by_launches": 84,
+      "developer_id": "8b95ee4f55eb63d7",
+      "launches_30d": 470,
+      "active_days": 10,
+      "observed_graduations": 6,
+      "all_time_launches": null,
+      "all_time_graduations": null,
+      "all_time_graduation_rate": null,
+      "all_time_best_peak_usd": null,
+      "performance_available": false
+    },
+    {
+      "rank_by_launches": 85,
+      "developer_id": "153cd06b07e04d1e",
+      "launches_30d": 469,
+      "active_days": 7,
+      "observed_graduations": 0,
+      "all_time_launches": null,
+      "all_time_graduations": null,
+      "all_time_graduation_rate": null,
+      "all_time_best_peak_usd": null,
+      "performance_available": false
+    },
+    {
+      "rank_by_launches": 86,
+      "developer_id": "723d27505fd2f00e",
+      "launches_30d": 468,
+      "active_days": 10,
+      "observed_graduations": 4,
+      "all_time_launches": null,
+      "all_time_graduations": null,
+      "all_time_graduation_rate": null,
+      "all_time_best_peak_usd": null,
+      "performance_available": false
+    },
+    {
+      "rank_by_launches": 87,
       "developer_id": "606e709a921111cb",
       "launches_30d": 467,
       "active_days": 3,
@@ -931,19 +1051,7 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 78,
-      "developer_id": "928597f56c3d9ba6",
-      "launches_30d": 466,
-      "active_days": 9,
-      "observed_graduations": 2,
-      "all_time_launches": null,
-      "all_time_graduations": null,
-      "all_time_graduation_rate": null,
-      "all_time_best_peak_usd": null,
-      "performance_available": false
-    },
-    {
-      "rank_by_launches": 79,
+      "rank_by_launches": 88,
       "developer_id": "05f9b8e0b22e6842",
       "launches_30d": 462,
       "active_days": 2,
@@ -955,10 +1063,46 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 80,
-      "developer_id": "3d9cd0c2fe22ef70",
-      "launches_30d": 458,
-      "active_days": 4,
+      "rank_by_launches": 89,
+      "developer_id": "4521b8ae0c4922b2",
+      "launches_30d": 461,
+      "active_days": 9,
+      "observed_graduations": 9,
+      "all_time_launches": null,
+      "all_time_graduations": null,
+      "all_time_graduation_rate": null,
+      "all_time_best_peak_usd": null,
+      "performance_available": false
+    },
+    {
+      "rank_by_launches": 90,
+      "developer_id": "b0d32b07b50bcce6",
+      "launches_30d": 459,
+      "active_days": 9,
+      "observed_graduations": 6,
+      "all_time_launches": null,
+      "all_time_graduations": null,
+      "all_time_graduation_rate": null,
+      "all_time_best_peak_usd": null,
+      "performance_available": false
+    },
+    {
+      "rank_by_launches": 91,
+      "developer_id": "29df65460300b6ad",
+      "launches_30d": 459,
+      "active_days": 8,
+      "observed_graduations": 3,
+      "all_time_launches": null,
+      "all_time_graduations": null,
+      "all_time_graduation_rate": null,
+      "all_time_best_peak_usd": null,
+      "performance_available": false
+    },
+    {
+      "rank_by_launches": 92,
+      "developer_id": "b9783936b9759c43",
+      "launches_30d": 451,
+      "active_days": 6,
       "observed_graduations": 0,
       "all_time_launches": null,
       "all_time_graduations": null,
@@ -967,7 +1111,7 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 81,
+      "rank_by_launches": 93,
       "developer_id": "76240e350da685ac",
       "launches_30d": 448,
       "active_days": 9,
@@ -979,19 +1123,7 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 82,
-      "developer_id": "153cd06b07e04d1e",
-      "launches_30d": 447,
-      "active_days": 7,
-      "observed_graduations": 0,
-      "all_time_launches": null,
-      "all_time_graduations": null,
-      "all_time_graduation_rate": null,
-      "all_time_best_peak_usd": null,
-      "performance_available": false
-    },
-    {
-      "rank_by_launches": 83,
+      "rank_by_launches": 94,
       "developer_id": "dab3c801cf732bc0",
       "launches_30d": 446,
       "active_days": 7,
@@ -1003,7 +1135,7 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 84,
+      "rank_by_launches": 95,
       "developer_id": "728de34c9ef9b51f",
       "launches_30d": 445,
       "active_days": 9,
@@ -1015,23 +1147,11 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 85,
-      "developer_id": "723d27505fd2f00e",
-      "launches_30d": 442,
-      "active_days": 9,
-      "observed_graduations": 4,
-      "all_time_launches": null,
-      "all_time_graduations": null,
-      "all_time_graduation_rate": null,
-      "all_time_best_peak_usd": null,
-      "performance_available": false
-    },
-    {
-      "rank_by_launches": 86,
-      "developer_id": "4521b8ae0c4922b2",
+      "rank_by_launches": 96,
+      "developer_id": "074e04ee89a4fb3f",
       "launches_30d": 440,
-      "active_days": 9,
-      "observed_graduations": 9,
+      "active_days": 10,
+      "observed_graduations": 2,
       "all_time_launches": null,
       "all_time_graduations": null,
       "all_time_graduation_rate": null,
@@ -1039,7 +1159,19 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 87,
+      "rank_by_launches": 97,
+      "developer_id": "2d2e52184c7bd2a5",
+      "launches_30d": 436,
+      "active_days": 10,
+      "observed_graduations": 5,
+      "all_time_launches": null,
+      "all_time_graduations": null,
+      "all_time_graduation_rate": null,
+      "all_time_best_peak_usd": null,
+      "performance_available": false
+    },
+    {
+      "rank_by_launches": 98,
       "developer_id": "eaa031ec67a338e6",
       "launches_30d": 435,
       "active_days": 5,
@@ -1051,31 +1183,7 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 88,
-      "developer_id": "e6c6c2a86dc91d32",
-      "launches_30d": 435,
-      "active_days": 5,
-      "observed_graduations": 2,
-      "all_time_launches": null,
-      "all_time_graduations": null,
-      "all_time_graduation_rate": null,
-      "all_time_best_peak_usd": null,
-      "performance_available": false
-    },
-    {
-      "rank_by_launches": 89,
-      "developer_id": "b0d32b07b50bcce6",
-      "launches_30d": 434,
-      "active_days": 9,
-      "observed_graduations": 6,
-      "all_time_launches": null,
-      "all_time_graduations": null,
-      "all_time_graduation_rate": null,
-      "all_time_best_peak_usd": null,
-      "performance_available": false
-    },
-    {
-      "rank_by_launches": 90,
+      "rank_by_launches": 99,
       "developer_id": "88f58939dd35f693",
       "launches_30d": 434,
       "active_days": 3,
@@ -1087,119 +1195,11 @@
       "performance_available": false
     },
     {
-      "rank_by_launches": 91,
-      "developer_id": "2d2e52184c7bd2a5",
-      "launches_30d": 433,
-      "active_days": 9,
-      "observed_graduations": 5,
-      "all_time_launches": null,
-      "all_time_graduations": null,
-      "all_time_graduation_rate": null,
-      "all_time_best_peak_usd": null,
-      "performance_available": false
-    },
-    {
-      "rank_by_launches": 92,
-      "developer_id": "d7c8b97fb9726e01",
-      "launches_30d": 428,
-      "active_days": 4,
-      "observed_graduations": 3,
-      "all_time_launches": null,
-      "all_time_graduations": null,
-      "all_time_graduation_rate": null,
-      "all_time_best_peak_usd": null,
-      "performance_available": false
-    },
-    {
-      "rank_by_launches": 93,
-      "developer_id": "436147a4db0d2c1a",
-      "launches_30d": 424,
-      "active_days": 7,
-      "observed_graduations": 7,
-      "all_time_launches": null,
-      "all_time_graduations": null,
-      "all_time_graduation_rate": null,
-      "all_time_best_peak_usd": null,
-      "performance_available": false
-    },
-    {
-      "rank_by_launches": 94,
-      "developer_id": "77f19c54e36cc97f",
-      "launches_30d": 424,
-      "active_days": 2,
-      "observed_graduations": 5,
-      "all_time_launches": null,
-      "all_time_graduations": null,
-      "all_time_graduation_rate": null,
-      "all_time_best_peak_usd": null,
-      "performance_available": false
-    },
-    {
-      "rank_by_launches": 95,
-      "developer_id": "b9783936b9759c43",
-      "launches_30d": 424,
-      "active_days": 5,
-      "observed_graduations": 0,
-      "all_time_launches": null,
-      "all_time_graduations": null,
-      "all_time_graduation_rate": null,
-      "all_time_best_peak_usd": null,
-      "performance_available": false
-    },
-    {
-      "rank_by_launches": 96,
-      "developer_id": "074e04ee89a4fb3f",
-      "launches_30d": 419,
-      "active_days": 9,
-      "observed_graduations": 2,
-      "all_time_launches": null,
-      "all_time_graduations": null,
-      "all_time_graduation_rate": null,
-      "all_time_best_peak_usd": null,
-      "performance_available": false
-    },
-    {
-      "rank_by_launches": 97,
-      "developer_id": "92457f7bfbd9fbe4",
-      "launches_30d": 412,
-      "active_days": 4,
-      "observed_graduations": 3,
-      "all_time_launches": null,
-      "all_time_graduations": null,
-      "all_time_graduation_rate": null,
-      "all_time_best_peak_usd": null,
-      "performance_available": false
-    },
-    {
-      "rank_by_launches": 98,
-      "developer_id": "d9052d94d86dbd61",
-      "launches_30d": 411,
-      "active_days": 9,
-      "observed_graduations": 12,
-      "all_time_launches": null,
-      "all_time_graduations": null,
-      "all_time_graduation_rate": null,
-      "all_time_best_peak_usd": null,
-      "performance_available": false
-    },
-    {
-      "rank_by_launches": 99,
-      "developer_id": "bfd3c7c6d2f09d0e",
-      "launches_30d": 411,
-      "active_days": 9,
-      "observed_graduations": 1,
-      "all_time_launches": null,
-      "all_time_graduations": null,
-      "all_time_graduation_rate": null,
-      "all_time_best_peak_usd": null,
-      "performance_available": false
-    },
-    {
       "rank_by_launches": 100,
-      "developer_id": "6340de60b2a77672",
-      "launches_30d": 404,
-      "active_days": 9,
-      "observed_graduations": 4,
+      "developer_id": "ba3bf39b18bf8deb",
+      "launches_30d": 432,
+      "active_days": 10,
+      "observed_graduations": 3,
       "all_time_launches": null,
       "all_time_graduations": null,
       "all_time_graduation_rate": null,
