@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-11-27T12:48:52.520780+00:00",
+  "updated_at": "2026-11-27T22:08:54.678844+00:00",
   "days_collected": 14,
   "period_start": "2026-10-29",
   "period_end": "2026-11-27",
   "ranking_method": "launch_count",
   "market_cap_ranking_available": false,
-  "total_developers": 90239,
+  "total_developers": 92979,
   "top_100": [
     {
       "rank": 1,
       "developer_id": "cc51559097e517ae",
-      "launches_30d": 5715,
-      "graduated_launches_observed": 76,
+      "launches_30d": 5950,
+      "graduated_launches_observed": 79,
       "previous_graduations_max": 1011,
       "active_days": 14
     },
@@ -26,9 +26,9 @@
     {
       "rank": 3,
       "developer_id": "b2bf121b5a316442",
-      "launches_30d": 3268,
-      "graduated_launches_observed": 85,
-      "previous_graduations_max": 680,
+      "launches_30d": 3408,
+      "graduated_launches_observed": 86,
+      "previous_graduations_max": 681,
       "active_days": 14
     },
     {
@@ -42,15 +42,15 @@
     {
       "rank": 5,
       "developer_id": "2d7782c0d4945c38",
-      "launches_30d": 2242,
+      "launches_30d": 2375,
       "graduated_launches_observed": 2,
       "previous_graduations_max": 2,
-      "active_days": 10
+      "active_days": 11
     },
     {
       "rank": 6,
       "developer_id": "9624508406fc7eae",
-      "launches_30d": 2144,
+      "launches_30d": 2148,
       "graduated_launches_observed": 0,
       "previous_graduations_max": 0,
       "active_days": 10
@@ -66,13 +66,21 @@
     {
       "rank": 8,
       "developer_id": "4e99f51793587251",
-      "launches_30d": 1951,
+      "launches_30d": 1963,
       "graduated_launches_observed": 0,
       "previous_graduations_max": 4,
       "active_days": 14
     },
     {
       "rank": 9,
+      "developer_id": "e03ed6199e9f8130",
+      "launches_30d": 1866,
+      "graduated_launches_observed": 12,
+      "previous_graduations_max": 12,
+      "active_days": 9
+    },
+    {
+      "rank": 10,
       "developer_id": "e2452d0baefec4b6",
       "launches_30d": 1794,
       "graduated_launches_observed": 21,
@@ -80,17 +88,9 @@
       "active_days": 12
     },
     {
-      "rank": 10,
-      "developer_id": "e03ed6199e9f8130",
-      "launches_30d": 1733,
-      "graduated_launches_observed": 12,
-      "previous_graduations_max": 12,
-      "active_days": 9
-    },
-    {
       "rank": 11,
       "developer_id": "6adc57e15b90b309",
-      "launches_30d": 1605,
+      "launches_30d": 1644,
       "graduated_launches_observed": 0,
       "previous_graduations_max": 12,
       "active_days": 9
@@ -114,9 +114,9 @@
     {
       "rank": 14,
       "developer_id": "8ec99bbef8962bec",
-      "launches_30d": 1475,
-      "graduated_launches_observed": 20,
-      "previous_graduations_max": 136,
+      "launches_30d": 1515,
+      "graduated_launches_observed": 21,
+      "previous_graduations_max": 137,
       "active_days": 14
     },
     {
@@ -129,32 +129,32 @@
     },
     {
       "rank": 16,
+      "developer_id": "2ac9f64456974590",
+      "launches_30d": 1409,
+      "graduated_launches_observed": 17,
+      "previous_graduations_max": 240,
+      "active_days": 12
+    },
+    {
+      "rank": 17,
       "developer_id": "a25e5db1874ec3eb",
-      "launches_30d": 1393,
+      "launches_30d": 1401,
       "graduated_launches_observed": 6,
       "previous_graduations_max": 11,
       "active_days": 10
     },
     {
-      "rank": 17,
-      "developer_id": "2ac9f64456974590",
-      "launches_30d": 1387,
-      "graduated_launches_observed": 17,
-      "previous_graduations_max": 240,
-      "active_days": 11
-    },
-    {
       "rank": 18,
       "developer_id": "e7f15be1a89f6402",
-      "launches_30d": 1290,
+      "launches_30d": 1294,
       "graduated_launches_observed": 13,
       "previous_graduations_max": 98,
-      "active_days": 13
+      "active_days": 14
     },
     {
       "rank": 19,
       "developer_id": "d9eca880f454d903",
-      "launches_30d": 1215,
+      "launches_30d": 1263,
       "graduated_launches_observed": 7,
       "previous_graduations_max": 89,
       "active_days": 14
@@ -162,13 +162,21 @@
     {
       "rank": 20,
       "developer_id": "45342299a556a402",
-      "launches_30d": 1202,
+      "launches_30d": 1209,
       "graduated_launches_observed": 9,
       "previous_graduations_max": 29,
       "active_days": 13
     },
     {
       "rank": 21,
+      "developer_id": "42ee1e670200b8fc",
+      "launches_30d": 1202,
+      "graduated_launches_observed": 5,
+      "previous_graduations_max": 5,
+      "active_days": 14
+    },
+    {
+      "rank": 22,
       "developer_id": "efa8b0b8e558fcce",
       "launches_30d": 1198,
       "graduated_launches_observed": 11,
@@ -176,20 +184,12 @@
       "active_days": 9
     },
     {
-      "rank": 22,
+      "rank": 23,
       "developer_id": "976ef3b9958ba5e2",
       "launches_30d": 1193,
       "graduated_launches_observed": 0,
       "previous_graduations_max": 0,
       "active_days": 4
-    },
-    {
-      "rank": 23,
-      "developer_id": "42ee1e670200b8fc",
-      "launches_30d": 1183,
-      "graduated_launches_observed": 5,
-      "previous_graduations_max": 4,
-      "active_days": 14
     },
     {
       "rank": 24,
@@ -201,6 +201,14 @@
     },
     {
       "rank": 25,
+      "developer_id": "07e93c446f9216e1",
+      "launches_30d": 1175,
+      "graduated_launches_observed": 21,
+      "previous_graduations_max": 266,
+      "active_days": 14
+    },
+    {
+      "rank": 26,
       "developer_id": "9bc4f31f7e13d9b4",
       "launches_30d": 1150,
       "graduated_launches_observed": 10,
@@ -208,55 +216,79 @@
       "active_days": 7
     },
     {
-      "rank": 26,
-      "developer_id": "07e93c446f9216e1",
-      "launches_30d": 1140,
-      "graduated_launches_observed": 20,
-      "previous_graduations_max": 265,
+      "rank": 27,
+      "developer_id": "0eddd9d8af90b281",
+      "launches_30d": 1148,
+      "graduated_launches_observed": 55,
+      "previous_graduations_max": 229,
       "active_days": 14
     },
     {
-      "rank": 27,
+      "rank": 28,
       "developer_id": "9521705a27303df7",
-      "launches_30d": 1125,
+      "launches_30d": 1137,
       "graduated_launches_observed": 1,
       "previous_graduations_max": 1,
       "active_days": 9
     },
     {
-      "rank": 28,
+      "rank": 29,
       "developer_id": "b9c0974b1bfe89ec",
-      "launches_30d": 1107,
-      "graduated_launches_observed": 11,
-      "previous_graduations_max": 16,
+      "launches_30d": 1118,
+      "graduated_launches_observed": 12,
+      "previous_graduations_max": 17,
       "active_days": 12
     },
     {
-      "rank": 29,
+      "rank": 30,
+      "developer_id": "a4eb436bfb11ad16",
+      "launches_30d": 1112,
+      "graduated_launches_observed": 25,
+      "previous_graduations_max": 39,
+      "active_days": 14
+    },
+    {
+      "rank": 31,
       "developer_id": "bbfba47157e5bab0",
-      "launches_30d": 1107,
+      "launches_30d": 1108,
       "graduated_launches_observed": 0,
       "previous_graduations_max": 6,
       "active_days": 14
     },
     {
-      "rank": 30,
-      "developer_id": "0eddd9d8af90b281",
-      "launches_30d": 1104,
-      "graduated_launches_observed": 53,
-      "previous_graduations_max": 227,
-      "active_days": 14
-    },
-    {
-      "rank": 31,
+      "rank": 32,
       "developer_id": "e54f7c1435055681",
-      "launches_30d": 1061,
+      "launches_30d": 1075,
       "graduated_launches_observed": 107,
       "previous_graduations_max": 197,
       "active_days": 14
     },
     {
-      "rank": 32,
+      "rank": 33,
+      "developer_id": "8ae419b3c371e551",
+      "launches_30d": 1071,
+      "graduated_launches_observed": 19,
+      "previous_graduations_max": 31,
+      "active_days": 14
+    },
+    {
+      "rank": 34,
+      "developer_id": "eb1e6456b7521609",
+      "launches_30d": 1063,
+      "graduated_launches_observed": 19,
+      "previous_graduations_max": 126,
+      "active_days": 14
+    },
+    {
+      "rank": 35,
+      "developer_id": "3e09111f516bc8be",
+      "launches_30d": 1061,
+      "graduated_launches_observed": 6,
+      "previous_graduations_max": 7,
+      "active_days": 9
+    },
+    {
+      "rank": 36,
       "developer_id": "09208ea9247bc8d1",
       "launches_30d": 1057,
       "graduated_launches_observed": 29,
@@ -264,31 +296,7 @@
       "active_days": 5
     },
     {
-      "rank": 33,
-      "developer_id": "eb1e6456b7521609",
-      "launches_30d": 1055,
-      "graduated_launches_observed": 19,
-      "previous_graduations_max": 126,
-      "active_days": 14
-    },
-    {
-      "rank": 34,
-      "developer_id": "3e09111f516bc8be",
-      "launches_30d": 1040,
-      "graduated_launches_observed": 6,
-      "previous_graduations_max": 7,
-      "active_days": 9
-    },
-    {
-      "rank": 35,
-      "developer_id": "8ae419b3c371e551",
-      "launches_30d": 1036,
-      "graduated_launches_observed": 18,
-      "previous_graduations_max": 31,
-      "active_days": 14
-    },
-    {
-      "rank": 36,
+      "rank": 37,
       "developer_id": "b9945a454f7bc975",
       "launches_30d": 1004,
       "graduated_launches_observed": 15,
@@ -296,44 +304,36 @@
       "active_days": 6
     },
     {
-      "rank": 37,
+      "rank": 38,
       "developer_id": "ff26cf985d0274ab",
-      "launches_30d": 990,
+      "launches_30d": 1004,
       "graduated_launches_observed": 14,
       "previous_graduations_max": 224,
       "active_days": 14
     },
     {
-      "rank": 38,
-      "developer_id": "a4eb436bfb11ad16",
-      "launches_30d": 968,
-      "graduated_launches_observed": 24,
-      "previous_graduations_max": 38,
-      "active_days": 14
+      "rank": 39,
+      "developer_id": "ca89971fc8c4cb04",
+      "launches_30d": 978,
+      "graduated_launches_observed": 9,
+      "previous_graduations_max": 9,
+      "active_days": 12
     },
     {
-      "rank": 39,
+      "rank": 40,
+      "developer_id": "1c0496c5b9080d4e",
+      "launches_30d": 969,
+      "graduated_launches_observed": 6,
+      "previous_graduations_max": 58,
+      "active_days": 7
+    },
+    {
+      "rank": 41,
       "developer_id": "6b7920951e3f1820",
       "launches_30d": 954,
       "graduated_launches_observed": 0,
       "previous_graduations_max": 0,
       "active_days": 10
-    },
-    {
-      "rank": 40,
-      "developer_id": "1c0496c5b9080d4e",
-      "launches_30d": 949,
-      "graduated_launches_observed": 6,
-      "previous_graduations_max": 58,
-      "active_days": 6
-    },
-    {
-      "rank": 41,
-      "developer_id": "ca89971fc8c4cb04",
-      "launches_30d": 947,
-      "graduated_launches_observed": 9,
-      "previous_graduations_max": 9,
-      "active_days": 11
     },
     {
       "rank": 42,
@@ -345,6 +345,14 @@
     },
     {
       "rank": 43,
+      "developer_id": "befbdf66b81995ce",
+      "launches_30d": 941,
+      "graduated_launches_observed": 18,
+      "previous_graduations_max": 30,
+      "active_days": 10
+    },
+    {
+      "rank": 44,
       "developer_id": "015a1a8b534b4948",
       "launches_30d": 940,
       "graduated_launches_observed": 6,
@@ -352,7 +360,15 @@
       "active_days": 6
     },
     {
-      "rank": 44,
+      "rank": 45,
+      "developer_id": "6be3643376883584",
+      "launches_30d": 936,
+      "graduated_launches_observed": 3,
+      "previous_graduations_max": 18,
+      "active_days": 14
+    },
+    {
+      "rank": 46,
       "developer_id": "5e306f792b167498",
       "launches_30d": 927,
       "graduated_launches_observed": 2,
@@ -360,15 +376,7 @@
       "active_days": 4
     },
     {
-      "rank": 45,
-      "developer_id": "6be3643376883584",
-      "launches_30d": 918,
-      "graduated_launches_observed": 3,
-      "previous_graduations_max": 18,
-      "active_days": 14
-    },
-    {
-      "rank": 46,
+      "rank": 47,
       "developer_id": "f8816036dae0472a",
       "launches_30d": 916,
       "graduated_launches_observed": 6,
@@ -376,7 +384,15 @@
       "active_days": 10
     },
     {
-      "rank": 47,
+      "rank": 48,
+      "developer_id": "9bd4ce3d6185b5a0",
+      "launches_30d": 911,
+      "graduated_launches_observed": 10,
+      "previous_graduations_max": 103,
+      "active_days": 14
+    },
+    {
+      "rank": 49,
       "developer_id": "589c106c05d03edc",
       "launches_30d": 910,
       "graduated_launches_observed": 14,
@@ -384,23 +400,15 @@
       "active_days": 12
     },
     {
-      "rank": 48,
-      "developer_id": "9bd4ce3d6185b5a0",
-      "launches_30d": 909,
-      "graduated_launches_observed": 10,
-      "previous_graduations_max": 103,
+      "rank": 50,
+      "developer_id": "d8e08bb904008ce6",
+      "launches_30d": 900,
+      "graduated_launches_observed": 12,
+      "previous_graduations_max": 159,
       "active_days": 14
     },
     {
-      "rank": 49,
-      "developer_id": "befbdf66b81995ce",
-      "launches_30d": 897,
-      "graduated_launches_observed": 14,
-      "previous_graduations_max": 26,
-      "active_days": 10
-    },
-    {
-      "rank": 50,
+      "rank": 51,
       "developer_id": "7f908fd66ee75c20",
       "launches_30d": 886,
       "graduated_launches_observed": 5,
@@ -408,28 +416,20 @@
       "active_days": 8
     },
     {
-      "rank": 51,
-      "developer_id": "d8e08bb904008ce6",
-      "launches_30d": 870,
-      "graduated_launches_observed": 12,
-      "previous_graduations_max": 159,
-      "active_days": 14
+      "rank": 52,
+      "developer_id": "01b37130bf342e6e",
+      "launches_30d": 848,
+      "graduated_launches_observed": 9,
+      "previous_graduations_max": 6,
+      "active_days": 9
     },
     {
-      "rank": 52,
+      "rank": 53,
       "developer_id": "a13f3f28dcb7a977",
       "launches_30d": 848,
       "graduated_launches_observed": 2,
       "previous_graduations_max": 2,
       "active_days": 2
-    },
-    {
-      "rank": 53,
-      "developer_id": "01b37130bf342e6e",
-      "launches_30d": 842,
-      "graduated_launches_observed": 9,
-      "previous_graduations_max": 6,
-      "active_days": 9
     },
     {
       "rank": 54,
@@ -441,6 +441,14 @@
     },
     {
       "rank": 55,
+      "developer_id": "2d2e52184c7bd2a5",
+      "launches_30d": 834,
+      "graduated_launches_observed": 9,
+      "previous_graduations_max": 113,
+      "active_days": 14
+    },
+    {
+      "rank": 56,
       "developer_id": "76240e350da685ac",
       "launches_30d": 830,
       "graduated_launches_observed": 14,
@@ -448,7 +456,7 @@
       "active_days": 14
     },
     {
-      "rank": 56,
+      "rank": 57,
       "developer_id": "7ecd5a1a41071d82",
       "launches_30d": 825,
       "graduated_launches_observed": 7,
@@ -456,19 +464,11 @@
       "active_days": 5
     },
     {
-      "rank": 57,
+      "rank": 58,
       "developer_id": "276e28eeb44be2c2",
-      "launches_30d": 817,
+      "launches_30d": 820,
       "graduated_launches_observed": 5,
       "previous_graduations_max": 29,
-      "active_days": 14
-    },
-    {
-      "rank": 58,
-      "developer_id": "2d2e52184c7bd2a5",
-      "launches_30d": 814,
-      "graduated_launches_observed": 9,
-      "previous_graduations_max": 113,
       "active_days": 14
     },
     {
@@ -481,6 +481,14 @@
     },
     {
       "rank": 60,
+      "developer_id": "59a618e45b66b89c",
+      "launches_30d": 792,
+      "graduated_launches_observed": 9,
+      "previous_graduations_max": 10,
+      "active_days": 8
+    },
+    {
+      "rank": 61,
       "developer_id": "66bde7973b8416ed",
       "launches_30d": 791,
       "graduated_launches_observed": 8,
@@ -488,7 +496,15 @@
       "active_days": 9
     },
     {
-      "rank": 61,
+      "rank": 62,
+      "developer_id": "a554391da1d47e2d",
+      "launches_30d": 789,
+      "graduated_launches_observed": 38,
+      "previous_graduations_max": 53,
+      "active_days": 10
+    },
+    {
+      "rank": 63,
       "developer_id": "a017a0caf20205de",
       "launches_30d": 787,
       "graduated_launches_observed": 39,
@@ -496,15 +512,7 @@
       "active_days": 6
     },
     {
-      "rank": 62,
-      "developer_id": "59a618e45b66b89c",
-      "launches_30d": 787,
-      "graduated_launches_observed": 9,
-      "previous_graduations_max": 10,
-      "active_days": 8
-    },
-    {
-      "rank": 63,
+      "rank": 64,
       "developer_id": "934730a9f9bbadff",
       "launches_30d": 776,
       "graduated_launches_observed": 6,
@@ -512,15 +520,23 @@
       "active_days": 12
     },
     {
-      "rank": 64,
-      "developer_id": "a554391da1d47e2d",
-      "launches_30d": 762,
-      "graduated_launches_observed": 38,
-      "previous_graduations_max": 53,
-      "active_days": 10
+      "rank": 65,
+      "developer_id": "830e3f430f2df75b",
+      "launches_30d": 772,
+      "graduated_launches_observed": 0,
+      "previous_graduations_max": 1,
+      "active_days": 12
     },
     {
-      "rank": 65,
+      "rank": 66,
+      "developer_id": "8e1e0dc070e31c36",
+      "launches_30d": 766,
+      "graduated_launches_observed": 10,
+      "previous_graduations_max": 11,
+      "active_days": 13
+    },
+    {
+      "rank": 67,
       "developer_id": "e6c6c2a86dc91d32",
       "launches_30d": 753,
       "graduated_launches_observed": 3,
@@ -528,23 +544,15 @@
       "active_days": 8
     },
     {
-      "rank": 66,
-      "developer_id": "8e1e0dc070e31c36",
-      "launches_30d": 751,
-      "graduated_launches_observed": 10,
-      "previous_graduations_max": 11,
-      "active_days": 13
-    },
-    {
-      "rank": 67,
+      "rank": 68,
       "developer_id": "caa67e7d4fae8a5c",
-      "launches_30d": 749,
+      "launches_30d": 751,
       "graduated_launches_observed": 1,
       "previous_graduations_max": 5,
-      "active_days": 11
+      "active_days": 12
     },
     {
-      "rank": 68,
+      "rank": 69,
       "developer_id": "13932823b7cbd741",
       "launches_30d": 739,
       "graduated_launches_observed": 5,
@@ -552,7 +560,23 @@
       "active_days": 6
     },
     {
-      "rank": 69,
+      "rank": 70,
+      "developer_id": "29df65460300b6ad",
+      "launches_30d": 733,
+      "graduated_launches_observed": 4,
+      "previous_graduations_max": 6,
+      "active_days": 12
+    },
+    {
+      "rank": 71,
+      "developer_id": "a6f8d3019ba0edaf",
+      "launches_30d": 722,
+      "graduated_launches_observed": 8,
+      "previous_graduations_max": 32,
+      "active_days": 14
+    },
+    {
+      "rank": 72,
       "developer_id": "1beda2b21799e60a",
       "launches_30d": 718,
       "graduated_launches_observed": 2,
@@ -560,15 +584,15 @@
       "active_days": 14
     },
     {
-      "rank": 70,
-      "developer_id": "29df65460300b6ad",
+      "rank": 73,
+      "developer_id": "8447861b53063a9c",
       "launches_30d": 710,
-      "graduated_launches_observed": 4,
-      "previous_graduations_max": 6,
-      "active_days": 11
+      "graduated_launches_observed": 6,
+      "previous_graduations_max": 63,
+      "active_days": 13
     },
     {
-      "rank": 71,
+      "rank": 74,
       "developer_id": "7712ebe5c8c878bd",
       "launches_30d": 704,
       "graduated_launches_observed": 2,
@@ -576,44 +600,20 @@
       "active_days": 10
     },
     {
-      "rank": 72,
-      "developer_id": "830e3f430f2df75b",
-      "launches_30d": 697,
-      "graduated_launches_observed": 0,
-      "previous_graduations_max": 1,
-      "active_days": 12
-    },
-    {
-      "rank": 73,
-      "developer_id": "8447861b53063a9c",
-      "launches_30d": 696,
-      "graduated_launches_observed": 6,
-      "previous_graduations_max": 63,
-      "active_days": 13
-    },
-    {
-      "rank": 74,
+      "rank": 75,
       "developer_id": "430347d2efa04213",
-      "launches_30d": 681,
+      "launches_30d": 695,
       "graduated_launches_observed": 8,
       "previous_graduations_max": 8,
-      "active_days": 8
-    },
-    {
-      "rank": 75,
-      "developer_id": "8b95ee4f55eb63d7",
-      "launches_30d": 677,
-      "graduated_launches_observed": 7,
-      "previous_graduations_max": 85,
-      "active_days": 13
+      "active_days": 9
     },
     {
       "rank": 76,
-      "developer_id": "a6f8d3019ba0edaf",
-      "launches_30d": 674,
+      "developer_id": "8b95ee4f55eb63d7",
+      "launches_30d": 691,
       "graduated_launches_observed": 8,
-      "previous_graduations_max": 32,
-      "active_days": 14
+      "previous_graduations_max": 86,
+      "active_days": 13
     },
     {
       "rank": 77,
@@ -633,6 +633,14 @@
     },
     {
       "rank": 79,
+      "developer_id": "06d37e14fdf5d20b",
+      "launches_30d": 670,
+      "graduated_launches_observed": 6,
+      "previous_graduations_max": 18,
+      "active_days": 12
+    },
+    {
+      "rank": 80,
       "developer_id": "4242a8b1cc3767a4",
       "launches_30d": 669,
       "graduated_launches_observed": 4,
@@ -640,7 +648,7 @@
       "active_days": 9
     },
     {
-      "rank": 80,
+      "rank": 81,
       "developer_id": "723d27505fd2f00e",
       "launches_30d": 668,
       "graduated_launches_observed": 5,
@@ -648,17 +656,9 @@
       "active_days": 13
     },
     {
-      "rank": 81,
-      "developer_id": "c20ad27df46d3cc3",
-      "launches_30d": 662,
-      "graduated_launches_observed": 3,
-      "previous_graduations_max": 2,
-      "active_days": 7
-    },
-    {
       "rank": 82,
       "developer_id": "4521b8ae0c4922b2",
-      "launches_30d": 657,
+      "launches_30d": 667,
       "graduated_launches_observed": 13,
       "previous_graduations_max": 122,
       "active_days": 14
@@ -666,13 +666,21 @@
     {
       "rank": 83,
       "developer_id": "4dfb9a3040fa51ed",
-      "launches_30d": 656,
-      "graduated_launches_observed": 7,
-      "previous_graduations_max": 9,
+      "launches_30d": 667,
+      "graduated_launches_observed": 8,
+      "previous_graduations_max": 10,
       "active_days": 14
     },
     {
       "rank": 84,
+      "developer_id": "c20ad27df46d3cc3",
+      "launches_30d": 662,
+      "graduated_launches_observed": 3,
+      "previous_graduations_max": 2,
+      "active_days": 7
+    },
+    {
+      "rank": 85,
       "developer_id": "91a2d1e0db6dfe2f",
       "launches_30d": 656,
       "graduated_launches_observed": 3,
@@ -680,7 +688,23 @@
       "active_days": 2
     },
     {
-      "rank": 85,
+      "rank": 86,
+      "developer_id": "d9052d94d86dbd61",
+      "launches_30d": 652,
+      "graduated_launches_observed": 18,
+      "previous_graduations_max": 149,
+      "active_days": 14
+    },
+    {
+      "rank": 87,
+      "developer_id": "2b0820f0801af8f4",
+      "launches_30d": 646,
+      "graduated_launches_observed": 4,
+      "previous_graduations_max": 4,
+      "active_days": 9
+    },
+    {
+      "rank": 88,
       "developer_id": "dda61790eb808e35",
       "launches_30d": 643,
       "graduated_launches_observed": 3,
@@ -688,15 +712,15 @@
       "active_days": 4
     },
     {
-      "rank": 86,
-      "developer_id": "2b0820f0801af8f4",
-      "launches_30d": 642,
-      "graduated_launches_observed": 4,
-      "previous_graduations_max": 4,
-      "active_days": 9
+      "rank": 89,
+      "developer_id": "fbcaaf8afa213923",
+      "launches_30d": 639,
+      "graduated_launches_observed": 8,
+      "previous_graduations_max": 8,
+      "active_days": 6
     },
     {
-      "rank": 87,
+      "rank": 90,
       "developer_id": "b5288b62b7eff2a1",
       "launches_30d": 636,
       "graduated_launches_observed": 7,
@@ -704,7 +728,7 @@
       "active_days": 8
     },
     {
-      "rank": 88,
+      "rank": 91,
       "developer_id": "2bbc462c1cf8faa8",
       "launches_30d": 629,
       "graduated_launches_observed": 0,
@@ -712,7 +736,23 @@
       "active_days": 9
     },
     {
-      "rank": 89,
+      "rank": 92,
+      "developer_id": "b0acab64f489cad2",
+      "launches_30d": 628,
+      "graduated_launches_observed": 4,
+      "previous_graduations_max": 4,
+      "active_days": 5
+    },
+    {
+      "rank": 93,
+      "developer_id": "6ea82aa87017d385",
+      "launches_30d": 624,
+      "graduated_launches_observed": 2,
+      "previous_graduations_max": 13,
+      "active_days": 14
+    },
+    {
+      "rank": 94,
       "developer_id": "71bccb75731ff573",
       "launches_30d": 620,
       "graduated_launches_observed": 7,
@@ -720,7 +760,23 @@
       "active_days": 6
     },
     {
-      "rank": 90,
+      "rank": 95,
+      "developer_id": "3d9cd0c2fe22ef70",
+      "launches_30d": 619,
+      "graduated_launches_observed": 0,
+      "previous_graduations_max": 0,
+      "active_days": 9
+    },
+    {
+      "rank": 96,
+      "developer_id": "b0d32b07b50bcce6",
+      "launches_30d": 616,
+      "graduated_launches_observed": 7,
+      "previous_graduations_max": 196,
+      "active_days": 14
+    },
+    {
+      "rank": 97,
       "developer_id": "6340de60b2a77672",
       "launches_30d": 616,
       "graduated_launches_observed": 4,
@@ -728,15 +784,15 @@
       "active_days": 14
     },
     {
-      "rank": 91,
-      "developer_id": "d9052d94d86dbd61",
-      "launches_30d": 614,
-      "graduated_launches_observed": 18,
-      "previous_graduations_max": 149,
-      "active_days": 13
+      "rank": 98,
+      "developer_id": "4c0b2024bb169d18",
+      "launches_30d": 615,
+      "graduated_launches_observed": 2,
+      "previous_graduations_max": 6,
+      "active_days": 14
     },
     {
-      "rank": 92,
+      "rank": 99,
       "developer_id": "8c71fc74a3b9fab7",
       "launches_30d": 612,
       "graduated_launches_observed": 23,
@@ -744,67 +800,11 @@
       "active_days": 11
     },
     {
-      "rank": 93,
-      "developer_id": "b0d32b07b50bcce6",
-      "launches_30d": 605,
-      "graduated_launches_observed": 7,
-      "previous_graduations_max": 196,
-      "active_days": 14
-    },
-    {
-      "rank": 94,
+      "rank": 100,
       "developer_id": "074e04ee89a4fb3f",
-      "launches_30d": 605,
+      "launches_30d": 611,
       "graduated_launches_observed": 2,
       "previous_graduations_max": 20,
-      "active_days": 14
-    },
-    {
-      "rank": 95,
-      "developer_id": "6ea82aa87017d385",
-      "launches_30d": 604,
-      "graduated_launches_observed": 2,
-      "previous_graduations_max": 13,
-      "active_days": 14
-    },
-    {
-      "rank": 96,
-      "developer_id": "fbcaaf8afa213923",
-      "launches_30d": 586,
-      "graduated_launches_observed": 7,
-      "previous_graduations_max": 7,
-      "active_days": 6
-    },
-    {
-      "rank": 97,
-      "developer_id": "3d9cd0c2fe22ef70",
-      "launches_30d": 585,
-      "graduated_launches_observed": 0,
-      "previous_graduations_max": 0,
-      "active_days": 9
-    },
-    {
-      "rank": 98,
-      "developer_id": "06d37e14fdf5d20b",
-      "launches_30d": 583,
-      "graduated_launches_observed": 5,
-      "previous_graduations_max": 17,
-      "active_days": 11
-    },
-    {
-      "rank": 99,
-      "developer_id": "1e8faefe40cf86ac",
-      "launches_30d": 580,
-      "graduated_launches_observed": 36,
-      "previous_graduations_max": 71,
-      "active_days": 14
-    },
-    {
-      "rank": 100,
-      "developer_id": "4c0b2024bb169d18",
-      "launches_30d": 578,
-      "graduated_launches_observed": 2,
-      "previous_graduations_max": 6,
       "active_days": 14
     }
   ]
